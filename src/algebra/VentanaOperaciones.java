@@ -1803,10 +1803,11 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         int numerador, denominador;
         int rContador = 1;
         int r = 0;
-        Fraction fraccion = new Fraction();
+        //Fraction fraccion = new Fraction();
         for (int k = 1; k <= Main.matrizFil; k++){
             while (rContador <= Main.matrizCol){
                 if (k == 1) {
+                    Fraction fraccion = new Fraction();
                     if(arrayFila1.get(r).getText().isEmpty()) numerador = 1;
                     else numerador = Integer.parseInt(arrayFila1.get(r).getText());
                     
@@ -1814,12 +1815,11 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     else denominador = Integer.parseInt(arrayFila1.get(r+1).getText());
                     
                     fraccion.setValue(numerador, denominador);
-                    System.out.println ("numerador: " + numerador);
-                    System.out.println ("denominador: " + denominador);
                     
                     matrizA.setElemento(k - 1, rContador - 1, fraccion);
                 }
                 else if (k == 2) {
+                    Fraction fraccion = new Fraction();
                     if(arrayFila2.get(r).getText().isEmpty()) numerador = 1;
                     else numerador = Integer.parseInt(arrayFila2.get(r).getText());
                     
@@ -1827,12 +1827,11 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     else denominador = Integer.parseInt(arrayFila2.get(r+1).getText());
                     
                     fraccion.setValue(numerador, denominador);
-                    System.out.println ("numerador: " + numerador);
-                    System.out.println ("denominador: " + denominador);
                     
                     matrizA.setElemento(k - 1, rContador - 1, fraccion);
                 }
                 else if (k == 3) {
+                    Fraction fraccion = new Fraction();
                     if(arrayFila3.get(r).getText().isEmpty()) numerador = 1;
                     else numerador = Integer.parseInt(arrayFila3.get(r).getText());
                     
@@ -1840,12 +1839,11 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     else denominador = Integer.parseInt(arrayFila3.get(r+1).getText());
                     
                     fraccion.setValue(numerador, denominador);
-                    System.out.println ("numerador: " + numerador);
-                    System.out.println ("denominador: " + denominador);
                     
                     matrizA.setElemento(k - 1, rContador - 1, fraccion);
                 }
                 else if (k == 4) {
+                    Fraction fraccion = new Fraction();
                     if(arrayFila4.get(r).getText().isEmpty()) numerador = 1;
                     else numerador = Integer.parseInt(arrayFila4.get(r).getText());
                     
@@ -1853,12 +1851,11 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     else denominador = Integer.parseInt(arrayFila4.get(r+1).getText());
                     
                     fraccion.setValue(numerador, denominador);
-                    System.out.println ("numerador: " + numerador);
-                    System.out.println ("denominador: " + denominador);
                     
                     matrizA.setElemento(k - 1, rContador - 1, fraccion);
                 }
                 else if (k == 5) {
+                    Fraction fraccion = new Fraction();
                     if(arrayFila5.get(r).getText().isEmpty()) numerador = 1;
                     else numerador = Integer.parseInt(arrayFila5.get(r).getText());
                     
@@ -1866,8 +1863,6 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     else denominador = Integer.parseInt(arrayFila5.get(r+1).getText());
                     
                     fraccion.setValue(numerador, denominador);
-                    System.out.println ("numerador: " + numerador);
-                    System.out.println ("denominador: " + denominador);
                     
                     matrizA.setElemento(k - 1, rContador - 1, fraccion);
                 }
