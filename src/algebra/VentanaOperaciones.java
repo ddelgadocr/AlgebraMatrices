@@ -1545,6 +1545,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setText("Operaciones Elementales");
 
+        CargarMatriz.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         CargarMatriz.setText("Cargar Matriz");
         CargarMatriz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1557,16 +1558,15 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(176, 176, 176)
-                        .addComponent(CargarMatriz))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(491, 491, 491)
-                        .addComponent(jLabel6)))
-                .addContainerGap(606, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addComponent(CargarMatriz)
+                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel6)
+                .addGap(225, 225, 225))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1580,7 +1580,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(85, 85, 85)
                         .addComponent(CargarMatriz)))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -1966,20 +1966,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JLabel LabelFil4;
     private javax.swing.JLabel LabelFil5;
     private javax.swing.JTextField NumF1C1;
-    private javax.swing.JTextField NumF1C10;
-    private javax.swing.JTextField NumF1C11;
-    private javax.swing.JTextField NumF1C12;
-    private javax.swing.JTextField NumF1C13;
-    private javax.swing.JTextField NumF1C14;
-    private javax.swing.JTextField NumF1C15;
-    private javax.swing.JTextField NumF1C16;
-    private javax.swing.JTextField NumF1C17;
     private javax.swing.JTextField NumF1C2;
     private javax.swing.JTextField NumF1C3;
     private javax.swing.JTextField NumF1C4;
     private javax.swing.JTextField NumF1C5;
-    private javax.swing.JTextField NumF1C8;
-    private javax.swing.JTextField NumF1C9;
     private javax.swing.JTextField NumF2C1;
     private javax.swing.JTextField NumF2C2;
     private javax.swing.JTextField NumF2C3;
@@ -2028,17 +2018,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JPanel panel0;
     private javax.swing.JPanel panel1;
     private javax.swing.JPanel panel10;
