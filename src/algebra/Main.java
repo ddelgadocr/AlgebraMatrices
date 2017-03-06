@@ -20,7 +20,8 @@ public class Main {
     public static void main(String[] args) {        
         //Se realizan pruebas
         //------Se crea la matriz------
-        /*Fraction elementos[][]= new Fraction[4][4];
+       /*
+        Fraction elementos[][]= new Fraction[4][4];
         Matriz matrizA = new Matriz(elementos);
         
         //Lo que hice fue hacer una matriz y a todas les puse un solo valor "5/6"
@@ -40,15 +41,21 @@ public class Main {
         //Se hace una nueva operacion
         OperacionesElementales SumaMultiplo= new OperacionesElementales(matrizA);
         Fraction multiplo = new Fraction(1,3);
-        SumaMultiplo.SumaFilaMultiplo(3,2,multiplo);*/
+        SumaMultiplo.SumaFilaMultiplo(3,2,multiplo);
         
-       // Falta validar que sean 5x5
+        //operacione fila por ecalar 
+        Fraction multiplicando = new Fraction(2,1);
+        SumaMultiplo.MultiplicarFilaPorEscalar(1,multiplicando);
+        SumaMultiplo.IntercabiarFilas(3,1);
+        */
+       
 
         // Inicia VentanaPrincipal.
         VentanaPrincipal VentanaPrincipal_ = new VentanaPrincipal();
         VentanaPrincipal_.setVisible(true);
         VentanaPrincipal_.setResizable(false); // Tamaño de ventana no variable.
         VentanaPrincipal_.setLocationRelativeTo(null); // Centra ventana.
+
     }
     
 }
