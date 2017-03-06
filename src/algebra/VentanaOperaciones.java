@@ -76,6 +76,17 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         arraySeparadores.add(SepF5C3); arraySeparadores.add(SepF5C4);        
         arraySeparadores.add(SepF5C5);
         
+        labelA.setVisible(true);
+        labelB.setVisible(false);
+        labelC.setVisible(true);
+        labelD.setVisible(false);
+        textA.setVisible(true);
+        textB.setVisible(false);
+        textC.setVisible(true);
+
+        labelA.setText("Fila:");
+        labelC.setText("Escalar:");
+        
         // Oculta todas las fracciones, luego se vuelven visibles de acuerdo a filasXcolumnas.
         for (int i = 0; i < arrayFila1.size(); i++) {
             arrayFila1.get(i).setVisible(false);
@@ -150,25 +161,27 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         int r = 0;
         for (int k = 1; k <= Main.matrizFil; k++){
             while (rContador <= Main.matrizCol){
-                if (k == 1) {
-                    arrayFila1.get(r).setVisible(true);
-                    arrayFila1.get(r+1).setVisible(true);
-                }
-                else if (k == 2) {
-                    arrayFila2.get(r).setVisible(true);
-                    arrayFila2.get(r+1).setVisible(true);
-                }
-                else if (k == 3) {
-                    arrayFila3.get(r).setVisible(true);
-                    arrayFila3.get(r+1).setVisible(true);
-                }
-                else if (k == 4) {
-                    arrayFila4.get(r).setVisible(true);
-                    arrayFila4.get(r+1).setVisible(true);
-                }
-                else if (k == 5) {
-                    arrayFila5.get(r).setVisible(true);
-                    arrayFila5.get(r+1).setVisible(true);
+                switch (k) {
+                    case 1: k = 1;
+                        arrayFila1.get(r).setVisible(true);
+                        arrayFila1.get(r+1).setVisible(true);
+                        break;
+                    case 2: k = 2;
+                        arrayFila2.get(r).setVisible(true);
+                        arrayFila2.get(r+1).setVisible(true);
+                        break;
+                    case 3: k = 3;
+                        arrayFila3.get(r).setVisible(true);
+                        arrayFila3.get(r+1).setVisible(true);
+                        break;
+                    case 4: k = 4;
+                        arrayFila4.get(r).setVisible(true);
+                        arrayFila4.get(r+1).setVisible(true);
+                        break;
+                    case 5: k = 5;
+                        arrayFila5.get(r).setVisible(true);
+                        arrayFila5.get(r+1).setVisible(true);
+                        break;
                 }
                 r += 2;
                 rContador++;
@@ -302,6 +315,14 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         SepF4C5 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
         CargarMatriz = new javax.swing.JButton();
+        ComboOperaciones = new javax.swing.JComboBox<>();
+        textA = new javax.swing.JTextField();
+        labelA = new javax.swing.JLabel();
+        textC = new javax.swing.JTextField();
+        labelC = new javax.swing.JLabel();
+        textB = new javax.swing.JTextField();
+        labelB = new javax.swing.JLabel();
+        labelD = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1553,6 +1574,47 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        ComboOperaciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        ComboOperaciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Multiplicar fila por escalar", "Intercambiar filas", "Sumar fila con múltiplo de otra fila" }));
+        ComboOperaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboOperacionesActionPerformed(evt);
+            }
+        });
+
+        textA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        textA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textAActionPerformed(evt);
+            }
+        });
+
+        labelA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelA.setText("Fila 'a':");
+
+        textC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        textC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textCActionPerformed(evt);
+            }
+        });
+
+        labelC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelC.setText("Escalar:");
+
+        textB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        textB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textBActionPerformed(evt);
+            }
+        });
+
+        labelB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelB.setText("Fila 'b':");
+
+        labelD.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        labelD.setText("(Fila destino)");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1560,9 +1622,27 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addComponent(CargarMatriz)
-                .addGap(47, 47, 47))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CargarMatriz)
+                    .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelC)
+                                .addGap(18, 18, 18)
+                                .addComponent(textC, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelA)
+                                .addGap(23, 23, 23)
+                                .addComponent(textA, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labelB)
+                                .addGap(23, 23, 23)
+                                .addComponent(textB, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelD)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
@@ -1578,8 +1658,23 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(CargarMatriz)))
+                        .addGap(83, 83, 83)
+                        .addComponent(CargarMatriz)
+                        .addGap(36, 36, 36)
+                        .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(96, 96, 96)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textA, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelA)
+                            .addComponent(labelD))
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(textB, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelB))
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelC)
+                            .addComponent(textC, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -1888,6 +1983,58 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         }*/
     }//GEN-LAST:event_CargarMatrizActionPerformed
 
+    private void ComboOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboOperacionesActionPerformed
+        if(ComboOperaciones.getSelectedIndex() == 0){
+            labelA.setVisible(true);
+            labelB.setVisible(false);
+            labelC.setVisible(true);
+            labelD.setVisible(false);
+            textA.setVisible(true);
+            textB.setVisible(false);
+            textC.setVisible(true);
+                
+            labelA.setText("Fila:");
+            labelC.setText("Escalar:");
+        }
+        else if(ComboOperaciones.getSelectedIndex() == 1){
+            labelA.setVisible(true);
+            labelB.setVisible(true);
+            labelC.setVisible(false);
+            labelD.setVisible(false);
+            textA.setVisible(true);
+            textB.setVisible(true);
+            textC.setVisible(false);
+            
+            labelA.setText("Fila 'a':");
+            labelB.setText("Fila 'b':");
+        }
+        else if(ComboOperaciones.getSelectedIndex() == 2){
+            labelA.setVisible(true);
+            labelB.setVisible(true);
+            labelC.setVisible(false);
+            labelD.setVisible(true);
+            textA.setVisible(true);
+            textB.setVisible(true);
+            textC.setVisible(false);
+            
+            labelA.setText("Fila 'a':");
+            labelB.setText("Fila 'b':");
+            labelC.setText("Múltiplo:");
+        }
+    }//GEN-LAST:event_ComboOperacionesActionPerformed
+
+    private void textAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textAActionPerformed
+
+    private void textCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textCActionPerformed
+
+    private void textBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textBActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1925,6 +2072,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CargarMatriz;
+    private javax.swing.JComboBox<String> ComboOperaciones;
     private javax.swing.JTextField DenF1C1;
     private javax.swing.JTextField DenF1C2;
     private javax.swing.JTextField DenF1C3;
@@ -2014,6 +2162,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JLabel labelA;
+    private javax.swing.JLabel labelB;
+    private javax.swing.JLabel labelC;
+    private javax.swing.JLabel labelD;
     private javax.swing.JPanel panel0;
     private javax.swing.JPanel panel1;
     private javax.swing.JPanel panel10;
@@ -2039,5 +2191,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JPanel panel7;
     private javax.swing.JPanel panel8;
     private javax.swing.JPanel panel9;
+    private javax.swing.JTextField textA;
+    private javax.swing.JTextField textB;
+    private javax.swing.JTextField textC;
     // End of variables declaration//GEN-END:variables
 }
