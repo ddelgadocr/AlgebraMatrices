@@ -61,6 +61,44 @@ public class Matriz {
         return fila;
     }
     
+    public int cantidadFilas() {
+        int contador = 0;
+        for (int i = 0; i < filas; i++) {
+            contador++;
+        }
+        return contador;
+    }
+    
+    public int cantidadColumnas(){
+        int contador = 0;
+        for( int j=0; j < columnas; j++){
+            contador ++;  
+        }
+        return contador;  
+        
+    }
+    
+    //Validar tamano
+    public boolean valiarTamano(){
+        int fila = cantidadFilas();
+        int columna = cantidadColumnas();
+        if(fila <= 5 || columna <= 5){
+            return true;
+        }else{
+            return false;
+        }  
+    }
+    
+     public boolean valiarMatCuadrada(){
+        int fila = cantidadFilas();
+        int columna = cantidadColumnas();
+        if(fila == columna ){
+            return true;
+        }else{
+            return false;
+        }  
+    }
+    
     //Imprimir la matriz
     public void imprime() {
 

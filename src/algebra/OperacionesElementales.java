@@ -51,4 +51,42 @@ public class OperacionesElementales {
         return matrizA;
     }
     
+    //Usuario ingresa filas, las tomo de la matriz las guardo en aux y las seteo 
+    //en la misma matriz difetente fila
+        public Matriz IntercabiarFilas(int fila1, int fila2) {
+        if (matrizA.getColumnas() <= 5 || matrizA.getFilas() <= 5) {
+            for (int j = 0; j < matrizA.getColumnas(); j++) {
+                Fraction aux = matrizA.getFila(fila1 - 1)[j];
+                Fraction aux2 = matrizA.getFila(fila2 - 1)[j];
+                matrizA.setElemento(fila1 - 1, j, aux2);
+                matrizA.setElemento(fila2 - 1, j, aux);
+            } 
+        }
+
+        System.out.println("Intercambiar filas"+"\n"+"Fila1: " + fila1 + "\n" + "Fila2: " + fila2);
+        matrizA.imprime();
+        return matrizA;
+    }
+
+    public Matriz MultiplicarFilaPorEscalar(int fila, Fraction escalar) { 
+        Fraction[] nuevaFila = new Fraction[matrizA.getColumnas()];
+
+        if (matrizA.getColumnas() <= 5 || matrizA.getFilas() <= 5) {
+            for (int j = 0; j < matrizA.getColumnas(); j++) {
+                Fraction resultado;
+                resultado = escalar.multiply(matrizA.getFila(fila - 1)[j]);
+                nuevaFila[j] = resultado;
+            }
+
+            for (int m = 0; m < matrizA.getColumnas(); m++) {
+                matrizA.setElemento(fila - 1, m, nuevaFila[m]);
+
+            }
+
+        }
+        System.out.println("Fila: " + fila + "\n" + "Multiplicada por: " + escalar);
+        matrizA.imprime();
+        return matrizA;
+
+    }
 }
