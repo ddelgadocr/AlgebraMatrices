@@ -79,22 +79,6 @@ public class Matriz {
         System.out.println();
     }
     
-    public void imprime2() {
-       String borde = "|";
-       System.out.println();
-        
-       for (int i=0; i<elementos.length; i++) {
-            System.out.print(borde); 
-            Fraction[] filai = elementos[i];
-            for (int j=0; j< filai.length; j++) {
-                imprimeElemento(elementos[i][j]); 
-            }            
-            System.out.print(borde);
-            System.out.println(); 
-        }
-        System.out.println();
-    }
-    
     public void imprimeElemento(Fraction d) {
         System.out.print(d.getNumerator() +"/"+ d.getDenominator()+ "  ");
     }

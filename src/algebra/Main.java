@@ -5,6 +5,8 @@
  */
 package algebra;
 
+import java.util.ArrayList;
+
         
 /**
  *
@@ -12,8 +14,9 @@ package algebra;
  */
 public class Main {
     // Se utilizan en VentanaOperaciones para crear matriz.
-    public static short matrizCol;
-    public static short matrizFil; 
+    public static short matrizCol; // Cantidad de columnas seleccionada por usuario.
+    public static short matrizFil; // Cantidad de filas seleccionada por usuario.
+    public static ArrayList<Matriz> arrayOperaciones = new ArrayList<>(); // Se agregan matrices al aplicar operaciones elementales.
     /**
      * @param args the command line arguments
      */
