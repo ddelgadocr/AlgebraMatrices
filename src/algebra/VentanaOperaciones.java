@@ -293,6 +293,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         NumF5C2 = new javax.swing.JTextField();
         DenF5C2 = new javax.swing.JTextField();
         SepF5C2 = new javax.swing.JSeparator();
+        panel22 = new javax.swing.JPanel();
+        NumF5C3 = new javax.swing.JTextField();
+        DenF5C3 = new javax.swing.JTextField();
+        SepF5C3 = new javax.swing.JSeparator();
         panel5 = new javax.swing.JPanel();
         NumF2C1 = new javax.swing.JTextField();
         DenF2C1 = new javax.swing.JTextField();
@@ -329,10 +333,6 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         NumF5C5 = new javax.swing.JTextField();
         DenF5C5 = new javax.swing.JTextField();
         SepF5C5 = new javax.swing.JSeparator();
-        panel22 = new javax.swing.JPanel();
-        NumF5C3 = new javax.swing.JTextField();
-        DenF5C3 = new javax.swing.JTextField();
-        SepF5C3 = new javax.swing.JSeparator();
         panel19 = new javax.swing.JPanel();
         NumF4C5 = new javax.swing.JTextField();
         DenF4C5 = new javax.swing.JTextField();
@@ -391,6 +391,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         LabelCol5.setText("5");
 
         NumF2C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF2C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         NumF2C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF2C4ActionPerformed(evt);
@@ -398,6 +399,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF2C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF2C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         DenF2C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF2C4ActionPerformed(evt);
@@ -434,6 +436,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF3C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF3C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         NumF3C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF3C2ActionPerformed(evt);
@@ -441,6 +444,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF3C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF3C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         DenF3C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF3C2ActionPerformed(evt);
@@ -477,6 +481,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF5C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF5C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         NumF5C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF5C4ActionPerformed(evt);
@@ -486,6 +491,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         SepF5C4.setForeground(new java.awt.Color(0, 0, 0));
 
         DenF5C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF5C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         DenF5C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF5C4ActionPerformed(evt);
@@ -520,6 +526,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF2C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF2C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         NumF2C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF2C3ActionPerformed(evt);
@@ -527,6 +534,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF2C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF2C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         DenF2C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF2C3ActionPerformed(evt);
@@ -563,6 +571,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF2C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF2C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         NumF2C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF2C5ActionPerformed(evt);
@@ -570,6 +579,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF2C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF2C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         DenF2C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF2C5ActionPerformed(evt);
@@ -606,6 +616,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF4C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF4C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         NumF4C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF4C2ActionPerformed(evt);
@@ -613,6 +624,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF4C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF4C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         DenF4C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF4C2ActionPerformed(evt);
@@ -649,6 +661,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF2C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF2C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         NumF2C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF2C2ActionPerformed(evt);
@@ -656,6 +669,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF2C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF2C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         DenF2C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF2C2ActionPerformed(evt);
@@ -692,6 +706,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF4C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF4C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         NumF4C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF4C1ActionPerformed(evt);
@@ -699,6 +714,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF4C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF4C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         DenF4C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF4C1ActionPerformed(evt);
@@ -735,6 +751,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF4C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF4C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         NumF4C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF4C3ActionPerformed(evt);
@@ -742,6 +759,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF4C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF4C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         DenF4C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF4C3ActionPerformed(evt);
@@ -778,6 +796,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF1C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF1C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         NumF1C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF1C2ActionPerformed(evt);
@@ -785,6 +804,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF1C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF1C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         DenF1C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF1C2ActionPerformed(evt);
@@ -821,6 +841,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF1C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF1C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         NumF1C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF1C4ActionPerformed(evt);
@@ -828,6 +849,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF1C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF1C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         DenF1C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF1C4ActionPerformed(evt);
@@ -864,6 +886,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF1C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF1C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         NumF1C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF1C3ActionPerformed(evt);
@@ -871,6 +894,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF1C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF1C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         DenF1C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF1C3ActionPerformed(evt);
@@ -907,6 +931,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF4C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF4C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         NumF4C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF4C4ActionPerformed(evt);
@@ -916,6 +941,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         SepF4C4.setForeground(new java.awt.Color(0, 0, 0));
 
         DenF4C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF4C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         DenF4C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF4C4ActionPerformed(evt);
@@ -950,6 +976,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF5C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF5C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         NumF5C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF5C2ActionPerformed(evt);
@@ -957,6 +984,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF5C2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF5C2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         DenF5C2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF5C2ActionPerformed(evt);
@@ -964,6 +992,51 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         SepF5C2.setForeground(new java.awt.Color(0, 0, 0));
+
+        NumF5C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF5C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
+        NumF5C3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NumF5C3ActionPerformed(evt);
+            }
+        });
+
+        DenF5C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF5C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
+        DenF5C3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DenF5C3ActionPerformed(evt);
+            }
+        });
+
+        SepF5C3.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout panel22Layout = new javax.swing.GroupLayout(panel22);
+        panel22.setLayout(panel22Layout);
+        panel22Layout.setHorizontalGroup(
+            panel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DenF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(panel22Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(panel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NumF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SepF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        panel22Layout.setVerticalGroup(
+            panel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(NumF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(SepF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DenF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout panel21Layout = new javax.swing.GroupLayout(panel21);
         panel21.setLayout(panel21Layout);
@@ -978,21 +1051,27 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addGroup(panel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(NumF5C2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(SepF5C2, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(panel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         panel21Layout.setVerticalGroup(
             panel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel21Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(NumF5C2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(SepF5C2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(DenF5C2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panel21Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panel21Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(NumF5C2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(7, 7, 7)
+                        .addComponent(SepF5C2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(DenF5C2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         NumF2C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF2C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         NumF2C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF2C1ActionPerformed(evt);
@@ -1000,6 +1079,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF2C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF2C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 204, 204)));
         DenF2C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF2C1ActionPerformed(evt);
@@ -1036,6 +1116,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF3C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF3C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         NumF3C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF3C3ActionPerformed(evt);
@@ -1043,6 +1124,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF3C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF3C3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         DenF3C3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF3C3ActionPerformed(evt);
@@ -1079,6 +1161,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF3C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF3C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         NumF3C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF3C1ActionPerformed(evt);
@@ -1086,6 +1169,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF3C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF3C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         DenF3C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF3C1ActionPerformed(evt);
@@ -1122,6 +1206,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF5C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF5C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         NumF5C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF5C1ActionPerformed(evt);
@@ -1129,6 +1214,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF5C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF5C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         DenF5C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF5C1ActionPerformed(evt);
@@ -1165,6 +1251,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF3C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF3C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         NumF3C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF3C5ActionPerformed(evt);
@@ -1172,6 +1259,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF3C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF3C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         DenF3C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF3C5ActionPerformed(evt);
@@ -1208,6 +1296,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF1C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF1C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         NumF1C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF1C5ActionPerformed(evt);
@@ -1215,6 +1304,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF1C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF1C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         DenF1C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF1C5ActionPerformed(evt);
@@ -1251,6 +1341,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF3C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF3C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         NumF3C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF3C4ActionPerformed(evt);
@@ -1258,6 +1349,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF3C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF3C4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         DenF3C4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF3C4ActionPerformed(evt);
@@ -1294,6 +1386,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF1C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF1C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         NumF1C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF1C1ActionPerformed(evt);
@@ -1301,6 +1394,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF1C1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF1C1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 204, 0)));
         DenF1C1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF1C1ActionPerformed(evt);
@@ -1337,6 +1431,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         );
 
         NumF5C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF5C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         NumF5C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF5C5ActionPerformed(evt);
@@ -1344,6 +1439,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF5C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF5C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0)));
         DenF5C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF5C5ActionPerformed(evt);
@@ -1379,50 +1475,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        NumF5C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        NumF5C3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NumF5C3ActionPerformed(evt);
-            }
-        });
-
-        DenF5C3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        DenF5C3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DenF5C3ActionPerformed(evt);
-            }
-        });
-
-        SepF5C3.setForeground(new java.awt.Color(0, 0, 0));
-
-        javax.swing.GroupLayout panel22Layout = new javax.swing.GroupLayout(panel22);
-        panel22.setLayout(panel22Layout);
-        panel22Layout.setHorizontalGroup(
-            panel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel22Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(DenF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(panel22Layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(panel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(NumF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SepF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
-        panel22Layout.setVerticalGroup(
-            panel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel22Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(NumF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(SepF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(5, 5, 5)
-                .addComponent(DenF5C3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
         NumF4C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        NumF4C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         NumF4C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NumF4C5ActionPerformed(evt);
@@ -1430,6 +1484,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         DenF4C5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        DenF4C5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 0, 204)));
         DenF4C5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DenF4C5ActionPerformed(evt);
@@ -1484,9 +1539,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                                 .addGap(400, 400, 400)
                                 .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(200, 200, 200)
-                                .addComponent(panel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(97, 97, 97)
+                                .addGap(398, 398, 398)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(panel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(panel24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1582,9 +1635,6 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addComponent(panel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(126, 126, 126)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(260, 260, 260)
-                                .addComponent(panel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(panel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(260, 260, 260)
@@ -1670,6 +1720,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         labelA.setText("labelA");
 
         textNum.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        textNum.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         textNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textNumActionPerformed(evt);
@@ -1776,6 +1827,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         });
 
         textDen.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        textDen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         textDen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textDenActionPerformed(evt);
@@ -1835,7 +1887,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(371, 371, 371)
                         .addComponent(jLabel6)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(102, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1878,7 +1930,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addComponent(textDen, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14)
                         .addComponent(EjecutarOperación)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -2163,23 +2215,17 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         // Comprobando que se hayan ingresado los datos para operaciones.
         switch (ComboOperaciones.getSelectedIndex()) {
             case 0:
-                if(textNum.getText().length() == 0 || textNum.getText() == "0") {
+                if(textNum.getText().length() == 0 || textDen.getText().equals("0")) {
                     JOptionPane.showMessageDialog(null, "Error: debe ingresar un escalar válido.");
                     return;
                 }
                 break;
-            /*case 1:
-                if(textA.getText().length() == 0 || textB.getText().length() == 0) {
-                    JOptionPane.showMessageDialog(null, "Error: debe completar los campos de fila y escalar.");
+            case 2:
+                if(textNum.getText().length() == 0 || textDen.getText().equals("0")) {
+                    JOptionPane.showMessageDialog(null, "Error: debe ingresar un múltiplo válido.");
                     return;
                 }
                 break;
-            case 2:
-                if(textA.getText().length() == 0 || textB.getText().length() == 0 || textC.getText().length() == 0) {
-                    JOptionPane.showMessageDialog(null, "Error: debe completar los campos de fila y escalar.");
-                    return;
-                }
-                break;*/
             default:
                 break;
         }
@@ -2273,7 +2319,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         switch (ComboOperaciones.getSelectedIndex()) {
             case 0:                
                 int fila = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
-                System.out.println("Fila:" + fila);
+                //System.out.println("Fila:" + fila);
                 Fraction escalar = new Fraction();
                 numerador = Integer.parseInt(textNum.getText());
                 if (textDen.getText().isEmpty()) denominador = 1;
@@ -2282,14 +2328,23 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 escalar.setValue(numerador, denominador);
                 
                 // Crea objeto de OperacionesElementales para aplicar operación.
-                OperacionesElementales OperacionElemental = new OperacionesElementales(Main.arrayOperaciones.get(0));
+                OperacionesElementales OperacionElementalA = new OperacionesElementales(Main.arrayOperaciones.get(0));
                 
-                OperacionElemental.MultiplicarFilaPorEscalar(fila, escalar); // Realiza operación.
-                matrizA = OperacionElemental.getMatrizA(); // Actualiza matrizA.
+                OperacionElementalA.MultiplicarFilaPorEscalar(fila, escalar); // Realiza operación.
+                matrizA = OperacionElementalA.getMatrizA(); // Actualiza matrizA.
                 Main.arrayOperaciones.add(matrizA); // Agrega matriz modificada.               
                 //matrizA.imprime();
                 break;
             case 1:
+                int fila1 = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
+                int fila2 = Integer.parseInt(ComboFilaB.getSelection().getActionCommand());
+                
+                // Crea objeto de OperacionesElementales para aplicar operación.
+                OperacionesElementales OperacionElementalB = new OperacionesElementales(Main.arrayOperaciones.get(0));
+                
+                OperacionElementalB.IntercabiarFilas(fila1, fila2); // Realiza operación.
+                matrizA = OperacionElementalB.getMatrizA(); // Actualiza matrizA.
+                Main.arrayOperaciones.add(matrizA); // Agrega matriz modificada.
                 break;
             case 2:
                 break;
@@ -2380,6 +2435,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 filB5.setVisible(false);
                 textNum.setVisible(true);
                 textDen.setVisible(true);
+                jSeparator1.setVisible(true);
                 labelA.setText("Fila:");
                 labelC.setText("Escalar:");
 
@@ -2432,6 +2488,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 textNum.setVisible(false);
                 textNum.setVisible(false);
                 textDen.setVisible(false);
+                jSeparator1.setVisible(false);
                 labelA.setText("Fila 'a':");
                 labelB.setText("Fila 'b':");
                 
@@ -2504,11 +2561,12 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             case 2:
                 labelA.setVisible(true);
                 labelB.setVisible(true);
-                labelC.setVisible(false);
+                labelC.setVisible(true);
                 labelD.setVisible(true);
                 textNum.setVisible(false);
                 textNum.setVisible(true);
                 textDen.setVisible(true);
+                jSeparator1.setVisible(true);
                 labelA.setText("Fila 'a':");
                 labelB.setText("Fila 'b':");
                 labelC.setText("Múltiplo:");
