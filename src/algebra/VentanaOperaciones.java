@@ -2347,6 +2347,22 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 Main.arrayOperaciones.add(matrizA); // Agrega matriz modificada.
                 break;
             case 2:
+                int numeroFila1 = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
+                int numeroFila2 = Integer.parseInt(ComboFilaB.getSelection().getActionCommand());
+                
+                Fraction multiplo = new Fraction();
+                numerador = Integer.parseInt(textNum.getText());
+                if (textDen.getText().isEmpty()) denominador = 1;
+                else denominador = Integer.parseInt(textDen.getText());
+                System.out.println(textDen.getText());
+                multiplo.setValue(numerador, denominador);
+                
+                // Crea objeto de OperacionesElementales para aplicar operación.
+                OperacionesElementales OperacionElementalC = new OperacionesElementales(Main.arrayOperaciones.get(0));
+                
+                OperacionElementalC.SumaFilaMultiplo(numeroFila1, numeroFila2, multiplo); // Realiza operación.
+                matrizA = OperacionElementalC.getMatrizA(); // Actualiza matrizA.
+                Main.arrayOperaciones.add(matrizA); // Agrega matriz modificada.
                 break;
             default:
                 break;
