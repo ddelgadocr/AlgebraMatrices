@@ -218,14 +218,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(Fil1)
                         .addComponent(Fil2)
                         .addComponent(Fil3)
                         .addComponent(Fil4)
-                        .addComponent(Fil5)))
+                        .addComponent(Fil5))
+                    .addComponent(jLabel1))
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -246,9 +246,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void OperacionesElementalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OperacionesElementalesActionPerformed
         // Obtiene cantidad de columnas deseadas.
-        System.out.println(Columnas.getSelection().getActionCommand());
+        //System.out.println(Columnas.getSelection().getActionCommand());
         short colSeleccionadas = Short.parseShort(Columnas.getSelection().getActionCommand());
-        System.out.println(colSeleccionadas);
+        //System.out.println(colSeleccionadas);
         switch (colSeleccionadas) {
             case 1: colSeleccionadas = 1;
                 Main.matrizCol = 1;
@@ -267,7 +267,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 break;
         }
         
-        System.out.println(Main.matrizCol);
+        //System.out.println(Main.matrizCol);
         
         // Obtiene cantidad de filas deseadas.
         short filSeleccionadas = Short.parseShort(Filas.getSelection().getActionCommand());
