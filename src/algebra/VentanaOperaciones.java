@@ -15,14 +15,7 @@ import javax.swing.JTextField;
  * @author Daniel
  */
 public class VentanaOperaciones extends javax.swing.JFrame {
-    private ArrayList<JTextField> arrayFracciones = new ArrayList<>();
     private ArrayList<JSeparator> arraySeparadores = new ArrayList<>();
-    
-    private ArrayList<JTextField> arrayColumna1 = new ArrayList<>();
-    private ArrayList<JTextField> arrayColumna2 = new ArrayList<>();
-    private ArrayList<JTextField> arrayColumna3 = new ArrayList<>();
-    private ArrayList<JTextField> arrayColumna4 = new ArrayList<>();
-    private ArrayList<JTextField> arrayColumna5 = new ArrayList<>();
     
     private ArrayList<JTextField> arrayFila1 = new ArrayList<>();
     private ArrayList<JTextField> arrayFila2 = new ArrayList<>();
@@ -94,7 +87,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         labelA.setText("Fila:");
         labelC.setText("Escalar:");
         
-        // Oculta todas las fracciones, luego se vuelven visibles de acuerdo a filasXcolumnas.
+        // Oculta todas las fracciones y separadores, luego se vuelven visibles de acuerdo a filasXcolumnas.
         for (int i = 0; i < arrayFila1.size(); i++) {
             arrayFila1.get(i).setVisible(false);
             arrayFila2.get(i).setVisible(false);
@@ -104,6 +97,18 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         }
         for (int i = 0; i < arraySeparadores.size(); i++) 
             arraySeparadores.get(i).setVisible(false);
+        
+        // Volviendo separadores de fracción visibles.
+        int f = 0;
+        int fContador = 1;
+        for(int i = 0; i < Main.matrizFil; i++){
+            for(int j = f; fContador <= Main.matrizCol; j++){
+                arraySeparadores.get(j).setVisible(true);
+                fContador++;
+            }
+            f += 5;
+            fContador = 1;
+        }
         
         switch (Main.matrizFil){
             case 1: Main.matrizFil = 1;
@@ -399,6 +404,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF2C4.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel8Layout = new javax.swing.GroupLayout(panel8);
         panel8.setLayout(panel8Layout);
         panel8Layout.setHorizontalGroup(
@@ -440,6 +447,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF3C2.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel11Layout = new javax.swing.GroupLayout(panel11);
         panel11.setLayout(panel11Layout);
         panel11Layout.setHorizontalGroup(
@@ -473,6 +482,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 NumF5C4ActionPerformed(evt);
             }
         });
+
+        SepF5C4.setForeground(new java.awt.Color(0, 0, 0));
 
         DenF5C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         DenF5C4.addActionListener(new java.awt.event.ActionListener() {
@@ -522,6 +533,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF2C3.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel7Layout = new javax.swing.GroupLayout(panel7);
         panel7.setLayout(panel7Layout);
         panel7Layout.setHorizontalGroup(
@@ -562,6 +575,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF2C5ActionPerformed(evt);
             }
         });
+
+        SepF2C5.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel9Layout = new javax.swing.GroupLayout(panel9);
         panel9.setLayout(panel9Layout);
@@ -604,6 +619,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF4C2.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel16Layout = new javax.swing.GroupLayout(panel16);
         panel16.setLayout(panel16Layout);
         panel16Layout.setHorizontalGroup(
@@ -644,6 +661,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF2C2ActionPerformed(evt);
             }
         });
+
+        SepF2C2.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel6Layout = new javax.swing.GroupLayout(panel6);
         panel6.setLayout(panel6Layout);
@@ -686,6 +705,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF4C1.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel15Layout = new javax.swing.GroupLayout(panel15);
         panel15.setLayout(panel15Layout);
         panel15Layout.setHorizontalGroup(
@@ -726,6 +747,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF4C3ActionPerformed(evt);
             }
         });
+
+        SepF4C3.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel17Layout = new javax.swing.GroupLayout(panel17);
         panel17.setLayout(panel17Layout);
@@ -768,6 +791,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF1C2.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
         panel1Layout.setHorizontalGroup(
@@ -808,6 +833,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF1C4ActionPerformed(evt);
             }
         });
+
+        SepF1C4.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel3Layout = new javax.swing.GroupLayout(panel3);
         panel3.setLayout(panel3Layout);
@@ -850,6 +877,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF1C3.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
         panel2Layout.setHorizontalGroup(
@@ -883,6 +912,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 NumF4C4ActionPerformed(evt);
             }
         });
+
+        SepF4C4.setForeground(new java.awt.Color(0, 0, 0));
 
         DenF4C4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         DenF4C4.addActionListener(new java.awt.event.ActionListener() {
@@ -932,6 +963,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF5C2.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel21Layout = new javax.swing.GroupLayout(panel21);
         panel21.setLayout(panel21Layout);
         panel21Layout.setHorizontalGroup(
@@ -972,6 +1005,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF2C1ActionPerformed(evt);
             }
         });
+
+        SepF2C1.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel5Layout = new javax.swing.GroupLayout(panel5);
         panel5.setLayout(panel5Layout);
@@ -1014,6 +1049,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF3C3.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel12Layout = new javax.swing.GroupLayout(panel12);
         panel12.setLayout(panel12Layout);
         panel12Layout.setHorizontalGroup(
@@ -1054,6 +1091,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF3C1ActionPerformed(evt);
             }
         });
+
+        SepF3C1.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel10Layout = new javax.swing.GroupLayout(panel10);
         panel10.setLayout(panel10Layout);
@@ -1096,6 +1135,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF5C1.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel20Layout = new javax.swing.GroupLayout(panel20);
         panel20.setLayout(panel20Layout);
         panel20Layout.setHorizontalGroup(
@@ -1136,6 +1177,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF3C5ActionPerformed(evt);
             }
         });
+
+        SepF3C5.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel14Layout = new javax.swing.GroupLayout(panel14);
         panel14.setLayout(panel14Layout);
@@ -1178,6 +1221,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF1C5.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel4Layout = new javax.swing.GroupLayout(panel4);
         panel4.setLayout(panel4Layout);
         panel4Layout.setHorizontalGroup(
@@ -1218,6 +1263,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF3C4ActionPerformed(evt);
             }
         });
+
+        SepF3C4.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel13Layout = new javax.swing.GroupLayout(panel13);
         panel13.setLayout(panel13Layout);
@@ -1260,6 +1307,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF1C1.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel0Layout = new javax.swing.GroupLayout(panel0);
         panel0.setLayout(panel0Layout);
         panel0Layout.setHorizontalGroup(
@@ -1300,6 +1349,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF5C5ActionPerformed(evt);
             }
         });
+
+        SepF5C5.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel24Layout = new javax.swing.GroupLayout(panel24);
         panel24.setLayout(panel24Layout);
@@ -1342,6 +1393,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        SepF5C3.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout panel22Layout = new javax.swing.GroupLayout(panel22);
         panel22.setLayout(panel22Layout);
         panel22Layout.setHorizontalGroup(
@@ -1382,6 +1435,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 DenF4C5ActionPerformed(evt);
             }
         });
+
+        SepF4C5.setForeground(new java.awt.Color(0, 0, 0));
 
         javax.swing.GroupLayout panel19Layout = new javax.swing.GroupLayout(panel19);
         panel19.setLayout(panel19Layout);
@@ -1727,6 +1782,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1736,48 +1793,45 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(39, 39, 39)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(EjecutarOperación)
-                                    .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(labelA)
-                                                .addGap(32, 32, 32)
-                                                .addComponent(filA1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(filA2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(filA3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(filA4)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(filA5))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(labelB)
-                                                .addGap(32, 32, 32)
-                                                .addComponent(filB1)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(filB2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(filB3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(filB4)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(filB5)))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(labelD))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
                                 .addComponent(labelC)
-                                .addGap(31, 31, 31)
+                                .addGap(23, 23, 23)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(textDen, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(textNum, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(EjecutarOperación)
+                            .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(labelA)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(filA1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(filA2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(filA3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(filA4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(filA5))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(labelB)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(filB1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(filB2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(filB3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(filB4)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(filB5)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(labelD))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(371, 371, 371)
                         .addComponent(jLabel6)))
@@ -2109,8 +2163,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         // Comprobando que se hayan ingresado los datos para operaciones.
         switch (ComboOperaciones.getSelectedIndex()) {
             case 0:
-                if(textNum.getText().length() == 0) {
-                    JOptionPane.showMessageDialog(null, "Error: debe ingresar un escalar.");
+                if(textNum.getText().length() == 0 || textNum.getText() == "0") {
+                    JOptionPane.showMessageDialog(null, "Error: debe ingresar un escalar válido.");
                     return;
                 }
                 break;
