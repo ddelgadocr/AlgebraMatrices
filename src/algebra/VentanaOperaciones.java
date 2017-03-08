@@ -77,15 +77,19 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         arraySeparadores.add(SepF5C3); arraySeparadores.add(SepF5C4);        
         arraySeparadores.add(SepF5C5);
         
-        //textA.addActionListener(ComboOperaciones);
+        filA1.setActionCommand("1");
+        filA1.setSelected(true);
+        filB2.setActionCommand("2");
+        filB2.setSelected(true);
         
-        labelA.setVisible(true);
+        // Vuelve invisible los componentes de ventana no default.
         labelB.setVisible(false);
-        labelC.setVisible(true);
         labelD.setVisible(false);
-        textA.setVisible(true);
-        textB.setVisible(false);
-        textC.setVisible(true);
+        filB1.setVisible(false);
+        filB2.setVisible(false);
+        filB3.setVisible(false);
+        filB4.setVisible(false);
+        filB5.setVisible(false);        
 
         labelA.setText("Fila:");
         labelC.setText("Escalar:");
@@ -107,18 +111,28 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 LabelFil3.setVisible(false);
                 LabelFil4.setVisible(false);
                 LabelFil5.setVisible(false);
+                filA2.setVisible(false);
+                filA3.setVisible(false);
+                filA4.setVisible(false);
+                filA5.setVisible(false);
                 break;
             case 2: Main.matrizFil = 2;
                 LabelFil3.setVisible(false);
                 LabelFil4.setVisible(false);
                 LabelFil5.setVisible(false);
+                filA3.setVisible(false);
+                filA4.setVisible(false);
+                filA5.setVisible(false);
                 break;
             case 3: Main.matrizFil = 3;
                 LabelFil4.setVisible(false);
                 LabelFil5.setVisible(false);
+                filA4.setVisible(false);
+                filA5.setVisible(false);
                 break;
             case 4: Main.matrizFil = 4;
                 LabelFil5.setVisible(false);
+                filA5.setVisible(false);
         }
         
         switch (Main.matrizCol){
@@ -204,6 +218,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private void initComponents() {
 
         jSeparator5 = new javax.swing.JSeparator();
+        ComboFilaA = new javax.swing.ButtonGroup();
+        ComboFilaB = new javax.swing.ButtonGroup();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         jPanel1 = new javax.swing.JPanel();
         LabelCol1 = new javax.swing.JLabel();
@@ -319,13 +335,23 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         EjecutarOperación = new javax.swing.JButton();
         ComboOperaciones = new javax.swing.JComboBox<>();
-        textA = new javax.swing.JTextField();
         labelA = new javax.swing.JLabel();
-        textC = new javax.swing.JTextField();
+        textNum = new javax.swing.JTextField();
         labelC = new javax.swing.JLabel();
-        textB = new javax.swing.JTextField();
         labelB = new javax.swing.JLabel();
         labelD = new javax.swing.JLabel();
+        filA4 = new javax.swing.JRadioButton();
+        filA5 = new javax.swing.JRadioButton();
+        filA1 = new javax.swing.JRadioButton();
+        filA2 = new javax.swing.JRadioButton();
+        filA3 = new javax.swing.JRadioButton();
+        filB4 = new javax.swing.JRadioButton();
+        filB5 = new javax.swing.JRadioButton();
+        filB1 = new javax.swing.JRadioButton();
+        filB2 = new javax.swing.JRadioButton();
+        filB3 = new javax.swing.JRadioButton();
+        textDen = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1585,32 +1611,18 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
-        textA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        textA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textAActionPerformed(evt);
-            }
-        });
-
         labelA.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelA.setText("labelA");
 
-        textC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        textC.addActionListener(new java.awt.event.ActionListener() {
+        textNum.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        textNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textCActionPerformed(evt);
+                textNumActionPerformed(evt);
             }
         });
 
         labelC.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelC.setText("labelC");
-
-        textB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        textB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textBActionPerformed(evt);
-            }
-        });
 
         labelB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelB.setText("labelB");
@@ -1618,38 +1630,158 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         labelD.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         labelD.setText("labelD");
 
+        ComboFilaA.add(filA4);
+        filA4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filA4.setText("4");
+        filA4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filA4ActionPerformed(evt);
+            }
+        });
+
+        ComboFilaA.add(filA5);
+        filA5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filA5.setText("5");
+        filA5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filA5ActionPerformed(evt);
+            }
+        });
+
+        ComboFilaA.add(filA1);
+        filA1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filA1.setText("1");
+        filA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filA1ActionPerformed(evt);
+            }
+        });
+
+        ComboFilaA.add(filA2);
+        filA2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filA2.setText("2");
+        filA2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filA2ActionPerformed(evt);
+            }
+        });
+
+        ComboFilaA.add(filA3);
+        filA3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filA3.setText("3");
+        filA3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filA3ActionPerformed(evt);
+            }
+        });
+
+        ComboFilaB.add(filB4);
+        filB4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filB4.setText("4");
+        filB4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filB4ActionPerformed(evt);
+            }
+        });
+
+        ComboFilaB.add(filB5);
+        filB5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filB5.setText("5");
+        filB5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filB5ActionPerformed(evt);
+            }
+        });
+
+        ComboFilaB.add(filB1);
+        filB1.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filB1.setText("1");
+        filB1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filB1ActionPerformed(evt);
+            }
+        });
+
+        ComboFilaB.add(filB2);
+        filB2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filB2.setText("2");
+        filB2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filB2ActionPerformed(evt);
+            }
+        });
+
+        ComboFilaB.add(filB3);
+        filB3.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        filB3.setText("3");
+        filB3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                filB3ActionPerformed(evt);
+            }
+        });
+
+        textDen.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        textDen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textDenActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EjecutarOperación)
-                    .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addContainerGap()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(EjecutarOperación)
+                                    .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(labelA)
+                                                .addGap(32, 32, 32)
+                                                .addComponent(filA1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(filA2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(filA3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(filA4)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(filA5))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(labelB)
+                                                .addGap(32, 32, 32)
+                                                .addComponent(filB1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(filB2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(filB3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(filB4)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(filB5)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(labelD))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
                                 .addComponent(labelC)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(textC, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelA)
-                                .addGap(23, 23, 23)
-                                .addComponent(textA, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(labelB)
-                                .addGap(23, 23, 23)
-                                .addComponent(textB, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(labelD)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(225, 225, 225))
+                                .addGap(31, 31, 31)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(textDen, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(textNum, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(371, 371, 371)
+                        .addComponent(jLabel6)))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1662,21 +1794,35 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(80, 80, 80)
-                        .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textA, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelA)
-                            .addComponent(labelD))
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(textB, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelB))
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelC)
-                            .addComponent(textC, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(51, 51, 51)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(99, 99, 99)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(filA1)
+                                        .addComponent(filA2)
+                                        .addComponent(filA3)
+                                        .addComponent(filA4)
+                                        .addComponent(filA5)
+                                        .addComponent(labelD))
+                                    .addComponent(labelA))
+                                .addGap(28, 28, 28)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(filB1)
+                                    .addComponent(filB2)
+                                    .addComponent(filB3)
+                                    .addComponent(filB4)
+                                    .addComponent(filB5)
+                                    .addComponent(labelB))
+                                .addGap(28, 28, 28)
+                                .addComponent(textNum, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(labelC))
+                        .addGap(1, 1, 1)
+                        .addComponent(textDen, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(14, 14, 14)
                         .addComponent(EjecutarOperación)))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
@@ -1963,12 +2109,12 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         // Comprobando que se hayan ingresado los datos para operaciones.
         switch (ComboOperaciones.getSelectedIndex()) {
             case 0:
-                if(textA.getText().length() == 0 || textC.getText().length() == 0) {
-                    JOptionPane.showMessageDialog(null, "Error: debe completar los campos de fila y escalar.");
+                if(textNum.getText().length() == 0) {
+                    JOptionPane.showMessageDialog(null, "Error: debe ingresar un escalar.");
                     return;
                 }
                 break;
-            case 1:
+            /*case 1:
                 if(textA.getText().length() == 0 || textB.getText().length() == 0) {
                     JOptionPane.showMessageDialog(null, "Error: debe completar los campos de fila y escalar.");
                     return;
@@ -1979,7 +2125,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Error: debe completar los campos de fila y escalar.");
                     return;
                 }
-                break;
+                break;*/
             default:
                 break;
         }
@@ -2071,11 +2217,15 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         
         // Realizando operación seleccionada.
         switch (ComboOperaciones.getSelectedIndex()) {
-            case 0:
-                int fila = Integer.parseInt(textA.getText());
+            case 0:                
+                int fila = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
+                System.out.println("Fila:" + fila);
                 Fraction escalar = new Fraction();
-                numerador = Integer.parseInt(textC.getText());
-                escalar.setValue(numerador, 1);
+                numerador = Integer.parseInt(textNum.getText());
+                if (textDen.getText().isEmpty()) denominador = 1;
+                else denominador = Integer.parseInt(textDen.getText());
+                System.out.println(textDen.getText());
+                escalar.setValue(numerador, denominador);
                 
                 // Crea objeto de OperacionesElementales para aplicar operación.
                 OperacionesElementales OperacionElemental = new OperacionesElementales(Main.arrayOperaciones.get(0));
@@ -2105,8 +2255,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             denominador = matrizA.getElemento(i - 1, jContador - 1).getDenominator();
                             
                             arrayFila1.get(j).setText(Integer.toString(numerador));
-                            if(denominador == 1) arrayFila5.get(j+1).setText("");
-                            else arrayFila5.get(j+1).setText(Integer.toString(denominador));                            
+                            if(denominador == 1) arrayFila1.get(j+1).setText("");
+                            else arrayFila1.get(j+1).setText(Integer.toString(denominador));                            
                             break;
                         }
                     case 2:
@@ -2115,8 +2265,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             denominador = matrizA.getElemento(i - 1, jContador - 1).getDenominator();
                             
                             arrayFila2.get(j).setText(Integer.toString(numerador));
-                            if(denominador == 1) arrayFila5.get(j+1).setText("");
-                            else arrayFila5.get(j+1).setText(Integer.toString(denominador));
+                            if(denominador == 1) arrayFila2.get(j+1).setText("");
+                            else arrayFila2.get(j+1).setText(Integer.toString(denominador));
                             break;
                         }
                     case 3:
@@ -2125,8 +2275,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             denominador = matrizA.getElemento(i - 1, jContador - 1).getDenominator();
                             
                             arrayFila3.get(j).setText(Integer.toString(numerador));
-                            if(denominador == 1) arrayFila5.get(j+1).setText("");
-                            else arrayFila5.get(j+1).setText(Integer.toString(denominador));
+                            if(denominador == 1) arrayFila3.get(j+1).setText("");
+                            else arrayFila3.get(j+1).setText(Integer.toString(denominador));
                             break;
                         }
                     case 4:
@@ -2135,8 +2285,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             denominador = matrizA.getElemento(i - 1, jContador - 1).getDenominator();
                             
                             arrayFila4.get(j).setText(Integer.toString(numerador));
-                            if(denominador == 1) arrayFila5.get(j+1).setText("");
-                            else arrayFila5.get(j+1).setText(Integer.toString(denominador));
+                            if(denominador == 1) arrayFila4.get(j+1).setText("");
+                            else arrayFila4.get(j+1).setText(Integer.toString(denominador));
                             break;
                         }
                     case 5:
@@ -2161,58 +2311,273 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_EjecutarOperaciónActionPerformed
 
     private void ComboOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboOperacionesActionPerformed
+        //short filaSeleccionada = Short.parseShort(ComboFila.getSelection().getActionCommand());
         switch (ComboOperaciones.getSelectedIndex()) {
             case 0:
                 labelA.setVisible(true);
                 labelB.setVisible(false);
                 labelC.setVisible(true);
                 labelD.setVisible(false);
-                textA.setVisible(true);
-                textB.setVisible(false);
-                textC.setVisible(true);
+                textNum.setVisible(true);
+                filB1.setVisible(false);
+                filB2.setVisible(false);
+                filB3.setVisible(false);
+                filB4.setVisible(false);
+                filB5.setVisible(false);
+                textNum.setVisible(true);
+                textDen.setVisible(true);
                 labelA.setText("Fila:");
                 labelC.setText("Escalar:");
+
+                // Activando y desactivando radiobutton de filas.
+                switch (Main.matrizFil - 1) {
+                    case 0:                
+                        filA1.setVisible(true);
+                        filA2.setVisible(false);
+                        filA3.setVisible(false);
+                        filA4.setVisible(false);
+                        filA5.setVisible(false);
+                        break;
+                    case 1:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(false);
+                        filA4.setVisible(false);
+                        filA5.setVisible(false);
+                        break;
+                    case 2:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(true);
+                        filA4.setVisible(false);
+                        filA5.setVisible(false);
+                        break;
+                    case 3:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(true);
+                        filA4.setVisible(true);
+                        filA5.setVisible(false);
+                        break;
+                    case 4:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(true);
+                        filA4.setVisible(true);
+                        filA5.setVisible(true);
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 1:
                 labelA.setVisible(true);
                 labelB.setVisible(true);
                 labelC.setVisible(false);
                 labelD.setVisible(false);
-                textA.setVisible(true);
-                textB.setVisible(true);
-                textC.setVisible(false);
+                textNum.setVisible(false);
+                textNum.setVisible(false);
+                textDen.setVisible(false);
                 labelA.setText("Fila 'a':");
                 labelB.setText("Fila 'b':");
+                
+                // Activando y desactivando radiobutton de filas.
+                switch (Main.matrizFil - 1) {
+                    case 0:                
+                        filA1.setVisible(true);
+                        filA2.setVisible(false);
+                        filA3.setVisible(false);
+                        filA4.setVisible(false);
+                        filA5.setVisible(false);
+                        filB1.setVisible(true);
+                        filB2.setVisible(false);
+                        filB3.setVisible(false);
+                        filB4.setVisible(false);
+                        filB5.setVisible(false);
+                        break;
+                    case 1:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(false);
+                        filA4.setVisible(false);
+                        filA5.setVisible(false);
+                        filB1.setVisible(true);
+                        filB2.setVisible(true);
+                        filB3.setVisible(false);
+                        filB4.setVisible(false);
+                        filB5.setVisible(false);
+                        break;
+                    case 2:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(true);
+                        filA4.setVisible(false);
+                        filA5.setVisible(false);
+                        filB1.setVisible(true);
+                        filB2.setVisible(true);
+                        filB3.setVisible(true);
+                        filB4.setVisible(false);
+                        filB5.setVisible(false);
+                        break;
+                    case 3:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(true);
+                        filA4.setVisible(true);
+                        filA5.setVisible(false);
+                        filB1.setVisible(true);
+                        filB2.setVisible(true);
+                        filB3.setVisible(true);
+                        filB4.setVisible(true);
+                        filB5.setVisible(false);
+                        break;
+                    case 4:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(true);
+                        filA4.setVisible(true);
+                        filA5.setVisible(true);
+                        filB1.setVisible(true);
+                        filB2.setVisible(true);
+                        filB3.setVisible(true);
+                        filB4.setVisible(true);
+                        filB5.setVisible(true);
+                        break;
+                    default:
+                        break;
+                }
                 break;
             case 2:
                 labelA.setVisible(true);
                 labelB.setVisible(true);
                 labelC.setVisible(false);
                 labelD.setVisible(true);
-                textA.setVisible(true);
-                textB.setVisible(true);
-                textC.setVisible(false);
+                textNum.setVisible(false);
+                textNum.setVisible(true);
+                textDen.setVisible(true);
                 labelA.setText("Fila 'a':");
                 labelB.setText("Fila 'b':");
                 labelC.setText("Múltiplo:");
                 labelD.setText("(Fila destino)");
+                
+                // Activando y desactivando radiobutton de filas.
+                switch (Main.matrizFil - 1) {
+                    case 0:                
+                        filA1.setVisible(true);
+                        filA2.setVisible(false);
+                        filA3.setVisible(false);
+                        filA4.setVisible(false);
+                        filA5.setVisible(false);
+                        filB1.setVisible(true);
+                        filB2.setVisible(false);
+                        filB3.setVisible(false);
+                        filB4.setVisible(false);
+                        filB5.setVisible(false);
+                        break;
+                    case 1:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(false);
+                        filA4.setVisible(false);
+                        filA5.setVisible(false);
+                        filB1.setVisible(true);
+                        filB2.setVisible(true);
+                        filB3.setVisible(false);
+                        filB4.setVisible(false);
+                        filB5.setVisible(false);
+                        break;
+                    case 2:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(true);
+                        filA4.setVisible(false);
+                        filA5.setVisible(false);
+                        filB1.setVisible(true);
+                        filB2.setVisible(true);
+                        filB3.setVisible(true);
+                        filB4.setVisible(false);
+                        filB5.setVisible(false);
+                        break;
+                    case 3:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(true);
+                        filA4.setVisible(true);
+                        filA5.setVisible(false);
+                        filB1.setVisible(true);
+                        filB2.setVisible(true);
+                        filB3.setVisible(true);
+                        filB4.setVisible(true);
+                        filB5.setVisible(false);
+                        break;
+                    case 4:
+                        filA1.setVisible(true);
+                        filA2.setVisible(true);
+                        filA3.setVisible(true);
+                        filA4.setVisible(true);
+                        filA5.setVisible(true);
+                        filB1.setVisible(true);
+                        filB2.setVisible(true);
+                        filB3.setVisible(true);
+                        filB4.setVisible(true);
+                        filB5.setVisible(true);
+                        break;
+                    default:
+                        break;
+                }
                 break;
             default:
                 break;
         }
     }//GEN-LAST:event_ComboOperacionesActionPerformed
 
-    private void textAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textAActionPerformed
+    private void textNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNumActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textAActionPerformed
+    }//GEN-LAST:event_textNumActionPerformed
 
-    private void textCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textCActionPerformed
+    private void filA4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filA4ActionPerformed
+        filA4.setActionCommand("4");
+    }//GEN-LAST:event_filA4ActionPerformed
 
-    private void textBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textBActionPerformed
+    private void filA5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filA5ActionPerformed
+        filA5.setActionCommand("5");
+    }//GEN-LAST:event_filA5ActionPerformed
+
+    private void filA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filA1ActionPerformed
+        filA1.setActionCommand("1");
+    }//GEN-LAST:event_filA1ActionPerformed
+
+    private void filA2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filA2ActionPerformed
+        filA2.setActionCommand("2");
+    }//GEN-LAST:event_filA2ActionPerformed
+
+    private void filA3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filA3ActionPerformed
+        filA3.setActionCommand("3");
+    }//GEN-LAST:event_filA3ActionPerformed
+
+    private void filB4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filB4ActionPerformed
+        filB4.setActionCommand("4");
+    }//GEN-LAST:event_filB4ActionPerformed
+
+    private void filB5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filB5ActionPerformed
+        filB5.setActionCommand("5");
+    }//GEN-LAST:event_filB5ActionPerformed
+
+    private void filB1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filB1ActionPerformed
+        filB1.setActionCommand("1");
+    }//GEN-LAST:event_filB1ActionPerformed
+
+    private void filB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filB2ActionPerformed
+        filB2.setActionCommand("2");
+    }//GEN-LAST:event_filB2ActionPerformed
+
+    private void filB3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_filB3ActionPerformed
+        filB3.setActionCommand("3");
+    }//GEN-LAST:event_filB3ActionPerformed
+
+    private void textDenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textDenActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textBActionPerformed
+    }//GEN-LAST:event_textDenActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2250,6 +2615,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup ComboFilaA;
+    private javax.swing.ButtonGroup ComboFilaB;
     private javax.swing.JComboBox<String> ComboOperaciones;
     private javax.swing.JTextField DenF1C1;
     private javax.swing.JTextField DenF1C2;
@@ -2337,9 +2704,20 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JSeparator SepF5C3;
     private javax.swing.JSeparator SepF5C4;
     private javax.swing.JSeparator SepF5C5;
+    private javax.swing.JRadioButton filA1;
+    private javax.swing.JRadioButton filA2;
+    private javax.swing.JRadioButton filA3;
+    private javax.swing.JRadioButton filA4;
+    private javax.swing.JRadioButton filA5;
+    private javax.swing.JRadioButton filB1;
+    private javax.swing.JRadioButton filB2;
+    private javax.swing.JRadioButton filB3;
+    private javax.swing.JRadioButton filB4;
+    private javax.swing.JRadioButton filB5;
     private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JLabel labelA;
     private javax.swing.JLabel labelB;
@@ -2370,8 +2748,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JPanel panel7;
     private javax.swing.JPanel panel8;
     private javax.swing.JPanel panel9;
-    private javax.swing.JTextField textA;
-    private javax.swing.JTextField textB;
-    private javax.swing.JTextField textC;
+    private javax.swing.JTextField textDen;
+    private javax.swing.JTextField textNum;
     // End of variables declaration//GEN-END:variables
 }
