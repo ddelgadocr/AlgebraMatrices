@@ -357,6 +357,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         filB3 = new javax.swing.JRadioButton();
         textDen = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
+        HistorialOperaciones = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1836,6 +1837,14 @@ public class VentanaOperaciones extends javax.swing.JFrame {
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
+        HistorialOperaciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        HistorialOperaciones.setText("Historial");
+        HistorialOperaciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HistorialOperacionesActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1883,7 +1892,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(filB5)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(labelD))))
+                                .addComponent(labelD))
+                            .addComponent(HistorialOperaciones)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(371, 371, 371)
                         .addComponent(jLabel6)))
@@ -1900,10 +1910,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(80, 80, 80)
+                        .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(89, 89, 89)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(ComboOperaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(99, 99, 99)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(filA1)
@@ -1929,7 +1939,9 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addGap(1, 1, 1)
                         .addComponent(textDen, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14)
-                        .addComponent(EjecutarOperación)))
+                        .addComponent(EjecutarOperación)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(HistorialOperaciones)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2138,7 +2150,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
 
     private void EjecutarOperaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EjecutarOperaciónActionPerformed
         Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
-        Matriz matrizA = new Matriz(elementos);
+        Matriz matrizOperacion = new Matriz(elementos);
         
         int numerador, denominador;
         int jContador = 1;
@@ -2233,6 +2245,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         // Recorrido para crear matriz.
         jContador = 1;
         j = 0;
+        
+        //Matriz matrizA = new Matriz(elementos);
         for (int i = 1; i <= Main.matrizFil; i++){
             while (jContador <= Main.matrizCol){
                 switch (i) {
@@ -2246,7 +2260,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
                             
                             fraccion.setValue(numerador, denominador);
-                            matrizA.setElemento(i - 1, jContador - 1, fraccion);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
                             break;
                         }
                     case 2:
@@ -2259,7 +2273,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
                             
                             fraccion.setValue(numerador, denominador);
-                            matrizA.setElemento(i - 1, jContador - 1, fraccion);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
                             break;
                         }
                     case 3:
@@ -2272,7 +2286,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
                             
                             fraccion.setValue(numerador, denominador);
-                            matrizA.setElemento(i - 1, jContador - 1, fraccion);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
                             break;
                         }
                     case 4:
@@ -2285,7 +2299,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
                             
                             fraccion.setValue(numerador, denominador);
-                            matrizA.setElemento(i - 1, jContador - 1, fraccion);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
                             break;
                         }
                     case 5:
@@ -2298,7 +2312,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
                             
                             fraccion.setValue(numerador, denominador);
-                            matrizA.setElemento(i - 1, jContador - 1, fraccion);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
                             break;
                         }
                     default:
@@ -2311,15 +2325,18 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             jContador = 1;         
         }
         
-        Main.arrayOperaciones.add(matrizA); // Agrega primer matriz a arrayOperaciones.
-        System.out.println("Soy la matriz A:");
-        matrizA.imprime();
+        Main.arrayOperaciones.add(matrizOperacion); // Agrega primer matriz a arrayOperaciones.
+        //System.out.println("Soy la matriz A:");
+        //matrizOperacion.imprime();
+        
+        
         
         // Realizando operación seleccionada.
+        Matriz matrizOperacion2 = new Matriz(elementos);
         switch (ComboOperaciones.getSelectedIndex()) {
-            case 0:                
+            case 0:       
+                
                 int fila = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
-                //System.out.println("Fila:" + fila);
                 Fraction escalar = new Fraction();
                 numerador = Integer.parseInt(textNum.getText());
                 if (textDen.getText().isEmpty()) denominador = 1;
@@ -2328,23 +2345,26 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 escalar.setValue(numerador, denominador);
                 
                 // Crea objeto de OperacionesElementales para aplicar operación.
-                OperacionesElementales OperacionElementalA = new OperacionesElementales(Main.arrayOperaciones.get(0));
+                OperacionesElementales OperacionElementalA = new OperacionesElementales(Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1));
                 
                 OperacionElementalA.MultiplicarFilaPorEscalar(fila, escalar); // Realiza operación.
-                matrizA = OperacionElementalA.getMatrizA(); // Actualiza matrizA.
-                Main.arrayOperaciones.add(matrizA); // Agrega matriz modificada.               
-                //matrizA.imprime();
+                matrizOperacion2 = OperacionElementalA.getMatrizA(); // Actualiza matrizA.
+                Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.               
+                Main.arrayOperacionesString.add("f" + ComboFilaA.getSelection().getActionCommand() + " * " + Integer.toString(numerador) + "/" + Integer.toString(denominador)); // Agrega indicación de operación.
                 break;
             case 1:
+                //Matriz matrizOperacion2 = new Matriz(elementos);
+                Fraction fraccion = new Fraction();
                 int fila1 = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
                 int fila2 = Integer.parseInt(ComboFilaB.getSelection().getActionCommand());
                 
                 // Crea objeto de OperacionesElementales para aplicar operación.
-                OperacionesElementales OperacionElementalB = new OperacionesElementales(Main.arrayOperaciones.get(0));
+                OperacionesElementales OperacionElementalB = new OperacionesElementales(Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1));
                 
                 OperacionElementalB.IntercabiarFilas(fila1, fila2); // Realiza operación.
-                matrizA = OperacionElementalB.getMatrizA(); // Actualiza matrizA.
-                Main.arrayOperaciones.add(matrizA); // Agrega matriz modificada.
+                matrizOperacion2 = OperacionElementalB.getMatrizA(); // Actualiza matrizA.
+                Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
+                Main.arrayOperacionesString.add("f" + ComboFilaA.getSelection().getActionCommand() + " <-> " + "f" + ComboFilaB.getSelection().getActionCommand()); // Agrega indicación de operación.
                 break;
             case 2:
                 int numeroFila1 = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
@@ -2358,11 +2378,12 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 multiplo.setValue(numerador, denominador);
                 
                 // Crea objeto de OperacionesElementales para aplicar operación.
-                OperacionesElementales OperacionElementalC = new OperacionesElementales(Main.arrayOperaciones.get(0));
+                OperacionesElementales OperacionElementalC = new OperacionesElementales(Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1));
                 
                 OperacionElementalC.SumaFilaMultiplo(numeroFila1, numeroFila2, multiplo); // Realiza operación.
-                matrizA = OperacionElementalC.getMatrizA(); // Actualiza matrizA.
-                Main.arrayOperaciones.add(matrizA); // Agrega matriz modificada.
+                matrizOperacion2 = OperacionElementalC.getMatrizA(); // Actualiza matrizA.
+                Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
+                Main.arrayOperacionesString.add("f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand()); // Agrega indicación de operación.
                 break;
             default:
                 break;
@@ -2376,8 +2397,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 switch (i) {
                     case 1:
                         {
-                            numerador = matrizA.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizA.getElemento(i - 1, jContador - 1).getDenominator();
+                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
                             
                             arrayFila1.get(j).setText(Integer.toString(numerador));
                             if(denominador == 1) arrayFila1.get(j+1).setText("");
@@ -2386,8 +2407,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         }
                     case 2:
                         {
-                            numerador = matrizA.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizA.getElemento(i - 1, jContador - 1).getDenominator();
+                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
                             
                             arrayFila2.get(j).setText(Integer.toString(numerador));
                             if(denominador == 1) arrayFila2.get(j+1).setText("");
@@ -2396,8 +2417,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         }
                     case 3:
                         {
-                            numerador = matrizA.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizA.getElemento(i - 1, jContador - 1).getDenominator();
+                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
                             
                             arrayFila3.get(j).setText(Integer.toString(numerador));
                             if(denominador == 1) arrayFila3.get(j+1).setText("");
@@ -2406,8 +2427,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         }
                     case 4:
                         {
-                            numerador = matrizA.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizA.getElemento(i - 1, jContador - 1).getDenominator();
+                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
                             
                             arrayFila4.get(j).setText(Integer.toString(numerador));
                             if(denominador == 1) arrayFila4.get(j+1).setText("");
@@ -2416,8 +2437,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         }
                     case 5:
                         {
-                            numerador = matrizA.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizA.getElemento(i - 1, jContador - 1).getDenominator();
+                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
                             
                             arrayFila5.get(j).setText(Integer.toString(numerador));
                             if(denominador == 1) arrayFila5.get(j+1).setText("");
@@ -2707,6 +2728,14 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textDenActionPerformed
 
+    private void HistorialOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistorialOperacionesActionPerformed
+         // Inicia VentanaHistorialOperaciones.
+        VentanaHistorialOperaciones VentanaHistorialOperaciones_ = new VentanaHistorialOperaciones();
+        VentanaHistorialOperaciones_.setVisible(true);
+        VentanaHistorialOperaciones_.setResizable(false); // Tamaño de ventana no variable.
+        VentanaHistorialOperaciones_.setLocationRelativeTo(null); // Centra ventana.
+    }//GEN-LAST:event_HistorialOperacionesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2772,6 +2801,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JTextField DenF5C4;
     private javax.swing.JTextField DenF5C5;
     private javax.swing.JButton EjecutarOperación;
+    private javax.swing.JButton HistorialOperaciones;
     private javax.swing.JLabel LabelCol1;
     private javax.swing.JLabel LabelCol2;
     private javax.swing.JLabel LabelCol3;

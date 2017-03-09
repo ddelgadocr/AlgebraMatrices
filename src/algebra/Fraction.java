@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package algebra;
-import java.util.Scanner;
 
 /**
  * A fraction, represented in numerator/denominator form.
