@@ -17,9 +17,8 @@ public class Main {
     public static short matrizCol; // Cantidad de columnas seleccionada por usuario.
     public static short matrizFil; // Cantidad de filas seleccionada por usuario.
     public static ArrayList<Matriz> arrayOperaciones = new ArrayList<>(); // Se agregan matrices al aplicar operaciones elementales.
-    /**
-     * @param args the command line arguments
-     */
+    public static ArrayList<String> arrayOperacionesString = new ArrayList<>(); // Array para almacenar la indicación de la operación.
+
     public static void main(String[] args) {        
         //Se realizan pruebas
         //------Se crea la matriz------
