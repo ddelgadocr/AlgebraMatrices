@@ -18,6 +18,7 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
         initComponents();
         textHistorial.setEditable(false);
         System.out.println("MATRICES:");
+        // Prueba
         for (int i = 0; i < Main.arrayOperaciones.size(); i++){            
             Main.arrayOperaciones.get(i).imprime();
             System.out.println(System.identityHashCode(Main.arrayOperaciones.get(i)));
