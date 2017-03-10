@@ -2149,9 +2149,6 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_NumF1C1ActionPerformed
 
     private void EjecutarOperaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EjecutarOperaciónActionPerformed
-        Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
-        Matriz matrizOperacion = new Matriz(elementos);
-        
         int numerador, denominador;
         int jContador = 1;
         int j = 0;
@@ -2246,7 +2243,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         jContador = 1;
         j = 0;
         
-        //Matriz matrizA = new Matriz(elementos);
+        Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
+        Matriz matrizOperacion = new Matriz(elementos);
         for (int i = 1; i <= Main.matrizFil; i++){
             while (jContador <= Main.matrizCol){
                 switch (i) {
@@ -2333,6 +2331,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         
         // Realizando operación seleccionada.
         Matriz matrizOperacion2 = new Matriz(elementos);
+        String operacionesString;
         switch (ComboOperaciones.getSelectedIndex()) {
             case 0:       
                 
@@ -2349,8 +2348,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 
                 OperacionElementalA.MultiplicarFilaPorEscalar(fila, escalar); // Realiza operación.
                 matrizOperacion2 = OperacionElementalA.getMatrizA(); // Actualiza matrizA.
-                Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.               
-                Main.arrayOperacionesString.add("f" + ComboFilaA.getSelection().getActionCommand() + " * " + Integer.toString(numerador) + "/" + Integer.toString(denominador)); // Agrega indicación de operación.
+                //Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.    
+                if (denominador == 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " * " + Integer.toString(numerador);
+                else operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " * " + Integer.toString(numerador) + "/" + Integer.toString(denominador);
+                Main.arrayOperacionesString.add(operacionesString); // Agrega indicación de operación.
                 break;
             case 1:
                 //Matriz matrizOperacion2 = new Matriz(elementos);
@@ -2363,7 +2364,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 
                 OperacionElementalB.IntercabiarFilas(fila1, fila2); // Realiza operación.
                 matrizOperacion2 = OperacionElementalB.getMatrizA(); // Actualiza matrizA.
-                Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
+                //Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
                 Main.arrayOperacionesString.add("f" + ComboFilaA.getSelection().getActionCommand() + " <-> " + "f" + ComboFilaB.getSelection().getActionCommand()); // Agrega indicación de operación.
                 break;
             case 2:
@@ -2382,8 +2383,12 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 
                 OperacionElementalC.SumaFilaMultiplo(numeroFila1, numeroFila2, multiplo); // Realiza operación.
                 matrizOperacion2 = OperacionElementalC.getMatrizA(); // Actualiza matrizA.
-                Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
-                Main.arrayOperacionesString.add("f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand()); // Agrega indicación de operación.
+                //Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
+                if (numerador != 1 && denominador != 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
+                else if (numerador != 1 && denominador == 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
+                else if (numerador == 1 && denominador == 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + "f" + ComboFilaB.getSelection().getActionCommand();
+                else operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
+                Main.arrayOperacionesString.add(operacionesString); // Agrega indicación de operación.
                 break;
             default:
                 break;
@@ -2729,7 +2734,166 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_textDenActionPerformed
 
     private void HistorialOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistorialOperacionesActionPerformed
-         // Inicia VentanaHistorialOperaciones.
+        if (Main.arrayOperaciones.isEmpty()){
+            int numerador, denominador;
+            int jContador = 1;
+            int j = 0;
+            // Recorriendo para comprobar que no hayan 0s en denominador.
+            for (int i = 1; i <= Main.matrizFil; i++){
+                while (jContador <= Main.matrizCol){
+                    switch (i) {
+                        case 1:
+                            {                      
+                                if(arrayFila1.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
+
+                                if(denominador == 0) {
+                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                    return;
+                                }
+                                break;
+                            }
+                        case 2:
+                            {                            
+                                if(arrayFila2.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
+
+                                if(denominador == 0) {
+                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                    return;
+                                }
+                                break;
+                            }
+                        case 3:
+                            {
+                                if(arrayFila3.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
+
+                                if(denominador == 0) {
+                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                    return;
+                                }
+                                break;
+                            }
+                        case 4:
+                            {
+                                if(arrayFila4.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
+
+                                if(denominador == 0) {
+                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                    return;
+                                }
+                                break;
+                            }
+                        case 5:
+                            {
+                                if(arrayFila5.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
+
+                                if(denominador == 0) {
+                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                    return;
+                                }
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                    j += 2;
+                    jContador++;
+                }
+                j = 0;
+                jContador = 1;         
+            }
+            
+            // Recorrido para crear matriz.
+            jContador = 1;
+            j = 0;
+
+            Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
+            Matriz matrizOperacion = new Matriz(elementos);
+            for (int i = 1; i <= Main.matrizFil; i++){
+                while (jContador <= Main.matrizCol){
+                    switch (i) {
+                        case 1:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila1.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila1.get(j).getText());
+
+                                if(arrayFila1.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        case 2:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila2.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila2.get(j).getText());
+
+                                if(arrayFila2.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        case 3:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila3.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila3.get(j).getText());
+
+                                if(arrayFila3.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        case 4:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila4.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila4.get(j).getText());
+
+                                if(arrayFila4.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        case 5:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila5.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila5.get(j).getText());
+
+                                if(arrayFila5.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                    j += 2;
+                    jContador++;
+                }
+                j = 0;
+                jContador = 1;         
+            }
+            Main.arrayOperaciones.add(matrizOperacion); // Agrega primer matriz a arrayOperaciones.
+        }
+        
+        // Inicia VentanaHistorialOperaciones.
         VentanaHistorialOperaciones VentanaHistorialOperaciones_ = new VentanaHistorialOperaciones();
         VentanaHistorialOperaciones_.setVisible(true);
         VentanaHistorialOperaciones_.setResizable(false); // Tamaño de ventana no variable.

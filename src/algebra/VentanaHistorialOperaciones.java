@@ -22,61 +22,53 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
             Main.arrayOperaciones.get(i).imprime();
             System.out.println(System.identityHashCode(Main.arrayOperaciones.get(i)));
         }
-        System.out.println("********:");
-        Main.arrayOperaciones.get(0).imprime();
-        Main.arrayOperaciones.get(1).imprime();
-        System.out.println("********:");
         
         // Agrega matriz original.
-        int numerador, denominador;
+        int numerador, denominador, digitos;
         int jContador = 1;
-        for (int i = 1; i <= Main.matrizFil; i++){
-            textHistorial.append("|");
-            while (jContador <= Main.matrizCol){
-                            numerador = Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1).getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1).getElemento(i - 1, jContador - 1).getDenominator();
-                            textHistorial.append(numerador + "/" + denominador + "  ");
-                jContador++;
+        for (int p = 0; p < Main.arrayOperaciones.size(); p++){
+            // Dibujando bordes superiores de matriz.
+            for (int i = -1; i <= (Main.matrizCol * 10); i++){
+                    textHistorial.append("─");
             }
             textHistorial.append("\n");
-            jContador = 1;         
-        }
-        
-        Main.arrayOperaciones.get(0).imprime();
-        
-        for (int i = 0; i < Main.arrayOperacionesString.size(); i++){
-            textHistorial.append("[" + Integer.toString(i + 1) + "] " + Main.arrayOperacionesString.get(i) + "\n");
-            
-        }
-        /*for (int i = 0; i < Main.arrayOperaciones.size(); i++){
-            for (int j = 0; j < )
-            Main.arrayOperaciones.get(i).getElemento(i, NORMAL)
-        }
+            for (int i = 1; i <= Main.matrizFil; i++){               
+                textHistorial.append("│");
+                while (jContador <= Main.matrizCol){
+                    numerador = Main.arrayOperaciones.get(p).getElemento(i - 1, jContador - 1).getNumerator();
+                    denominador = Main.arrayOperaciones.get(p).getElemento(i - 1, jContador - 1).getDenominator();
+                    // Validando numerador negativo, para orden de matriz.
+                    if(numerador < 0) textHistorial.append("-");
+                    textHistorial.append(Integer.toString(Math.abs(numerador)));
+                    if(denominador > 1) textHistorial.append("/" + denominador);
                     
-        /*
-            public void imprime() {
-
-            String borde = "|";
-            System.out.println();
-
-            for (int i=0; i<elementos.length; i++) {
-                 System.out.print(borde); 
-                 Fraction[] filai = elementos[i];
-                 for (int j=0; j< filai.length; j++) {
-                     imprimeElemento(elementos[i][j]); 
-                 }            
-                 System.out.print(borde);
-                 System.out.println(); 
-             }
-             System.out.println();
-         }
-
-         public void imprimeElemento(Fraction d) {
-             System.out.print(d.getNumerator() +"/"+ d.getDenominator()+ "  ");
-         }
-        
-        
-        */
+                    if (numerador == 0) digitos = ((int)Math.log10(denominador) + 1) + 1; // El último +1 es del '/'.
+                    else if (denominador == 0 || denominador == 1) digitos = ((int)Math.log10(numerador) + 1);
+                    else digitos = ((int)Math.log10(numerador) + 1) + ((int)Math.log10(denominador) + 1); // El último +1 es del '/'.
+                    // Agrega espacios restantes de matriz. Para que se vea bonita :)
+                    if (numerador < 0) {
+                        digitos += 3;
+                        textHistorial.append(" ");
+                    }
+                    while(digitos < 12){
+                        textHistorial.append("  ");
+                        digitos++;
+                    }
+                    textHistorial.append("│");
+                    jContador++;
+                }
+                //textHistorial.append("│");
+                textHistorial.append("\n");
+                jContador = 1;         
+            }
+            // Dibujando bordes inferiores de matriz.
+            for (int i = -1; i <= (Main.matrizCol * 10); i++){
+                    textHistorial.append("─");
+            }
+            if ((Main.arrayOperaciones.size() > Main.arrayOperacionesString.size()) && (Main.arrayOperacionesString.isEmpty() == false && p > 0)) textHistorial.append("\n(" + Integer.toString(p + 1) + ") " + Main.arrayOperacionesString.get(p - 1));
+            else textHistorial.append("\n(" + Integer.toString(p + 1) + ") " + Main.arrayOperacionesString.get(p));
+            textHistorial.append("\n\n");
+        }
     }
 
     /**
