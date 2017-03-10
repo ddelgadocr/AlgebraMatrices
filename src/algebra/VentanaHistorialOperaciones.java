@@ -17,11 +17,6 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
     public VentanaHistorialOperaciones() {
         initComponents();
         textHistorial.setEditable(false);
-        System.out.println("MATRICES:");
-        for (int i = 0; i < Main.arrayOperaciones.size(); i++){            
-            Main.arrayOperaciones.get(i).imprime();
-            System.out.println(System.identityHashCode(Main.arrayOperaciones.get(i)));
-        }
         
         // Agrega matriz original.
         int numerador, denominador, digitos;
@@ -65,8 +60,11 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
             for (int i = -1; i <= (Main.matrizCol * 10); i++){
                     textHistorial.append("─");
             }
-            if ((Main.arrayOperaciones.size() > Main.arrayOperacionesString.size()) && (Main.arrayOperacionesString.isEmpty() == false && p > 0)) textHistorial.append("\n(" + Integer.toString(p + 1) + ") " + Main.arrayOperacionesString.get(p - 1));
-            else textHistorial.append("\n(" + Integer.toString(p + 1) + ") " + Main.arrayOperacionesString.get(p));
+            textHistorial.append("\n");
+            for (int i = 0; i <= (Main.matrizCol * 6); i++){
+                textHistorial.append("  ");
+            }
+            if (p > 0) textHistorial.append("(" + Integer.toString(p) + ") " + Main.arrayOperacionesString.get(p - 1));
             textHistorial.append("\n\n");
         }
     }
@@ -104,13 +102,14 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(356, 356, 356)
-                .addComponent(HistorialOperaciones)
-                .addContainerGap(369, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(HistorialOperaciones)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
