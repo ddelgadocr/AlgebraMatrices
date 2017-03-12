@@ -2239,95 +2239,95 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 break;
         }
         
-        // Recorrido para crear matriz.
-        jContador = 1;
-        j = 0;
-        
         Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
         Matriz matrizOperacion0 = new Matriz(elementos);
-        for (int i = 1; i <= Main.matrizFil; i++){
-            while (jContador <= Main.matrizCol){
-                switch (i) {
-                    case 1:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila1.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila1.get(j).getText());
-                            
-                            if(arrayFila1.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
-                        }
-                    case 2:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila2.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila2.get(j).getText());
-                            
-                            if(arrayFila2.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
-                        }
-                    case 3:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila3.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila3.get(j).getText());
-                            
-                            if(arrayFila3.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
-                        }
-                    case 4:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila4.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila4.get(j).getText());
-                            
-                            if(arrayFila4.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
-                        }
-                    case 5:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila5.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila5.get(j).getText());
-                            
-                            if(arrayFila5.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
-                        }
-                    default:
-                        break;
-                }
-                j += 2;
-                jContador++;
-            }
+        // Recorrido para crear matriz.
+        if (Main.arrayOperaciones.isEmpty()){
+            jContador = 1;
             j = 0;
-            jContador = 1;         
+            for (int i = 1; i <= Main.matrizFil; i++){
+                while (jContador <= Main.matrizCol){
+                    switch (i) {
+                        case 1:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila1.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila1.get(j).getText());
+
+                                if(arrayFila1.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        case 2:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila2.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila2.get(j).getText());
+
+                                if(arrayFila2.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        case 3:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila3.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila3.get(j).getText());
+
+                                if(arrayFila3.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        case 4:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila4.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila4.get(j).getText());
+
+                                if(arrayFila4.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        case 5:
+                            {
+                                Fraction fraccion = new Fraction();
+                                if(arrayFila5.get(j).getText().isEmpty()) numerador = 1;
+                                else numerador = Integer.parseInt(arrayFila5.get(j).getText());
+
+                                if(arrayFila5.get(j+1).getText().isEmpty()) denominador = 1;
+                                else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
+
+                                fraccion.setValue(numerador, denominador);
+                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                                break;
+                            }
+                        default:
+                            break;
+                    }
+                    j += 2;
+                    jContador++;
+                }
+                j = 0;
+                jContador = 1;         
+            }
+            Main.arrayOperaciones.add(matrizOperacion0); // Agrega primer matriz a arrayOperaciones.
         }
-        Main.arrayOperaciones.add(matrizOperacion0); // Agrega primer matriz a arrayOperaciones.
         
         // Recorrido para crear matriz.
         jContador = 1;
-        j = 0;
-        
+        j = 0;        
         //Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
         Matriz matrizOperacion = new Matriz(elementos);
         for (int i = 1; i <= Main.matrizFil; i++){
@@ -2407,15 +2407,40 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             j = 0;
             jContador = 1;         
         }
+        Main.arrayOperaciones.add(matrizOperacion); // Agrega matriz a arrayOperaciones.
+        //if(Main.arrayOperaciones.size() == 1) return;
         
-        Main.arrayOperaciones.add(matrizOperacion); // Agrega primer matriz a arrayOperaciones.
-        //System.out.println("Soy la matriz A:");
-        //matrizOperacion.imprime();
-        
-        
-        
+        // Una vez se ha agregado la matriz original al array, la matriz solo puede modificarse mediante operaciones.
+        if (Main.arrayOperaciones.isEmpty() == false){
+            NumF1C1.setEditable(false); DenF1C1.setEditable(false);
+            NumF1C2.setEditable(false); DenF1C2.setEditable(false);
+            NumF1C3.setEditable(false); DenF1C3.setEditable(false);
+            NumF1C4.setEditable(false); DenF1C4.setEditable(false);
+            NumF1C5.setEditable(false); DenF1C5.setEditable(false);
+            NumF2C1.setEditable(false); DenF2C1.setEditable(false);
+            NumF2C2.setEditable(false); DenF2C2.setEditable(false);
+            NumF2C3.setEditable(false); DenF2C3.setEditable(false);
+            NumF2C4.setEditable(false); DenF2C4.setEditable(false);
+            NumF2C5.setEditable(false); DenF2C5.setEditable(false);
+            NumF3C1.setEditable(false); DenF3C1.setEditable(false);
+            NumF3C2.setEditable(false); DenF3C2.setEditable(false);
+            NumF3C3.setEditable(false); DenF3C3.setEditable(false);
+            NumF3C4.setEditable(false); DenF3C4.setEditable(false);
+            NumF3C5.setEditable(false); DenF3C5.setEditable(false);
+            NumF4C1.setEditable(false); DenF4C1.setEditable(false);
+            NumF4C2.setEditable(false); DenF4C2.setEditable(false);
+            NumF4C3.setEditable(false); DenF4C3.setEditable(false);
+            NumF4C4.setEditable(false); DenF4C4.setEditable(false);
+            NumF4C5.setEditable(false); DenF4C5.setEditable(false);
+            NumF5C1.setEditable(false); DenF5C1.setEditable(false);
+            NumF5C2.setEditable(false); DenF5C2.setEditable(false);
+            NumF5C3.setEditable(false); DenF5C3.setEditable(false);
+            NumF5C4.setEditable(false); DenF5C4.setEditable(false);
+            NumF5C5.setEditable(false); DenF5C5.setEditable(false);
+        }
+                
         // Realizando operación seleccionada.
-        Matriz matrizOperacion2 = new Matriz(elementos);
+        //Matriz matrizOperacion2 = new Matriz(elementos);
         String operacionesString;
         switch (ComboOperaciones.getSelectedIndex()) {
             case 0:       
@@ -2432,15 +2457,15 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 OperacionesElementales OperacionElementalA = new OperacionesElementales(Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1));
                 
                 OperacionElementalA.MultiplicarFilaPorEscalar(fila, escalar); // Realiza operación.
-                matrizOperacion2 = OperacionElementalA.getMatrizA(); // Actualiza matrizA.
+                matrizOperacion = OperacionElementalA.getMatrizA(); // Actualiza matrizA.
                 //Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.    
-                if (denominador == 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " * " + Integer.toString(numerador);
-                else operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " * " + Integer.toString(numerador) + "/" + Integer.toString(denominador);
+                if (denominador == 1) operacionesString =  Integer.toString(numerador) + " * f" + ComboFilaA.getSelection().getActionCommand();
+                else operacionesString = Integer.toString(numerador)+ "/" + Integer.toString(denominador) + " * f" + ComboFilaA.getSelection().getActionCommand();
                 Main.arrayOperacionesString.add(operacionesString); // Agrega indicación de operación.
                 break;
             case 1:
                 //Matriz matrizOperacion2 = new Matriz(elementos);
-                Fraction fraccion = new Fraction();
+                //Fraction fraccion = new Fraction();
                 int fila1 = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
                 int fila2 = Integer.parseInt(ComboFilaB.getSelection().getActionCommand());
                 
@@ -2448,7 +2473,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 OperacionesElementales OperacionElementalB = new OperacionesElementales(Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1));
                 
                 OperacionElementalB.IntercabiarFilas(fila1, fila2); // Realiza operación.
-                matrizOperacion2 = OperacionElementalB.getMatrizA(); // Actualiza matrizA.
+                matrizOperacion = OperacionElementalB.getMatrizA(); // Actualiza matrizA.
                 //Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
                 Main.arrayOperacionesString.add("f" + ComboFilaA.getSelection().getActionCommand() + " <-> " + "f" + ComboFilaB.getSelection().getActionCommand()); // Agrega indicación de operación.
                 break;
@@ -2467,7 +2492,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 OperacionesElementales OperacionElementalC = new OperacionesElementales(Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1));
                 
                 OperacionElementalC.SumaFilaMultiplo(numeroFila1, numeroFila2, multiplo); // Realiza operación.
-                matrizOperacion2 = OperacionElementalC.getMatrizA(); // Actualiza matrizA.
+                matrizOperacion = OperacionElementalC.getMatrizA(); // Actualiza matrizA.
                 //Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
                 if (numerador != 1 && denominador != 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
                 else if (numerador != 1 && denominador == 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();

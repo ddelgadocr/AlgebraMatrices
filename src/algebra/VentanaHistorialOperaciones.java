@@ -17,8 +17,10 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
     public VentanaHistorialOperaciones() {
         initComponents();
         textHistorial.setEditable(false);
+        System.out.println("ArrayOperacionesSize: " + Main.arrayOperaciones.size());
+        System.out.println("ArrayOperacionesStringSize: " + Main.arrayOperacionesString.size());
         
-        // Agrega matriz original.
+        // Agrega matrices del arrayOperaciones.
         int numerador, denominador, digitos;
         int jContador = 1;
         for (int p = 0; p < Main.arrayOperaciones.size(); p++){
@@ -62,7 +64,7 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
             }
             textHistorial.append("\n");
             for (int i = 0; i <= (Main.matrizCol * 6); i++){
-                textHistorial.append("  ");
+                textHistorial.append("  "); 
             }
             if (p > 0) textHistorial.append("(" + Integer.toString(p) + ") " + Main.arrayOperacionesString.get(p - 1));
             textHistorial.append("\n\n");
