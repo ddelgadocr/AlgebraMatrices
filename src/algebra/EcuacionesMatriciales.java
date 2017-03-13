@@ -151,4 +151,149 @@ public class EcuacionesMatriciales {
         nuevaMatriz.imprime();
         return nuevaMatriz;
     }
+    
+    
+    
+    //meto que calcule la determinante
+    
+  public Fraction Determinante(int i, Matriz matriz)
+  {
+      Fraction deter = new Fraction();
+      if (matriz.cantidadColumnas()==2) 
+      {
+          
+          deter.setValue(matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1).subtract(matriz.getElemento(0, 1)).multiply(matriz.getElemento(1, 0))).getNumerator(), matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1).subtract(matriz.getElemento(0, 1)).multiply(matriz.getElemento(1, 0))).getDenominator());       
+          return  deter;
+      }
+      
+      else
+      {
+        deter.setValue(0,1);
+        
+          for (int j = 0; j < matriz.getColumnas(); j++) 
+          {
+              Fraction[][] elementos = new Fraction[matriz.cantidadFilas()][matriz.cantidadColumnas()];
+              Matriz temp = new Matriz(elementos);
+              temp = SubMatriz(i, j, matriz);
+              deter = deter.add(Signo(i,j)).multiply(matriz.getElemento(i, j)).multiply(Determinante(0,temp));
+               
+              
+          }
+      
+      
+          System.out.println("Determinante"+deter);
+          return deter;
+      }
+  
+      
+      
+  
+  }
+  
+   //claculo de submatriz eliminado i, j
+  
+  
+ private Matriz SubMatriz(int i,int j,Matriz matriz)
+ {
+ 
+     Fraction[][] elementos = new Fraction[matriz.cantidadFilas()-1][matriz.cantidadColumnas()-1];
+     Matriz temp = new Matriz(elementos);
+     
+     int count1=0;
+     int count2=0;
+     
+     
+     for (int k = 0; k < matriz.getFilas(); k++) 
+     {
+         if (k!=i) 
+         {
+             count2=0;
+            for (int l = 0; l < matriz.getColumnas(); l++) 
+            {
+                if (l!=j) 
+                {
+                    temp.setElemento(count1, count2,matriz.getElemento(k, l) );
+                    
+                    count2++;
+                }
+               
+            }
+            
+            count1++;
+         }             
+         
+         
+     }
+     
+     
+     return temp;
+ 
+ 
+ 
+ }
+ 
+ 
+ 
+ //metodo para calcular la adjunta de una matrzi
+ 
+public Matriz AdjuntaMatriz(Matriz matriz)
+
+{
+   Fraction[][] elementos = new Fraction[matriz.cantidadFilas()-1][matriz.cantidadColumnas()-1];
+   Matriz tempAdjunta = new Matriz(elementos);
+  
+    for (int i = 0; i < tempAdjunta.getFilas(); i++) 
+    {
+        for (int j = 0; j < tempAdjunta.getColumnas(); j++) 
+        {
+            Matriz temp  = SubMatriz(i, j, matriz) ;
+            
+            Fraction elementoAdjunto= new Fraction();
+            elementoAdjunto = elementoAdjunto.add(Signo(i,j).multiply(Determinante(0, temp)));
+ 
+            tempAdjunta.setElemento(i, j, elementoAdjunto);
+            
+        }
+        
+    }
+    
+    
+    return tempAdjunta;
+
+}
+
+public Matriz Inversa(Matriz matriz)
+{
+   Fraction[][] elementos = new Fraction[matriz.cantidadFilas()-1][matriz.cantidadColumnas()-1];
+   Matriz minversa = new Matriz(elementos);
+    
+    Fraction determinate = Determinante(0, matriz); //calculando la determinate
+    for (int i = 0; Transpuesta(matriz).getFilas()-1 < i; i++) 
+            {
+                for (int j = 0; j < Transpuesta(matriz).getColumnas()-1; j++) 
+                {
+                    minversa.setElemento(i,j,matriz.getElemento(i, j).divide(determinate));
+                    
+                }
+                
+            }
+    minversa.imprime();
+    return minversa;
+}
+
+
+public Fraction Signo(int i,int j){
+        Fraction unon= new Fraction(-1, 1);
+        Fraction unop= new Fraction(1, 1);
+        
+        if ((i+j)%2 == 0){
+            return unop;
+        }
+        else{
+            return unon;
+        }
+    }
+
+
+
 }

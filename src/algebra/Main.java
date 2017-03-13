@@ -22,7 +22,7 @@ public class Main {
     public static void main(String[] args) {        
         //Se realizan pruebas
         //------Se crea la matriz------
-        /*Fraction elementos[][]= new Fraction[4][4];
+        Fraction elementos[][]= new Fraction[4][4];
         Matriz matrizA = new Matriz(elementos);
         
         //Lo que hice fue hacer una matriz y a todas les puse un solo valor "5/6"
@@ -40,10 +40,8 @@ public class Main {
         matrizA.imprime();
        
         //Se hace una nueva operacion
-        OperacionesElementales SumaMultiplo= new OperacionesElementales(matrizA);
-        Fraction multiplo = new Fraction(1,3);
-        SumaMultiplo.SumaFilaMultiplo(3,2,multiplo);*/
-        
+        EcuacionesMatriciales ecu = new EcuacionesMatriciales(matrizA, matrizA,  matrizA);
+        ecu.Determinante(1, matrizA);
        // Falta validar que sean 5x5
 
         // Inicia VentanaPrincipal.
