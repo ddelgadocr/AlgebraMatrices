@@ -17,6 +17,7 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
     public VentanaHistorialOperaciones() {
         initComponents();
         textHistorial.setEditable(false);
+<<<<<<< HEAD
         System.out.println("MATRICES:");
         // Prueba
         for (int i = 0; i < Main.arrayOperaciones.size(); i++){            
@@ -27,57 +28,60 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
         Main.arrayOperaciones.get(0).imprime();
         Main.arrayOperaciones.get(1).imprime();
         System.out.println("********:");
+=======
+        System.out.println("ArrayOperacionesSize: " + Main.arrayOperaciones.size());
+        System.out.println("ArrayOperacionesStringSize: " + Main.arrayOperacionesString.size());
+>>>>>>> Dani
         
-        // Agrega matriz original.
-        int numerador, denominador;
+        // Agrega matrices del arrayOperaciones.
+        int numerador, denominador, digitos;
         int jContador = 1;
-        for (int i = 1; i <= Main.matrizFil; i++){
-            textHistorial.append("|");
-            while (jContador <= Main.matrizCol){
-                            numerador = Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1).getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1).getElemento(i - 1, jContador - 1).getDenominator();
-                            textHistorial.append(numerador + "/" + denominador + "  ");
-                jContador++;
+        for (int p = 0; p < Main.arrayOperaciones.size(); p++){
+            // Dibujando bordes superiores de matriz.
+            for (int i = -1; i <= (Main.matrizCol * 10); i++){
+                    textHistorial.append("─");
             }
             textHistorial.append("\n");
-            jContador = 1;         
-        }
-        
-        Main.arrayOperaciones.get(0).imprime();
-        
-        for (int i = 0; i < Main.arrayOperacionesString.size(); i++){
-            textHistorial.append("[" + Integer.toString(i + 1) + "] " + Main.arrayOperacionesString.get(i) + "\n");
-            
-        }
-        /*for (int i = 0; i < Main.arrayOperaciones.size(); i++){
-            for (int j = 0; j < )
-            Main.arrayOperaciones.get(i).getElemento(i, NORMAL)
-        }
+            for (int i = 1; i <= Main.matrizFil; i++){               
+                textHistorial.append("│");
+                while (jContador <= Main.matrizCol){
+                    numerador = Main.arrayOperaciones.get(p).getElemento(i - 1, jContador - 1).getNumerator();
+                    denominador = Main.arrayOperaciones.get(p).getElemento(i - 1, jContador - 1).getDenominator();
+                    // Validando numerador negativo, para orden de matriz.
+                    if(numerador < 0) textHistorial.append("-");
+                    textHistorial.append(Integer.toString(Math.abs(numerador)));
+                    if(denominador > 1) textHistorial.append("/" + denominador);
                     
-        /*
-            public void imprime() {
-
-            String borde = "|";
-            System.out.println();
-
-            for (int i=0; i<elementos.length; i++) {
-                 System.out.print(borde); 
-                 Fraction[] filai = elementos[i];
-                 for (int j=0; j< filai.length; j++) {
-                     imprimeElemento(elementos[i][j]); 
-                 }            
-                 System.out.print(borde);
-                 System.out.println(); 
-             }
-             System.out.println();
-         }
-
-         public void imprimeElemento(Fraction d) {
-             System.out.print(d.getNumerator() +"/"+ d.getDenominator()+ "  ");
-         }
-        
-        
-        */
+                    if (numerador == 0) digitos = ((int)Math.log10(denominador) + 1) + 1; // El último +1 es del '/'.
+                    else if (denominador == 0 || denominador == 1) digitos = ((int)Math.log10(numerador) + 1);
+                    else digitos = ((int)Math.log10(numerador) + 1) + ((int)Math.log10(denominador) + 1); // El último +1 es del '/'.
+                    // Agrega espacios restantes de matriz. Para que se vea bonita :)
+                    if (numerador < 0) {
+                        digitos += 3;
+                        textHistorial.append(" ");
+                    }
+                    while(digitos < 12){
+                        textHistorial.append("  ");
+                        digitos++;
+                    }
+                    textHistorial.append("│");
+                    jContador++;
+                }
+                //textHistorial.append("│");
+                textHistorial.append("\n");
+                jContador = 1;         
+            }
+            // Dibujando bordes inferiores de matriz.
+            for (int i = -1; i <= (Main.matrizCol * 10); i++){
+                    textHistorial.append("─");
+            }
+            textHistorial.append("\n");
+            for (int i = 0; i <= (Main.matrizCol * 6); i++){
+                textHistorial.append("  "); 
+            }
+            if (p > 0) textHistorial.append("(" + Integer.toString(p) + ") " + Main.arrayOperacionesString.get(p - 1));
+            textHistorial.append("\n\n");
+        }
     }
 
     /**
@@ -113,13 +117,14 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(356, 356, 356)
-                .addComponent(HistorialOperaciones)
-                .addContainerGap(369, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(HistorialOperaciones)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
