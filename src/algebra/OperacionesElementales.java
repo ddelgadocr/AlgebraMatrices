@@ -10,7 +10,9 @@ package algebra;
  * @author Melissa
  */
 public class OperacionesElementales {
-    private Matriz matrizA;
+    Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
+    Matriz matrizA = new Matriz(elementos);
+    //private Matriz matrizA;
 
     public OperacionesElementales(Matriz matrizA){
         this.matrizA = matrizA;
@@ -89,4 +91,7 @@ public class OperacionesElementales {
         return matrizA;
 
     }
+    
+    
+    
 }
