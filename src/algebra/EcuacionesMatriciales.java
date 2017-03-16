@@ -169,11 +169,12 @@ public class EcuacionesMatriciales {
           Fraction resul = new Fraction();
           
           mult1 = matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1));
-          System.out.println("mult1:"+ mult1);
+          //System.out.println("mult1:"+ mult1);
           mult2 = matriz.getElemento(0, 1).multiply(matriz.getElemento(1, 0));
-          System.out.println("mult2:"+ mult2);
+          //System.out.println("mult2:"+ mult2);
           resul = mult1.subtract(mult2);
-          System.out.println("resul:"+ resul);
+          //resul = resul.add(Signo(i,j).mult1.substract(mult2));
+          //System.out.println("resul:"+ resul);
           
           //deter.setValue(resul.getNumerator(), resul.getDenominator());
           
@@ -184,26 +185,25 @@ public class EcuacionesMatriciales {
       
       else
       {
-        deter.setValue(0,1);
+        //deter.setValue(0,1);
         
           for (int j = 0; j < matriz.getColumnas(); j++) 
           {
               Fraction[][] elementos = new Fraction[matriz.cantidadFilas()][matriz.cantidadColumnas()];
               Matriz temp = new Matriz(elementos);
               temp = SubMatriz(i, j, matriz);
-              deter = deter.add(Signo(i,j)).multiply(matriz.getElemento(i, j)).multiply(Determinante(0,temp));
-               
-              
+              System.out.println("Soy submatriz:");
+              temp.imprime();
+              Fraction mult1 = new Fraction();
+              mult1 = matriz.getElemento(i, j).multiply(Determinante(0,temp));
+              System.out.println("mult1:"+ mult1);
+              deter.add(Signo(i,j)).setValue(mult1.getNumerator(), mult1.getDenominator());
+              System.out.println("Determinante:"+deter);
+             //deter.add(Signo(i,j)).multiply(mult1);  
           }
-      
-      
-          System.out.println("Determinante:"+deter);
+          //System.out.println("Determinante:"+deter);
           return deter;
       }
-  
-      
-      
-  
   }
   
    //claculo de submatriz eliminado i, j

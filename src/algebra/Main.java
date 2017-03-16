@@ -69,6 +69,9 @@ public class Main {
         Fraction fraccion5 = new Fraction();
         fraccion4.setValue(35, 1);
         
+        Fraction fraccion11 = new Fraction();
+        fraccion11.setValue(18, 1);
+        
         
         
         
@@ -114,6 +117,9 @@ public class Main {
                 matrizC.setElemento(2, 0, fraccion2);
                 matrizC.setElemento(2, 1, fraccion3);
                 matrizC.setElemento(2, 2, fraccion4);
+                matrizC.setElemento(3, 0, fraccion2);
+                matrizC.setElemento(3, 1, fraccion3);
+                matrizC.setElemento(3, 2, fraccion11);
             }
         }
 
@@ -121,7 +127,7 @@ public class Main {
        
         //Primero imprime la matriz 
         System.out.println("Soy la matriz C:");
-        matrizA.imprime();
+        matrizC.imprime();
        
         //Se hace una nueva operacion
         EcuacionesMatriciales ecu = new EcuacionesMatriciales(matrizA, matrizA,  matrizA);
