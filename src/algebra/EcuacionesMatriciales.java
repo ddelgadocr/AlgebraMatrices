@@ -159,10 +159,26 @@ public class EcuacionesMatriciales {
   public Fraction Determinante(int i, Matriz matriz)
   {
       Fraction deter = new Fraction();
+                
+
       if (matriz.cantidadColumnas()==2) 
       {
           
-          deter.setValue(matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1).subtract(matriz.getElemento(0, 1)).multiply(matriz.getElemento(1, 0))).getNumerator(), matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1).subtract(matriz.getElemento(0, 1)).multiply(matriz.getElemento(1, 0))).getDenominator());       
+          Fraction mult1 = new Fraction();
+          Fraction mult2 = new Fraction();
+          Fraction resul = new Fraction();
+          
+          mult1 = matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1));
+          System.out.println("mult1:"+ mult1);
+          mult2 = matriz.getElemento(0, 1).multiply(matriz.getElemento(1, 0));
+          System.out.println("mult2:"+ mult2);
+          resul = mult1.subtract(mult2);
+          System.out.println("resul:"+ resul);
+          
+          //deter.setValue(resul.getNumerator(), resul.getDenominator());
+          
+          //deter.setValue(matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1).subtract(matriz.getElemento(0, 1)).multiply(matriz.getElemento(1, 0))).getNumerator(), matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1).subtract(matriz.getElemento(0, 1)).multiply(matriz.getElemento(1, 0))).getDenominator());       
+          //System.out.println("DeterminantePrimero:"+ deter);
           return  deter;
       }
       
@@ -181,7 +197,7 @@ public class EcuacionesMatriciales {
           }
       
       
-          System.out.println("Determinante"+deter);
+          System.out.println("Determinante:"+deter);
           return deter;
       }
   
