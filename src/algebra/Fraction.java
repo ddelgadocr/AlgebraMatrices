@@ -202,4 +202,16 @@ public class Fraction {
         return new Fraction(nn, nd);
     }
 
+    public Fraction Signo(int i,int j){
+        Fraction unon= new Fraction(-1, 1);
+        Fraction unop= new Fraction(1, 1);
+        
+        if ((i+j)%2 == 0){
+            return unop;
+        }
+        else{
+            return unon;
+        }
+    }
+
  }

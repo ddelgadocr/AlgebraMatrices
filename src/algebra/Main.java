@@ -55,7 +55,7 @@ public class Main {
         fraccion.setValue(5, 1);
         
         Fraction fraccion1 = new Fraction();
-        fraccion1.setValue(45, 1);
+        fraccion1.setValue(45,1 );
         
         Fraction fraccion2 = new Fraction();
         fraccion2.setValue(4, 1);
@@ -64,7 +64,7 @@ public class Main {
         fraccion3.setValue(9, 1);
         
         Fraction fraccion4 = new Fraction();
-        fraccion4.setValue(20, 1);
+        fraccion4.setValue(35, 1);
         
         Fraction fraccion5 = new Fraction();
         fraccion4.setValue(35, 1);
@@ -101,7 +101,7 @@ public class Main {
         
         
         //Matriz 3x3
-        Fraction ele[][]= new Fraction[4][4];
+        Fraction ele[][]= new Fraction[3][3];
         Matriz matrizC = new Matriz(ele);
         for (int i = 0; i < matrizC.getFilas(); i++) {
             for (int j = 0; j < matrizC.getColumnas(); j++) {
@@ -110,16 +110,18 @@ public class Main {
                 matrizC.setElemento(0, 0, fraccion);
                 matrizC.setElemento(0, 1, fraccion1);
                 matrizC.setElemento(0, 2, fraccion2);
-                matrizC.setElemento(0, 3, fraccion3);
+                //matrizC.setElemento(0, 3, fraccion3);
+                matrizC.setElemento(1, 0, fraccion3);
                 matrizC.setElemento(1, 1, fraccion4);
                 matrizC.setElemento(1, 2, fraccion);
-                matrizC.setElemento(1, 3, fraccion1);
+                //matrizC.setElemento(1, 3, fraccion1);
                 matrizC.setElemento(2, 0, fraccion2);
                 matrizC.setElemento(2, 1, fraccion3);
                 matrizC.setElemento(2, 2, fraccion4);
-                matrizC.setElemento(3, 0, fraccion2);
-                matrizC.setElemento(3, 1, fraccion3);
-                matrizC.setElemento(3, 2, fraccion11);
+                //matrizC.setElemento(2, 3, fraccion11);
+                //matrizC.setElemento(3, 0, fraccion2);
+                //matrizC.setElemento(3, 1, fraccion3);
+                //matrizC.setElemento(3, 2, fraccion11);
             }
         }
 
@@ -131,7 +133,7 @@ public class Main {
        
         //Se hace una nueva operacion
         EcuacionesMatriciales ecu = new EcuacionesMatriciales(matrizA, matrizA,  matrizA);
-        ecu.Determinante(1, matrizC);
+        ecu.Determinante(0, matrizC);
         //ecu.AdjuntaMatriz(matrizB);
        // Falta validar que sean 5x5
 

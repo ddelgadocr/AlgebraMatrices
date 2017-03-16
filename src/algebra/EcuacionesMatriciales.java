@@ -156,52 +156,51 @@ public class EcuacionesMatriciales {
     
     //meto que calcule la determinante
     
-  public Fraction Determinante(int i, Matriz matriz)
+  
+     public Fraction Determinante(int i, Matriz matriz)
   {
       Fraction deter = new Fraction();
-                
-
-      if (matriz.cantidadColumnas()==2) 
+      
+      //System.out.println("cantidad de columnas"+matriz.cantidadColumnas()); 
+      int largo = matriz.cantidadFilas();      
+      if (largo == 2) 
       {
-          
           Fraction mult1 = new Fraction();
           Fraction mult2 = new Fraction();
-          Fraction resul = new Fraction();
-          
+          Fraction resultado = new Fraction();
           mult1 = matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1));
-          //System.out.println("mult1:"+ mult1);
+          System.out.println("mult1:"+ mult1);
           mult2 = matriz.getElemento(0, 1).multiply(matriz.getElemento(1, 0));
-          //System.out.println("mult2:"+ mult2);
-          resul = mult1.subtract(mult2);
-          //resul = resul.add(Signo(i,j).mult1.substract(mult2));
-          //System.out.println("resul:"+ resul);
+          System.out.println("mult2:"+ mult2);
+          resultado = mult1.subtract(mult2);
           
-          //deter.setValue(resul.getNumerator(), resul.getDenominator());
           
-          //deter.setValue(matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1).subtract(matriz.getElemento(0, 1)).multiply(matriz.getElemento(1, 0))).getNumerator(), matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1).subtract(matriz.getElemento(0, 1)).multiply(matriz.getElemento(1, 0))).getDenominator());       
-          //System.out.println("DeterminantePrimero:"+ deter);
-          return  deter;
+          deter.setValue(resultado.getNumerator(), resultado.getDenominator());
+                  
+          System.out.println("resul:"+ deter);
+          return deter;
+          
       }
       
       else
       {
-        //deter.setValue(0,1);
+        deter.setValue(0,1);
         
-          for (int j = 0; j < matriz.getColumnas(); j++) 
+          for (int j = 0; j < matriz.cantidadFilas(); j++) 
           {
-              Fraction[][] elementos = new Fraction[matriz.cantidadFilas()][matriz.cantidadColumnas()];
+              System.out.println("cantidad de filas"+matriz.getFilas());
+              Fraction[][] elementos = new Fraction[matriz.getFilas()][matriz.getColumnas()];
               Matriz temp = new Matriz(elementos);
-              temp = SubMatriz(i, j, matriz);
-              System.out.println("Soy submatriz:");
-              temp.imprime();
+              temp = this.SubMatriz(i, j, matriz);
               Fraction mult1 = new Fraction();
-              mult1 = matriz.getElemento(i, j).multiply(Determinante(0,temp));
-              System.out.println("mult1:"+ mult1);
-              deter.add(Signo(i,j)).setValue(mult1.getNumerator(), mult1.getDenominator());
-              System.out.println("Determinante:"+deter);
-             //deter.add(Signo(i,j)).multiply(mult1);  
+              Fraction aux = new Fraction();
+              mult1 = matriz.getElemento(i, j).multiply(this.Determinante(0,temp));
+              aux = deter.add(mult1);
+              aux = aux.add(Signo(i,j));
+              deter.setValue(aux.getNumerator(), aux.getDenominator());
+              System.out.println("resul del deter fila:"+deter);
           }
-          //System.out.println("Determinante:"+deter);
+          
           return deter;
       }
   }
@@ -209,7 +208,7 @@ public class EcuacionesMatriciales {
    //claculo de submatriz eliminado i, j
   
   
- private Matriz SubMatriz(int i,int j,Matriz matriz)
+ public Matriz SubMatriz(int i,int j,Matriz matriz)
  {
  
      Fraction[][] elementos = new Fraction[matriz.cantidadFilas()-1][matriz.cantidadColumnas()-1];
@@ -222,29 +221,28 @@ public class EcuacionesMatriciales {
      for (int k = 0; k < matriz.getFilas(); k++) 
      {
          if (k!=i) 
+            
          {
              count2=0;
             for (int l = 0; l < matriz.getColumnas(); l++) 
             {
                 if (l!=j) 
-                {
-                    temp.setElemento(count1, count2,matriz.getElemento(k, l) );
                     
+                {
+                    //System.out.println("l: "+l+"j:"+j);
+                    temp.setElemento(count1, count2,matriz.getElemento(k,l));
+                    //temp.setElemento(count1, count2).getElemento(matriz.getElemento(k,l).getNumerator(), matriz.getElemento(k,l).getDenominator());
                     count2++;
                 }
                
             }
             
             count1++;
-         }             
+         }
          
-         
+
      }
-     
-     
      return temp;
- 
- 
  
  }
  
@@ -296,7 +294,6 @@ public Matriz Inversa(Matriz matriz)
     minversa.imprime();
     return minversa;
 }
-
 
 public Fraction Signo(int i,int j){
         Fraction unon= new Fraction(-1, 1);
