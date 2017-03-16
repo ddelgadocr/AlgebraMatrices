@@ -37,10 +37,10 @@ public class VentanaHistorialOperaciones extends javax.swing.JFrame {
                     // Validando numerador negativo, para orden de matriz.
                     if(numerador < 0) textHistorial.append("-");
                     textHistorial.append(Integer.toString(Math.abs(numerador)));
-                    if(denominador > 1) textHistorial.append("/" + denominador);
+                    if(denominador > 1 || denominador < -1) textHistorial.append("/" + denominador);
                     
                     if (numerador == 0) digitos = ((int)Math.log10(denominador) + 1) + 1; // El último +1 es del '/'.
-                    else if (denominador == 0 || denominador == 1) digitos = ((int)Math.log10(numerador) + 1);
+                    else if (denominador == 0 || denominador == 1 || denominador == -1) digitos = ((int)Math.log10(numerador) + 1);
                     else digitos = ((int)Math.log10(numerador) + 1) + ((int)Math.log10(denominador) + 1); // El último +1 es del '/'.
                     // Agrega espacios restantes de matriz. Para que se vea bonita :)
                     if (numerador < 0) {

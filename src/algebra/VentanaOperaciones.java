@@ -2205,6 +2205,13 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_NumF1C1ActionPerformed
 
     private void EjecutarOperaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EjecutarOperaciónActionPerformed
+        // Comprueba valores numéricos en campos para operación.
+        if ((textNum.getText().matches("^[0-9-]+$") == false && textNum.getText().isEmpty() == false)
+                || (textDen.getText().matches("^[0-9-]+$") == false && textDen.getText().isEmpty() == false)) {
+            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+            return;
+        }
+        
         int numerador, denominador;
         int jContador = 1;
         int j = 0;
@@ -2213,6 +2220,13 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             while (jContador <= Main.matrizCol) {
                 switch (i) {
                     case 1: {
+                        // Valida input de solo números.
+                        if ((arrayFila1.get(j).getText().matches("^[0-9-]+$") == false && arrayFila1.get(j).getText().isEmpty() == false)
+                                || (arrayFila1.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila1.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
+                        }
+
                         if (arrayFila1.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
@@ -2226,6 +2240,13 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         break;
                     }
                     case 2: {
+                        // Valida input de solo números.
+                        if ((arrayFila2.get(j).getText().matches("^[0-9-]+$") == false && arrayFila2.get(j).getText().isEmpty() == false)
+                                || (arrayFila2.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila2.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
+                        }
+
                         if (arrayFila2.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
@@ -2239,6 +2260,13 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         break;
                     }
                     case 3: {
+                        // Valida input de solo números.
+                        if ((arrayFila3.get(j).getText().matches("^[0-9-]+$") == false && arrayFila3.get(j).getText().isEmpty() == false)
+                                || (arrayFila3.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila3.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
+                        }
+
                         if (arrayFila3.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
@@ -2252,6 +2280,13 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         break;
                     }
                     case 4: {
+                        // Valida input de solo números.
+                        if ((arrayFila4.get(j).getText().matches("^[0-9-]+$") == false && arrayFila4.get(j).getText().isEmpty() == false)
+                                || (arrayFila4.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila4.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
+                        }
+
                         if (arrayFila4.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
@@ -2265,6 +2300,13 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         break;
                     }
                     case 5: {
+                        // Valida input de solo números.
+                        if ((arrayFila5.get(j).getText().matches("^[0-9-]+$") == false && arrayFila5.get(j).getText().isEmpty() == false)
+                                || (arrayFila5.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila5.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
+                        }
+
                         if (arrayFila5.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
@@ -3020,13 +3062,16 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 while (jContador <= Main.matrizCol) {
                     switch (i) {
                         case 1: {
+                            // Valida input de solo números.
+                            if ((arrayFila1.get(j).getText().matches("^[0-9]+$") == false && arrayFila1.get(j).getText().isEmpty() == false)
+                                    || (arrayFila1.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila1.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
+                            }
+
                             if (arrayFila1.get(j + 1).getText().isEmpty()) {
                                 denominador = 1;
                             } else {
-                                if (arrayFila1.get(j + 1).getText().matches("^[0-9]+$") == false) {
-                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
-                                    return;
-                                }
                                 denominador = Integer.parseInt(arrayFila1.get(j + 1).getText());
                             }
 
@@ -3037,13 +3082,16 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             break;
                         }
                         case 2: {
+                            // Valida input de solo números.
+                            if ((arrayFila2.get(j).getText().matches("^[0-9]+$") == false && arrayFila2.get(j).getText().isEmpty() == false)
+                                    || (arrayFila2.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila2.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
+                            }
+
                             if (arrayFila2.get(j + 1).getText().isEmpty()) {
                                 denominador = 1;
                             } else {
-                                if (arrayFila2.get(j + 1).getText().matches("^[0-9]+$") == false) {
-                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
-                                    return;
-                                }
                                 denominador = Integer.parseInt(arrayFila2.get(j + 1).getText());
                             }
 
@@ -3054,13 +3102,16 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             break;
                         }
                         case 3: {
+                            // Valida input de solo números.
+                            if ((arrayFila3.get(j).getText().matches("^[0-9]+$") == false && arrayFila3.get(j).getText().isEmpty() == false)
+                                    || (arrayFila3.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila3.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
+                            }
+
                             if (arrayFila3.get(j + 1).getText().isEmpty()) {
                                 denominador = 1;
                             } else {
-                                if (arrayFila3.get(j + 1).getText().matches("^[0-9]+$") == false) {
-                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
-                                    return;
-                                }
                                 denominador = Integer.parseInt(arrayFila3.get(j + 1).getText());
                             }
 
@@ -3071,13 +3122,16 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             break;
                         }
                         case 4: {
+                            // Valida input de solo números.
+                            if ((arrayFila4.get(j).getText().matches("^[0-9]+$") == false && arrayFila4.get(j).getText().isEmpty() == false)
+                                    || (arrayFila4.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila4.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
+                            }
+
                             if (arrayFila4.get(j + 1).getText().isEmpty()) {
                                 denominador = 1;
                             } else {
-                                if (arrayFila4.get(j + 1).getText().matches("^[0-9]+$") == false) {
-                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
-                                    return;
-                                }
                                 denominador = Integer.parseInt(arrayFila4.get(j + 1).getText());
                             }
 
@@ -3088,13 +3142,16 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                             break;
                         }
                         case 5: {
+                            // Valida input de solo números.
+                            if ((arrayFila5.get(j).getText().matches("^[0-9]+$") == false && arrayFila5.get(j).getText().isEmpty() == false)
+                                    || (arrayFila5.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila5.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
+                            }
+
                             if (arrayFila5.get(j + 1).getText().isEmpty()) {
                                 denominador = 1;
                             } else {
-                                if (arrayFila5.get(j + 1).getText().matches("^[0-9]+$") == false) {
-                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
-                                    return;
-                                }
                                 denominador = Integer.parseInt(arrayFila5.get(j + 1).getText());
                             }
 
@@ -3243,6 +3300,60 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 jContador = 1;
             }
             Main.arrayOperaciones.add(matrizOperacion); // Agrega primer matriz a arrayOperaciones.
+        }
+
+        // Una vez se ha agregado la matriz original al array, la matriz solo puede modificarse mediante operaciones.
+        if (Main.arrayOperaciones.isEmpty() == false) {
+            NumF1C1.setEditable(false);
+            DenF1C1.setEditable(false);
+            NumF1C2.setEditable(false);
+            DenF1C2.setEditable(false);
+            NumF1C3.setEditable(false);
+            DenF1C3.setEditable(false);
+            NumF1C4.setEditable(false);
+            DenF1C4.setEditable(false);
+            NumF1C5.setEditable(false);
+            DenF1C5.setEditable(false);
+            NumF2C1.setEditable(false);
+            DenF2C1.setEditable(false);
+            NumF2C2.setEditable(false);
+            DenF2C2.setEditable(false);
+            NumF2C3.setEditable(false);
+            DenF2C3.setEditable(false);
+            NumF2C4.setEditable(false);
+            DenF2C4.setEditable(false);
+            NumF2C5.setEditable(false);
+            DenF2C5.setEditable(false);
+            NumF3C1.setEditable(false);
+            DenF3C1.setEditable(false);
+            NumF3C2.setEditable(false);
+            DenF3C2.setEditable(false);
+            NumF3C3.setEditable(false);
+            DenF3C3.setEditable(false);
+            NumF3C4.setEditable(false);
+            DenF3C4.setEditable(false);
+            NumF3C5.setEditable(false);
+            DenF3C5.setEditable(false);
+            NumF4C1.setEditable(false);
+            DenF4C1.setEditable(false);
+            NumF4C2.setEditable(false);
+            DenF4C2.setEditable(false);
+            NumF4C3.setEditable(false);
+            DenF4C3.setEditable(false);
+            NumF4C4.setEditable(false);
+            DenF4C4.setEditable(false);
+            NumF4C5.setEditable(false);
+            DenF4C5.setEditable(false);
+            NumF5C1.setEditable(false);
+            DenF5C1.setEditable(false);
+            NumF5C2.setEditable(false);
+            DenF5C2.setEditable(false);
+            NumF5C3.setEditable(false);
+            DenF5C3.setEditable(false);
+            NumF5C4.setEditable(false);
+            DenF5C4.setEditable(false);
+            NumF5C5.setEditable(false);
+            DenF5C5.setEditable(false);
         }
 
         // Inicia VentanaHistorialOperaciones.
