@@ -373,6 +373,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         Resolver = new javax.swing.JButton();
         AgregarMatriz = new javax.swing.JButton();
         verMatrices = new javax.swing.JButton();
+        Resolver1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1743,6 +1744,14 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
             }
         });
 
+        Resolver1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Resolver1.setText("Prueba Det");
+        Resolver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Resolver1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1757,7 +1766,8 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AgregarMatriz)
                             .addComponent(Resolver)
-                            .addComponent(verMatrices))
+                            .addComponent(verMatrices)
+                            .addComponent(Resolver1))
                         .addGap(0, 12, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -1782,6 +1792,8 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                 .addComponent(verMatrices)
                 .addGap(18, 18, 18)
                 .addComponent(Resolver)
+                .addGap(18, 18, 18)
+                .addComponent(Resolver1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2302,6 +2314,15 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         VentanaMostrarEcuaciones_.setLocationRelativeTo(null); // Centra ventana.
     }//GEN-LAST:event_verMatricesActionPerformed
 
+    private void Resolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Resolver1ActionPerformed
+        Fraction det = new Fraction(); // Determinante.
+        
+        det = Main.arrayEcuaciones.get(Main.arrayEcuaciones.size() - 1).Determinante(Main.matrizCol);
+        
+        System.out.println("Determinante numerador: " + det.getNumerator());
+        System.out.println("Determinante denominador: " + det.getDenominator());
+    }//GEN-LAST:event_Resolver1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2400,6 +2421,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
     private javax.swing.JTextField NumF5C4;
     private javax.swing.JTextField NumF5C5;
     private javax.swing.JButton Resolver;
+    private javax.swing.JButton Resolver1;
     private javax.swing.JSeparator SepF1C1;
     private javax.swing.JSeparator SepF1C2;
     private javax.swing.JSeparator SepF1C3;
