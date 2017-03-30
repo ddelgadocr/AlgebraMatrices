@@ -133,7 +133,12 @@ public class Main {
        
         //Se hace una nueva operacion
         EcuacionesMatriciales ecu = new EcuacionesMatriciales(matrizA, matrizA,  matrizA);
-        ecu.Determinante(0, matrizC);
+        //ecu.Transpuesta(matrizC);
+        //ecu.Inversa(matrizC);
+        ecu.AdjuntaMatriz(matrizC);
+   
+        
+        //ecu.Determinante(0, matrizC);
         //ecu.AdjuntaMatriz(matrizB);
        // Falta validar que sean 5x5
 

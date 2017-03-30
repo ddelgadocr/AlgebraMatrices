@@ -105,6 +105,7 @@ public class EcuacionesMatriciales {
     
     
     public Matriz Transpuesta(Matriz matriz){
+       // System.out.println("soy transpuesta");
         Fraction elemento [][] = new Fraction[matriz.getFilas()][matriz.getColumnas()];
         Matriz mInvertida = new Matriz(elemento);
         
@@ -153,64 +154,11 @@ public class EcuacionesMatriciales {
     }
     
     
-    
-    //meto que calcule la determinante
-    
-  
-     public Fraction Determinante(int i, Matriz matriz)
-  {
-      Fraction deter = new Fraction();
-      
-      //System.out.println("cantidad de columnas"+matriz.cantidadColumnas()); 
-      int largo = matriz.cantidadFilas();      
-      if (largo == 2) 
-      {
-          Fraction mult1 = new Fraction();
-          Fraction mult2 = new Fraction();
-          Fraction resultado = new Fraction();
-          mult1 = matriz.getElemento(0, 0).multiply(matriz.getElemento(1, 1));
-          System.out.println("mult1:"+ mult1);
-          mult2 = matriz.getElemento(0, 1).multiply(matriz.getElemento(1, 0));
-          System.out.println("mult2:"+ mult2);
-          resultado = mult1.subtract(mult2);
-          
-          
-          deter.setValue(resultado.getNumerator(), resultado.getDenominator());
-                  
-          System.out.println("resul:"+ deter);
-          return deter;
-          
-      }
-      
-      else
-      {
-        deter.setValue(0,1);
-        
-          for (int j = 0; j < matriz.cantidadFilas(); j++) 
-          {
-              System.out.println("cantidad de filas"+matriz.getFilas());
-              Fraction[][] elementos = new Fraction[matriz.getFilas()][matriz.getColumnas()];
-              Matriz temp = new Matriz(elementos);
-              temp = this.SubMatriz(i, j, matriz);
-              Fraction mult1 = new Fraction();
-              Fraction aux = new Fraction();
-              mult1 = matriz.getElemento(i, j).multiply(this.Determinante(0,temp));
-              aux = deter.add(mult1);
-              aux = aux.add(Signo(i,j));
-              deter.setValue(aux.getNumerator(), aux.getDenominator());
-              System.out.println("resul del deter fila:"+deter);
-          }
-          
-          return deter;
-      }
-  }
-  
-   //claculo de submatriz eliminado i, j
-  
+
   
  public Matriz SubMatriz(int i,int j,Matriz matriz)
  {
- 
+     
      Fraction[][] elementos = new Fraction[matriz.cantidadFilas()-1][matriz.cantidadColumnas()-1];
      Matriz temp = new Matriz(elementos);
      
@@ -229,9 +177,7 @@ public class EcuacionesMatriciales {
                 if (l!=j) 
                     
                 {
-                    //System.out.println("l: "+l+"j:"+j);
                     temp.setElemento(count1, count2,matriz.getElemento(k,l));
-                    //temp.setElemento(count1, count2).getElemento(matriz.getElemento(k,l).getNumerator(), matriz.getElemento(k,l).getDenominator());
                     count2++;
                 }
                
@@ -242,9 +188,12 @@ public class EcuacionesMatriciales {
          
 
      }
+     System.out.println("soy temp");
+     temp.imprime();
      return temp;
  
  }
+
  
  
  
@@ -253,9 +202,13 @@ public class EcuacionesMatriciales {
 public Matriz AdjuntaMatriz(Matriz matriz)
 
 {
+    System.out.println("soy la adjunta");
+   
    Fraction[][] elementos = new Fraction[matriz.cantidadFilas()-1][matriz.cantidadColumnas()-1];
    Matriz tempAdjunta = new Matriz(elementos);
-  
+   
+   int tam = matriz.getColumnas();
+   Fraction det = matriz.Determinante(tam);
     for (int i = 0; i < tempAdjunta.getFilas(); i++) 
     {
         for (int j = 0; j < tempAdjunta.getColumnas(); j++) 
@@ -263,7 +216,7 @@ public Matriz AdjuntaMatriz(Matriz matriz)
             Matriz temp  = SubMatriz(i, j, matriz) ;
             
             Fraction elementoAdjunto= new Fraction();
-            elementoAdjunto = elementoAdjunto.add(Signo(i,j).multiply(Determinante(0, temp)));
+            elementoAdjunto = elementoAdjunto.add(Signo(i,j).multiply(det));
  
             tempAdjunta.setElemento(i, j, elementoAdjunto);
             
@@ -271,22 +224,23 @@ public Matriz AdjuntaMatriz(Matriz matriz)
         
     }
     
-    
+    tempAdjunta.imprime();
     return tempAdjunta;
 
 }
 
 public Matriz Inversa(Matriz matriz)
 {
-   Fraction[][] elementos = new Fraction[matriz.cantidadFilas()-1][matriz.cantidadColumnas()-1];
-   Matriz minversa = new Matriz(elementos);
-    
-    Fraction determinate = Determinante(0, matriz); //calculando la determinate
+    System.out.println("soy la inversa");
+    Fraction[][] elementos = new Fraction[matriz.cantidadFilas()-1][matriz.cantidadColumnas()-1];
+    Matriz minversa = new Matriz(elementos);
+    int tam = matriz.getColumnas();
+    Fraction det = matriz.Determinante(tam);
     for (int i = 0; Transpuesta(matriz).getFilas()-1 < i; i++) 
             {
                 for (int j = 0; j < Transpuesta(matriz).getColumnas()-1; j++) 
                 {
-                    minversa.setElemento(i,j,matriz.getElemento(i, j).divide(determinate));
+                    minversa.setElemento(i,j,matriz.getElemento(i, j).divide(det));
                     
                 }
                 
@@ -306,7 +260,5 @@ public Fraction Signo(int i,int j){
             return unon;
         }
     }
-
-
 
 }
