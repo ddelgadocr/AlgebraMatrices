@@ -2001,7 +2001,43 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_DenF4C5ActionPerformed
 
     private void ResolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResolverActionPerformed
+        Fraction[][] elementos = new Fraction[Main.matrizFil][Main.matrizCol];
+        Matriz inversaA = new Matriz(elementos);
+        Matriz restaCB = new Matriz(elementos);
+        Matriz matrizX = new Matriz(elementos);
         
+        EcuacionesMatriciales ecu = new EcuacionesMatriciales(Main.arrayEcuaciones.get(0), Main.arrayEcuaciones.get(1),  Main.arrayEcuaciones.get(2)); // MatrizA, MatrizB, MatrizC.
+
+        inversaA = ecu.Inversa1(ecu.getMatrizA());
+        
+        System.out.println("MatrizA: ");
+        ecu.getMatrizA().imprime();
+        
+        System.out.println("inversaA: ");
+        inversaA.imprime();
+        
+        // Resta Matriz C - Matriz B.
+        for (int i = 0; i < Main.matrizFil; i++) {
+            for (int j = 0; j < Main.matrizCol; j++) {
+                Fraction elementoCB = new Fraction(); // Elemento de resta MAtriz C - Matriz B.
+                elementoCB = ecu.getMatrizC().getElemento(i, j).subtract(ecu.getMatrizB().getElemento(i, j));
+                restaCB.setElemento(i, j, elementoCB);
+            }
+        }
+        
+        System.out.println("MatrizA: ");
+        ecu.getMatrizA().imprime();
+        
+        System.out.println("inversaA: ");
+        inversaA.imprime();
+        
+        System.out.println("restaCB: ");
+        restaCB.imprime();
+        
+        matrizX = ecu.Multiplicacion(inversaA, restaCB);
+        
+        System.out.println("matrizX: ");
+        matrizX.imprime();
     }//GEN-LAST:event_ResolverActionPerformed
 
     private void AgregarMatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarMatrizActionPerformed

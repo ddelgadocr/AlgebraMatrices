@@ -2629,7 +2629,6 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         String operacionesString;
         switch (ComboOperaciones.getSelectedIndex()) {
             case 0:
-
                 int fila = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
                 Fraction escalar = new Fraction();
                 numerador = Integer.parseInt(textNum.getText());

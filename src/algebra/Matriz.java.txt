@@ -356,34 +356,4 @@ public class Matriz {
                 (matriz55.getElemento(0, 4).multiply(matriz5.Determinante(4))));
         return det;
     }
-    
-    public Matriz Multiplicacion2Matrices(Matriz matrizA, Matriz matrizB) {
-        Fraction[][] multiplicacion = new Fraction[matrizA.getFilas()][matrizB.getColumnas()];
-        Matriz nuevaMatriz = new Matriz(multiplicacion);
-        if (matrizA.getColumnas() != matrizB.getFilas()) {
-            System.out.println("No se puede realizar la multiplicacion");
-        } else {
-            for (int x = 0; x < multiplicacion.length; x++) {
-                for (int y = 0; y < multiplicacion[x].length; y++) {
-                    Fraction nuevonumero = new Fraction();
-                    for (int z = 0; z < matrizA.getColumnas(); z++) {
-                        nuevonumero = nuevonumero.add(matrizA.getElemento(x, z).multiply(matrizB.getElemento(z, y)));
-                        multiplicacion[x][y] = nuevonumero;
-                    }
-                }
-            }
-
-            for (int i = 0; i < multiplicacion.length; i++) {
-                for (int j = 0; j < multiplicacion[i].length; j++) {
-                    nuevaMatriz.setElemento(i, j, multiplicacion[i][j]);
-                }
-            }
-
-            System.out.println("Soy la multiplicacion de matrices");
-            nuevaMatriz.imprime();
-        }
-
-        System.out.println("Soy la multiplicacion de matrices");
-        return nuevaMatriz;
-    }
 }
