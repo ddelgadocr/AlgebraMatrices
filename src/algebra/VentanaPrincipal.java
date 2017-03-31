@@ -24,6 +24,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Col3.setSelected(true);
         Fil3.setActionCommand("3");
         Fil3.setSelected(true);
+        
+        Fil1.setVisible(false);
+        Col1.setVisible(false);
     }
 
     /**

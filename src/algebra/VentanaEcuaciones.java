@@ -16,17 +16,17 @@ import javax.swing.JTextField;
  * @author Daniel
  */
 public class VentanaEcuaciones extends javax.swing.JFrame {
-    
+
     private ArrayList<JSeparator> arraySeparadores = new ArrayList<>();
     private ArrayList<JTextField> arrayFila1 = new ArrayList<>();
     private ArrayList<JTextField> arrayFila2 = new ArrayList<>();
     private ArrayList<JTextField> arrayFila3 = new ArrayList<>();
     private ArrayList<JTextField> arrayFila4 = new ArrayList<>();
     private ArrayList<JTextField> arrayFila5 = new ArrayList<>();
-    
+
     public VentanaEcuaciones() {
         initComponents();
-        
+
         arrayFila1.add(NumF1C1);
         arrayFila1.add(DenF1C1);
         arrayFila1.add(NumF1C2);
@@ -37,7 +37,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         arrayFila1.add(DenF1C4);
         arrayFila1.add(NumF1C5);
         arrayFila1.add(DenF1C5);
-        
+
         arrayFila2.add(NumF2C1);
         arrayFila2.add(DenF2C1);
         arrayFila2.add(NumF2C2);
@@ -48,7 +48,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         arrayFila2.add(DenF2C4);
         arrayFila2.add(NumF2C5);
         arrayFila2.add(DenF2C5);
-        
+
         arrayFila3.add(NumF3C1);
         arrayFila3.add(DenF3C1);
         arrayFila3.add(NumF3C2);
@@ -59,7 +59,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         arrayFila3.add(DenF3C4);
         arrayFila3.add(NumF3C5);
         arrayFila3.add(DenF3C5);
-        
+
         arrayFila4.add(NumF4C1);
         arrayFila4.add(DenF4C1);
         arrayFila4.add(NumF4C2);
@@ -70,7 +70,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         arrayFila4.add(DenF4C4);
         arrayFila4.add(NumF4C5);
         arrayFila4.add(DenF4C5);
-        
+
         arrayFila5.add(NumF5C1);
         arrayFila5.add(DenF5C1);
         arrayFila5.add(NumF5C2);
@@ -81,7 +81,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         arrayFila5.add(DenF5C4);
         arrayFila5.add(NumF5C5);
         arrayFila5.add(DenF5C5);
-        
+
         arraySeparadores.add(SepF1C1);
         arraySeparadores.add(SepF1C2);
         arraySeparadores.add(SepF1C3);
@@ -107,11 +107,12 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         arraySeparadores.add(SepF5C3);
         arraySeparadores.add(SepF5C4);
         arraySeparadores.add(SepF5C5);
-        
+
         labelA.setText("Matriz A");
         verMatrices.setVisible(false);
         AgregarMatriz.setVisible(true);
         Resolver.setVisible(false);
+        PruebaDet.setVisible(false);
 
         // Oculta todas las fracciones y separadores, luego se vuelven visibles de acuerdo a filasXcolumnas.
         for (int i = 0; i < arrayFila1.size(); i++) {
@@ -136,7 +137,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
             f += 5;
             fContador = 1;
         }
-        
+
         switch (Main.matrizFil) {
             case 1:
                 Main.matrizFil = 1;
@@ -160,7 +161,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                 Main.matrizFil = 4;
                 LabelFil5.setVisible(false);
         }
-        
+
         switch (Main.matrizCol) {
             case 1:
                 Main.matrizCol = 1;
@@ -184,7 +185,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                 Main.matrizCol = 4;
                 LabelCol5.setVisible(false);
         }
-        
+
         int i = 0;
         switch (Main.matrizFil) {
             case 1:
@@ -208,7 +209,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                 i = 49;
                 break;
         }
-        
+
         int rContador = 1;
         int r = 0;
         for (int k = 1; k <= Main.matrizFil; k++) {
@@ -373,7 +374,8 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         Resolver = new javax.swing.JButton();
         AgregarMatriz = new javax.swing.JButton();
         verMatrices = new javax.swing.JButton();
-        Resolver1 = new javax.swing.JButton();
+        PruebaDet = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1744,11 +1746,19 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
             }
         });
 
-        Resolver1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        Resolver1.setText("Prueba Det");
-        Resolver1.addActionListener(new java.awt.event.ActionListener() {
+        PruebaDet.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        PruebaDet.setText("Prueba Det");
+        PruebaDet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Resolver1ActionPerformed(evt);
+                PruebaDetActionPerformed(evt);
+            }
+        });
+
+        Regresar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Regresar.setText("Regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegresarActionPerformed(evt);
             }
         });
 
@@ -1767,7 +1777,8 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                             .addComponent(AgregarMatriz)
                             .addComponent(Resolver)
                             .addComponent(verMatrices)
-                            .addComponent(Resolver1))
+                            .addComponent(PruebaDet)
+                            .addComponent(Regresar))
                         .addGap(0, 12, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -1793,7 +1804,9 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(Resolver)
                 .addGap(18, 18, 18)
-                .addComponent(Resolver1)
+                .addComponent(PruebaDet)
+                .addGap(18, 18, 18)
+                .addComponent(Regresar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2001,43 +2014,84 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_DenF4C5ActionPerformed
 
     private void ResolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResolverActionPerformed
-        Fraction[][] elementos = new Fraction[Main.matrizFil][Main.matrizCol];
-        Matriz inversaA = new Matriz(elementos);
-        Matriz restaCB = new Matriz(elementos);
-        Matriz matrizX = new Matriz(elementos);
-        
-        EcuacionesMatriciales ecu = new EcuacionesMatriciales(Main.arrayEcuaciones.get(0), Main.arrayEcuaciones.get(1),  Main.arrayEcuaciones.get(2)); // MatrizA, MatrizB, MatrizC.
+        if (Main.arrayEcuaciones.size() < 4) {
+            Fraction deter = new Fraction(); // Elemento de resta MAtriz C - Matriz B.
+            deter = Main.arrayEcuaciones.get(0).Determinante(Main.matrizFil);
+            if (deter.getNumerator() == 0) {
+                JOptionPane.showMessageDialog(null, "El sistema tiene soluciones infinitas.");
 
-        inversaA = ecu.Inversa1(ecu.getMatrizA());
-        
-        System.out.println("MatrizA: ");
-        ecu.getMatrizA().imprime();
-        
-        System.out.println("inversaA: ");
-        inversaA.imprime();
-        
-        // Resta Matriz C - Matriz B.
-        for (int i = 0; i < Main.matrizFil; i++) {
-            for (int j = 0; j < Main.matrizCol; j++) {
-                Fraction elementoCB = new Fraction(); // Elemento de resta MAtriz C - Matriz B.
-                elementoCB = ecu.getMatrizC().getElemento(i, j).subtract(ecu.getMatrizB().getElemento(i, j));
-                restaCB.setElemento(i, j, elementoCB);
+                Main.arrayEcuaciones.clear();
+
+                // Inicia VentanaPrincipal
+                this.setVisible(false); // Oculta esta ventana.
+                VentanaPrincipal VentanaPrincipal_ = new VentanaPrincipal();
+                VentanaPrincipal_.setVisible(true);
+                VentanaPrincipal_.setResizable(false); // Tamaño de ventana no variable.
+                VentanaPrincipal_.setLocationRelativeTo(null); // Centra ventana.
+                return;
             }
+
+            Fraction[][] elementos = new Fraction[Main.matrizFil][Main.matrizCol];
+            Matriz inversaA = new Matriz(elementos);
+            Matriz restaCB = new Matriz(elementos);
+            Matriz matrizX = new Matriz(elementos);
+
+            EcuacionesMatriciales ecu = new EcuacionesMatriciales(Main.arrayEcuaciones.get(0), Main.arrayEcuaciones.get(1), Main.arrayEcuaciones.get(2)); // MatrizA, MatrizB, MatrizC.
+
+            //System.out.println("MatrizA: ");
+            //ecu.getMatrizA().imprime();
+            inversaA = ecu.Inversa1(ecu.getMatrizA());
+
+            // Applying absolute value.
+            for (int i = 0; i < Main.matrizFil; i++) {
+                for (int j = 0; j < Main.matrizCol; j++) {
+                    int numerador = inversaA.getElemento(i, j).getNumerator();
+                    int denominador = inversaA.getElemento(i, j).getDenominator();
+                    if (numerador < 0 && denominador < 0) {
+                        Fraction absNum = new Fraction();
+                        absNum.setValue(Math.abs(numerador), Math.abs(denominador));
+                        inversaA.setElemento(i, j, absNum);
+                    } else if (numerador > 0 && denominador < 0) {
+                        Fraction absNum = new Fraction();
+                        absNum.setValue(numerador * -1, Math.abs(denominador));
+                        inversaA.setElemento(i, j, absNum);
+                    } else if (numerador == 0) {
+                        Fraction absNum = new Fraction();
+                        absNum.setValue(Math.abs(numerador), Math.abs(denominador));
+                        inversaA.setElemento(i, j, absNum);
+                    }
+                }
+            }
+
+            System.out.println("inversaA: ");
+            inversaA.imprime();
+            // Resta Matriz C - Matriz B.
+            for (int i = 0; i < Main.matrizFil; i++) {
+                for (int j = 0; j < Main.matrizCol; j++) {
+                    Fraction elementoCB = new Fraction(); // Elemento de resta MAtriz C - Matriz B.
+                    elementoCB = ecu.getMatrizC().getElemento(i, j).subtract(ecu.getMatrizB().getElemento(i, j));
+                    restaCB.setElemento(i, j, elementoCB);
+                }
+            }
+
+            //System.out.println("MatrizA: ");
+            //ecu.getMatrizA().imprime();
+            //System.out.println("inversaA: ");
+            //inversaA.imprime();
+            //System.out.println("restaCB: ");
+            //restaCB.imprime();
+            matrizX = ecu.Multiplicacion(inversaA, restaCB);
+            Main.arrayEcuaciones.add(matrizX); // Agrega para mostrar en VentanaMostrarSolucion.
+
+            //System.out.println("matrizX: ");
+            //matrizX.imprime();
         }
-        
-        System.out.println("MatrizA: ");
-        ecu.getMatrizA().imprime();
-        
-        System.out.println("inversaA: ");
-        inversaA.imprime();
-        
-        System.out.println("restaCB: ");
-        restaCB.imprime();
-        
-        matrizX = ecu.Multiplicacion(inversaA, restaCB);
-        
-        System.out.println("matrizX: ");
-        matrizX.imprime();
+
+        // Inicia VentanaMostrarSolucion
+        VentanaMostrarSolucion VentanaMostrarSolucion_ = new VentanaMostrarSolucion();
+        VentanaMostrarSolucion_.setVisible(true);
+        VentanaMostrarSolucion_.setResizable(false); // Tamaño de ventana no variable.
+        VentanaMostrarSolucion_.setLocationRelativeTo(null); // Centra ventana.
     }//GEN-LAST:event_ResolverActionPerformed
 
     private void AgregarMatrizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarMatrizActionPerformed
@@ -2055,14 +2109,14 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
                             return;
                         }
-                        
+
                         if (arrayFila1.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
-                            
+
                             denominador = Integer.parseInt(arrayFila1.get(j + 1).getText());
                         }
-                        
+
                         if (denominador == 0) {
                             JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
                             return;
@@ -2076,14 +2130,14 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
                             return;
                         }
-                        
+
                         if (arrayFila2.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
-                            
+
                             denominador = Integer.parseInt(arrayFila2.get(j + 1).getText());
                         }
-                        
+
                         if (denominador == 0) {
                             JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
                             return;
@@ -2097,13 +2151,13 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
                             return;
                         }
-                        
+
                         if (arrayFila3.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
                             denominador = Integer.parseInt(arrayFila3.get(j + 1).getText());
                         }
-                        
+
                         if (denominador == 0) {
                             JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
                             return;
@@ -2117,13 +2171,13 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
                             return;
                         }
-                        
+
                         if (arrayFila4.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
                             denominador = Integer.parseInt(arrayFila4.get(j + 1).getText());
                         }
-                        
+
                         if (denominador == 0) {
                             JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
                             return;
@@ -2137,13 +2191,13 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
                             return;
                         }
-                        
+
                         if (arrayFila5.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
                             denominador = Integer.parseInt(arrayFila5.get(j + 1).getText());
                         }
-                        
+
                         if (denominador == 0) {
                             JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
                             return;
@@ -2159,7 +2213,7 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
             j = 0;
             jContador = 1;
         }
-        
+
         Fraction elementos[][] = new Fraction[Main.matrizFil][Main.matrizCol];
         Matriz matrizEcuacion = new Matriz(elementos);
         // Recorrido para crear matriz.
@@ -2175,13 +2229,13 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                         } else {
                             numerador = Integer.parseInt(arrayFila1.get(j).getText());
                         }
-                        
+
                         if (arrayFila1.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
                             denominador = Integer.parseInt(arrayFila1.get(j + 1).getText());
                         }
-                        
+
                         fraccion.setValue(numerador, denominador);
                         matrizEcuacion.setElemento(i - 1, jContador - 1, fraccion);
                         break;
@@ -2193,13 +2247,13 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                         } else {
                             numerador = Integer.parseInt(arrayFila2.get(j).getText());
                         }
-                        
+
                         if (arrayFila2.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
                             denominador = Integer.parseInt(arrayFila2.get(j + 1).getText());
                         }
-                        
+
                         fraccion.setValue(numerador, denominador);
                         matrizEcuacion.setElemento(i - 1, jContador - 1, fraccion);
                         break;
@@ -2211,13 +2265,13 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                         } else {
                             numerador = Integer.parseInt(arrayFila3.get(j).getText());
                         }
-                        
+
                         if (arrayFila3.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
                             denominador = Integer.parseInt(arrayFila3.get(j + 1).getText());
                         }
-                        
+
                         fraccion.setValue(numerador, denominador);
                         matrizEcuacion.setElemento(i - 1, jContador - 1, fraccion);
                         break;
@@ -2229,13 +2283,13 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                         } else {
                             numerador = Integer.parseInt(arrayFila4.get(j).getText());
                         }
-                        
+
                         if (arrayFila4.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
                             denominador = Integer.parseInt(arrayFila4.get(j + 1).getText());
                         }
-                        
+
                         fraccion.setValue(numerador, denominador);
                         matrizEcuacion.setElemento(i - 1, jContador - 1, fraccion);
                         break;
@@ -2247,13 +2301,13 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                         } else {
                             numerador = Integer.parseInt(arrayFila5.get(j).getText());
                         }
-                        
+
                         if (arrayFila5.get(j + 1).getText().isEmpty()) {
                             denominador = 1;
                         } else {
                             denominador = Integer.parseInt(arrayFila5.get(j + 1).getText());
                         }
-                        
+
                         fraccion.setValue(numerador, denominador);
                         matrizEcuacion.setElemento(i - 1, jContador - 1, fraccion);
                         break;
@@ -2268,61 +2322,23 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
             jContador = 1;
         }
         Main.arrayEcuaciones.add(matrizEcuacion); // Agrega matriz a arrayEcuaciones.
-
         // Una vez se ha agregado la matriz al array, la matriz se reinicia.
-        if (Main.arrayOperaciones.isEmpty() == false) {
-            NumF1C1.setText("");
-            DenF1C1.setText("");
-            NumF1C2.setText("");
-            DenF1C2.setText("");
-            NumF1C3.setText("");
-            DenF1C3.setText("");
-            NumF1C4.setText("");
-            DenF1C4.setText("");
-            NumF1C5.setText("");
-            DenF1C5.setText("");
-            NumF2C1.setText("");
-            DenF2C1.setText("");
-            NumF2C2.setText("");
-            DenF2C2.setText("");
-            NumF2C3.setText("");
-            DenF2C3.setText("");
-            NumF2C4.setText("");
-            DenF2C4.setText("");
-            NumF2C5.setText("");
-            DenF2C5.setText("");
-            NumF3C1.setText("");
-            DenF3C1.setText("");
-            NumF3C2.setText("");
-            DenF3C2.setText("");
-            NumF3C3.setText("");
-            DenF3C3.setText("");
-            NumF3C4.setText("");
-            DenF3C4.setText("");
-            NumF3C5.setText("");
-            DenF3C5.setText("");
-            NumF4C1.setText("");
-            DenF4C1.setText("");
-            NumF4C2.setText("");
-            DenF4C2.setText("");
-            NumF4C3.setText("");
-            DenF4C3.setText("");
-            NumF4C4.setText("");
-            DenF4C4.setText("");
-            NumF4C5.setText("");
-            DenF4C5.setText("");
-            NumF5C1.setText("");
-            DenF5C1.setText("");
-            NumF5C2.setText("");
-            DenF5C2.setText("");
-            NumF5C3.setText("");
-            DenF5C3.setText("");
-            NumF5C4.setText("");
-            DenF5C4.setText("");
-            NumF5C5.setText("");
-            DenF5C5.setText("");
-        }
-        
+        arrayFila1.forEach((i) -> {
+            i.setText("");
+        });
+        arrayFila2.forEach((i) -> {
+            i.setText("");
+        });
+        arrayFila3.forEach((i) -> {
+            i.setText("");
+        });
+        arrayFila4.forEach((i) -> {
+            i.setText("");
+        });
+        arrayFila5.forEach((i) -> {
+            i.setText("");
+        });
+
         switch (Main.arrayEcuaciones.size()) {
             case 1:
                 labelA.setText("Matriz B");
@@ -2350,14 +2366,30 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
         VentanaMostrarEcuaciones_.setLocationRelativeTo(null); // Centra ventana.
     }//GEN-LAST:event_verMatricesActionPerformed
 
-    private void Resolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Resolver1ActionPerformed
+    private void PruebaDetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruebaDetActionPerformed
         Fraction det = new Fraction(); // Determinante.
-        
+
         det = Main.arrayEcuaciones.get(Main.arrayEcuaciones.size() - 1).Determinante(Main.matrizCol);
-        
+
         System.out.println("Determinante numerador: " + det.getNumerator());
         System.out.println("Determinante denominador: " + det.getDenominator());
-    }//GEN-LAST:event_Resolver1ActionPerformed
+    }//GEN-LAST:event_PruebaDetActionPerformed
+
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
+        int response = JOptionPane.showConfirmDialog(null, "Si sale perderá las matrices.", "Confirm",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (response == JOptionPane.YES_OPTION) {
+            Main.arrayOperaciones.clear();
+
+            // Inicia VentanaPrincipal
+            this.setVisible(false); // Oculta esta ventana.
+            VentanaPrincipal VentanaPrincipal_ = new VentanaPrincipal();
+            VentanaPrincipal_.setVisible(true);
+            VentanaPrincipal_.setResizable(false); // Tamaño de ventana no variable.
+            VentanaPrincipal_.setLocationRelativeTo(null); // Centra ventana.
+            return;
+        }
+    }//GEN-LAST:event_RegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2456,8 +2488,9 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
     private javax.swing.JTextField NumF5C3;
     private javax.swing.JTextField NumF5C4;
     private javax.swing.JTextField NumF5C5;
+    private javax.swing.JButton PruebaDet;
+    private javax.swing.JButton Regresar;
     private javax.swing.JButton Resolver;
-    private javax.swing.JButton Resolver1;
     private javax.swing.JSeparator SepF1C1;
     private javax.swing.JSeparator SepF1C2;
     private javax.swing.JSeparator SepF1C3;

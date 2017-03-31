@@ -414,6 +414,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         textDen = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         HistorialOperaciones = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1901,6 +1902,14 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        Regresar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Regresar.setText("Regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1949,7 +1958,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                                         .addComponent(filB5)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(labelD))
-                            .addComponent(HistorialOperaciones)))
+                            .addComponent(HistorialOperaciones)
+                            .addComponent(Regresar)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(371, 371, 371)
                         .addComponent(jLabel6)))
@@ -1997,7 +2007,9 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(EjecutarOperación)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(HistorialOperaciones)))
+                        .addComponent(HistorialOperaciones)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Regresar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2211,7 +2223,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
             return;
         }
-        
+
         int numerador, denominador;
         int jContador = 1;
         int j = 0;
@@ -3362,6 +3374,22 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         VentanaHistorialOperaciones_.setLocationRelativeTo(null); // Centra ventana.
     }//GEN-LAST:event_HistorialOperacionesActionPerformed
 
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
+        int response = JOptionPane.showConfirmDialog(null, "Si sale perderá la matriz.", "Confirm",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (response == JOptionPane.YES_OPTION) {
+            Main.arrayOperaciones.clear();
+
+            // Inicia VentanaPrincipal
+            this.setVisible(false); // Oculta esta ventana.
+            VentanaPrincipal VentanaPrincipal_ = new VentanaPrincipal();
+            VentanaPrincipal_.setVisible(true);
+            VentanaPrincipal_.setResizable(false); // Tamaño de ventana no variable.
+            VentanaPrincipal_.setLocationRelativeTo(null); // Centra ventana.
+            return;
+        }
+    }//GEN-LAST:event_RegresarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -3463,6 +3491,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JTextField NumF5C3;
     private javax.swing.JTextField NumF5C4;
     private javax.swing.JTextField NumF5C5;
+    private javax.swing.JButton Regresar;
     private javax.swing.JSeparator SepF1C1;
     private javax.swing.JSeparator SepF1C2;
     private javax.swing.JSeparator SepF1C3;
