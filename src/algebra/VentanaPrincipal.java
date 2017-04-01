@@ -5,6 +5,8 @@
  */
 package algebra;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Daniel
@@ -22,6 +24,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         Col3.setSelected(true);
         Fil3.setActionCommand("3");
         Fil3.setSelected(true);
+        
+        Fil1.setVisible(false);
+        Col1.setVisible(false);
     }
 
     /**
@@ -246,49 +251,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void OperacionesElementalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OperacionesElementalesActionPerformed
         // Obtiene cantidad de columnas deseadas.
-        //System.out.println(Columnas.getSelection().getActionCommand());
+        
         short colSeleccionadas = Short.parseShort(Columnas.getSelection().getActionCommand());
-        //System.out.println(colSeleccionadas);
-        switch (colSeleccionadas) {
-            case 1: colSeleccionadas = 1;
-                Main.matrizCol = 1;
-                break;
-            case 2: colSeleccionadas = 2;
-                Main.matrizCol = 2;
-                break;
-            case 3: colSeleccionadas = 3;
-                Main.matrizCol = 3;
-                break;
-            case 4: colSeleccionadas = 4;
-                Main.matrizCol = 4;
-                break;
-            case 5: colSeleccionadas = 5;
-                Main.matrizCol = 5;
-                break;
-        }
-        
-        //System.out.println(Main.matrizCol);
-        
-        // Obtiene cantidad de filas deseadas.
         short filSeleccionadas = Short.parseShort(Filas.getSelection().getActionCommand());
-        switch (filSeleccionadas) {
-            case 1: filSeleccionadas = 1;
-                Main.matrizFil = 1;
-                break;
-            case 2: filSeleccionadas = 2;
-                Main.matrizFil = 2;
-                break;
-            case 3: filSeleccionadas = 3;
-                Main.matrizFil = 3;
-                break;
-            case 4: filSeleccionadas = 4;
-                Main.matrizFil = 4;  
-                break;
-            case 5: filSeleccionadas = 5;
-                Main.matrizFil = 5;
-                break;
-        }
-
+        
+        Main.matrizCol = colSeleccionadas;
+        Main.matrizFil = filSeleccionadas;
+       
         // Inicia VentanaOperaciones.
         this.setVisible(false); // Oculta esta ventana.
         VentanaOperaciones VentanaOperaciones_ = new VentanaOperaciones();
@@ -298,7 +267,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_OperacionesElementalesActionPerformed
 
     private void EcuacionesMatricialesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EcuacionesMatricialesActionPerformed
-        // TODO add your handling code here:
+        short colSeleccionadas = Short.parseShort(Columnas.getSelection().getActionCommand());
+        short filSeleccionadas = Short.parseShort(Filas.getSelection().getActionCommand());
+        
+        if(colSeleccionadas != filSeleccionadas || filSeleccionadas == 1) {
+            JOptionPane.showMessageDialog(null, "Error: deben ser matrices cuadradas >= 2.");
+            return;
+        }
+        
+        Main.matrizCol = colSeleccionadas;
+        Main.matrizFil = filSeleccionadas;
+        
+        // Inicia VentanaOperaciones.
+        this.setVisible(false); // Oculta esta ventana.
+        VentanaEcuaciones VentanaEcuaciones_ = new VentanaEcuaciones();
+        VentanaEcuaciones_.setVisible(true);
+        VentanaEcuaciones_.setResizable(false); // Tamaño de ventana no variable.
+        VentanaEcuaciones_.setLocationRelativeTo(null); // Centra ventana.
     }//GEN-LAST:event_EcuacionesMatricialesActionPerformed
 
     private void Col1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Col1ActionPerformed

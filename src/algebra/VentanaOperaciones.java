@@ -15,66 +15,103 @@ import javax.swing.JTextField;
  * @author Daniel
  */
 public class VentanaOperaciones extends javax.swing.JFrame {
+
     private ArrayList<JSeparator> arraySeparadores = new ArrayList<>();
-    
     private ArrayList<JTextField> arrayFila1 = new ArrayList<>();
     private ArrayList<JTextField> arrayFila2 = new ArrayList<>();
     private ArrayList<JTextField> arrayFila3 = new ArrayList<>();
     private ArrayList<JTextField> arrayFila4 = new ArrayList<>();
     private ArrayList<JTextField> arrayFila5 = new ArrayList<>();
-    
+
     public VentanaOperaciones() {
         initComponents();
-        
-        arrayFila1.add(NumF1C1); arrayFila1.add(DenF1C1);
-        arrayFila1.add(NumF1C2); arrayFila1.add(DenF1C2);
-        arrayFila1.add(NumF1C3); arrayFila1.add(DenF1C3);
-        arrayFila1.add(NumF1C4); arrayFila1.add(DenF1C4);
-        arrayFila1.add(NumF1C5); arrayFila1.add(DenF1C5);
 
-        arrayFila2.add(NumF2C1); arrayFila2.add(DenF2C1);
-        arrayFila2.add(NumF2C2); arrayFila2.add(DenF2C2);
-        arrayFila2.add(NumF2C3); arrayFila2.add(DenF2C3);
-        arrayFila2.add(NumF2C4); arrayFila2.add(DenF2C4);
-        arrayFila2.add(NumF2C5); arrayFila2.add(DenF2C5);
+        arrayFila1.add(NumF1C1);
+        arrayFila1.add(DenF1C1);
+        arrayFila1.add(NumF1C2);
+        arrayFila1.add(DenF1C2);
+        arrayFila1.add(NumF1C3);
+        arrayFila1.add(DenF1C3);
+        arrayFila1.add(NumF1C4);
+        arrayFila1.add(DenF1C4);
+        arrayFila1.add(NumF1C5);
+        arrayFila1.add(DenF1C5);
 
-        arrayFila3.add(NumF3C1); arrayFila3.add(DenF3C1);
-        arrayFila3.add(NumF3C2); arrayFila3.add(DenF3C2);
-        arrayFila3.add(NumF3C3); arrayFila3.add(DenF3C3);
-        arrayFila3.add(NumF3C4); arrayFila3.add(DenF3C4);
-        arrayFila3.add(NumF3C5); arrayFila3.add(DenF3C5);
+        arrayFila2.add(NumF2C1);
+        arrayFila2.add(DenF2C1);
+        arrayFila2.add(NumF2C2);
+        arrayFila2.add(DenF2C2);
+        arrayFila2.add(NumF2C3);
+        arrayFila2.add(DenF2C3);
+        arrayFila2.add(NumF2C4);
+        arrayFila2.add(DenF2C4);
+        arrayFila2.add(NumF2C5);
+        arrayFila2.add(DenF2C5);
 
-        arrayFila4.add(NumF4C1); arrayFila4.add(DenF4C1);
-        arrayFila4.add(NumF4C2); arrayFila4.add(DenF4C2);
-        arrayFila4.add(NumF4C3); arrayFila4.add(DenF4C3);
-        arrayFila4.add(NumF4C4); arrayFila4.add(DenF4C4);
-        arrayFila4.add(NumF4C5); arrayFila4.add(DenF4C5);
+        arrayFila3.add(NumF3C1);
+        arrayFila3.add(DenF3C1);
+        arrayFila3.add(NumF3C2);
+        arrayFila3.add(DenF3C2);
+        arrayFila3.add(NumF3C3);
+        arrayFila3.add(DenF3C3);
+        arrayFila3.add(NumF3C4);
+        arrayFila3.add(DenF3C4);
+        arrayFila3.add(NumF3C5);
+        arrayFila3.add(DenF3C5);
 
-        arrayFila5.add(NumF5C1); arrayFila5.add(DenF5C1);
-        arrayFila5.add(NumF5C2); arrayFila5.add(DenF5C2);
-        arrayFila5.add(NumF5C3); arrayFila5.add(DenF5C3);
-        arrayFila5.add(NumF5C4); arrayFila5.add(DenF5C4);
-        arrayFila5.add(NumF5C5); arrayFila5.add(DenF5C5);
-        
-        arraySeparadores.add(SepF1C1); arraySeparadores.add(SepF1C2);
-        arraySeparadores.add(SepF1C3); arraySeparadores.add(SepF1C4);
-        arraySeparadores.add(SepF1C5); arraySeparadores.add(SepF2C1);
-        arraySeparadores.add(SepF2C2); arraySeparadores.add(SepF2C3);
-        arraySeparadores.add(SepF2C4); arraySeparadores.add(SepF2C5);
-        arraySeparadores.add(SepF3C1); arraySeparadores.add(SepF3C2);
-        arraySeparadores.add(SepF3C3); arraySeparadores.add(SepF3C4);
-        arraySeparadores.add(SepF3C5); arraySeparadores.add(SepF4C1);      
-        arraySeparadores.add(SepF4C2); arraySeparadores.add(SepF4C3);        
-        arraySeparadores.add(SepF4C4); arraySeparadores.add(SepF4C5);       
-        arraySeparadores.add(SepF5C1); arraySeparadores.add(SepF5C2);    
-        arraySeparadores.add(SepF5C3); arraySeparadores.add(SepF5C4);        
+        arrayFila4.add(NumF4C1);
+        arrayFila4.add(DenF4C1);
+        arrayFila4.add(NumF4C2);
+        arrayFila4.add(DenF4C2);
+        arrayFila4.add(NumF4C3);
+        arrayFila4.add(DenF4C3);
+        arrayFila4.add(NumF4C4);
+        arrayFila4.add(DenF4C4);
+        arrayFila4.add(NumF4C5);
+        arrayFila4.add(DenF4C5);
+
+        arrayFila5.add(NumF5C1);
+        arrayFila5.add(DenF5C1);
+        arrayFila5.add(NumF5C2);
+        arrayFila5.add(DenF5C2);
+        arrayFila5.add(NumF5C3);
+        arrayFila5.add(DenF5C3);
+        arrayFila5.add(NumF5C4);
+        arrayFila5.add(DenF5C4);
+        arrayFila5.add(NumF5C5);
+        arrayFila5.add(DenF5C5);
+
+        arraySeparadores.add(SepF1C1);
+        arraySeparadores.add(SepF1C2);
+        arraySeparadores.add(SepF1C3);
+        arraySeparadores.add(SepF1C4);
+        arraySeparadores.add(SepF1C5);
+        arraySeparadores.add(SepF2C1);
+        arraySeparadores.add(SepF2C2);
+        arraySeparadores.add(SepF2C3);
+        arraySeparadores.add(SepF2C4);
+        arraySeparadores.add(SepF2C5);
+        arraySeparadores.add(SepF3C1);
+        arraySeparadores.add(SepF3C2);
+        arraySeparadores.add(SepF3C3);
+        arraySeparadores.add(SepF3C4);
+        arraySeparadores.add(SepF3C5);
+        arraySeparadores.add(SepF4C1);
+        arraySeparadores.add(SepF4C2);
+        arraySeparadores.add(SepF4C3);
+        arraySeparadores.add(SepF4C4);
+        arraySeparadores.add(SepF4C5);
+        arraySeparadores.add(SepF5C1);
+        arraySeparadores.add(SepF5C2);
+        arraySeparadores.add(SepF5C3);
+        arraySeparadores.add(SepF5C4);
         arraySeparadores.add(SepF5C5);
-        
+
         filA1.setActionCommand("1");
         filA1.setSelected(true);
         filB2.setActionCommand("2");
         filB2.setSelected(true);
-        
+
         // Vuelve invisible los componentes de ventana no default.
         labelB.setVisible(false);
         labelD.setVisible(false);
@@ -82,11 +119,11 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         filB2.setVisible(false);
         filB3.setVisible(false);
         filB4.setVisible(false);
-        filB5.setVisible(false);        
+        filB5.setVisible(false);
 
         labelA.setText("Fila:");
         labelC.setText("Escalar:");
-        
+
         // Oculta todas las fracciones y separadores, luego se vuelven visibles de acuerdo a filasXcolumnas.
         for (int i = 0; i < arrayFila1.size(); i++) {
             arrayFila1.get(i).setVisible(false);
@@ -95,23 +132,25 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             arrayFila4.get(i).setVisible(false);
             arrayFila5.get(i).setVisible(false);
         }
-        for (int i = 0; i < arraySeparadores.size(); i++) 
+        for (int i = 0; i < arraySeparadores.size(); i++) {
             arraySeparadores.get(i).setVisible(false);
-        
+        }
+
         // Volviendo separadores de fracción visibles.
         int f = 0;
         int fContador = 1;
-        for(int i = 0; i < Main.matrizFil; i++){
-            for(int j = f; fContador <= Main.matrizCol; j++){
+        for (int i = 0; i < Main.matrizFil; i++) {
+            for (int j = f; fContador <= Main.matrizCol; j++) {
                 arraySeparadores.get(j).setVisible(true);
                 fContador++;
             }
             f += 5;
             fContador = 1;
         }
-        
-        switch (Main.matrizFil){
-            case 1: Main.matrizFil = 1;
+
+        switch (Main.matrizFil) {
+            case 1:
+                Main.matrizFil = 1;
                 LabelFil2.setVisible(false);
                 LabelFil3.setVisible(false);
                 LabelFil4.setVisible(false);
@@ -121,7 +160,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 filA4.setVisible(false);
                 filA5.setVisible(false);
                 break;
-            case 2: Main.matrizFil = 2;
+            case 2:
+                Main.matrizFil = 2;
                 LabelFil3.setVisible(false);
                 LabelFil4.setVisible(false);
                 LabelFil5.setVisible(false);
@@ -129,80 +169,96 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 filA4.setVisible(false);
                 filA5.setVisible(false);
                 break;
-            case 3: Main.matrizFil = 3;
+            case 3:
+                Main.matrizFil = 3;
                 LabelFil4.setVisible(false);
                 LabelFil5.setVisible(false);
                 filA4.setVisible(false);
                 filA5.setVisible(false);
                 break;
-            case 4: Main.matrizFil = 4;
+            case 4:
+                Main.matrizFil = 4;
                 LabelFil5.setVisible(false);
                 filA5.setVisible(false);
         }
-        
-        switch (Main.matrizCol){
-            case 1: Main.matrizCol = 1;
+
+        switch (Main.matrizCol) {
+            case 1:
+                Main.matrizCol = 1;
                 LabelCol2.setVisible(false);
                 LabelCol3.setVisible(false);
                 LabelCol4.setVisible(false);
                 LabelCol5.setVisible(false);
                 break;
-            case 2: Main.matrizCol = 2;
+            case 2:
+                Main.matrizCol = 2;
                 LabelCol3.setVisible(false);
                 LabelCol4.setVisible(false);
                 LabelCol5.setVisible(false);
                 break;
-            case 3: Main.matrizCol = 3;
+            case 3:
+                Main.matrizCol = 3;
                 LabelCol4.setVisible(false);
                 LabelCol5.setVisible(false);
                 break;
-            case 4: Main.matrizCol = 4;
+            case 4:
+                Main.matrizCol = 4;
                 LabelCol5.setVisible(false);
         }
-        
+
         int i = 0;
         switch (Main.matrizFil) {
-            case 1: Main.matrizFil = 1;
+            case 1:
+                Main.matrizFil = 1;
                 i = 9;
                 break;
-            case 2: Main.matrizFil = 2;
+            case 2:
+                Main.matrizFil = 2;
                 i = 19;
                 break;
-            case 3: Main.matrizFil = 3;
+            case 3:
+                Main.matrizFil = 3;
                 i = 29;
                 break;
-            case 4: Main.matrizFil = 4;
+            case 4:
+                Main.matrizFil = 4;
                 i = 39;
                 break;
-            case 5: Main.matrizFil = 5;
+            case 5:
+                Main.matrizFil = 5;
                 i = 49;
                 break;
         }
-        
+
         int rContador = 1;
         int r = 0;
-        for (int k = 1; k <= Main.matrizFil; k++){
-            while (rContador <= Main.matrizCol){
+        for (int k = 1; k <= Main.matrizFil; k++) {
+            while (rContador <= Main.matrizCol) {
                 switch (k) {
-                    case 1: k = 1;
+                    case 1:
+                        k = 1;
                         arrayFila1.get(r).setVisible(true);
-                        arrayFila1.get(r+1).setVisible(true);
+                        arrayFila1.get(r + 1).setVisible(true);
                         break;
-                    case 2: k = 2;
+                    case 2:
+                        k = 2;
                         arrayFila2.get(r).setVisible(true);
-                        arrayFila2.get(r+1).setVisible(true);
+                        arrayFila2.get(r + 1).setVisible(true);
                         break;
-                    case 3: k = 3;
+                    case 3:
+                        k = 3;
                         arrayFila3.get(r).setVisible(true);
-                        arrayFila3.get(r+1).setVisible(true);
+                        arrayFila3.get(r + 1).setVisible(true);
                         break;
-                    case 4: k = 4;
+                    case 4:
+                        k = 4;
                         arrayFila4.get(r).setVisible(true);
-                        arrayFila4.get(r+1).setVisible(true);
+                        arrayFila4.get(r + 1).setVisible(true);
                         break;
-                    case 5: k = 5;
+                    case 5:
+                        k = 5;
                         arrayFila5.get(r).setVisible(true);
-                        arrayFila5.get(r+1).setVisible(true);
+                        arrayFila5.get(r + 1).setVisible(true);
                         break;
                 }
                 r += 2;
@@ -358,6 +414,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
         textDen = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         HistorialOperaciones = new javax.swing.JButton();
+        Regresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1845,6 +1902,14 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             }
         });
 
+        Regresar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Regresar.setText("Regresar");
+        Regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -1893,7 +1958,8 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                                         .addComponent(filB5)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(labelD))
-                            .addComponent(HistorialOperaciones)))
+                            .addComponent(HistorialOperaciones)
+                            .addComponent(Regresar)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(371, 371, 371)
                         .addComponent(jLabel6)))
@@ -1941,7 +2007,9 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(EjecutarOperación)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(HistorialOperaciones)))
+                        .addComponent(HistorialOperaciones)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Regresar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -2149,68 +2217,120 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_NumF1C1ActionPerformed
 
     private void EjecutarOperaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EjecutarOperaciónActionPerformed
+        // Comprueba valores numéricos en campos para operación.
+        if ((textNum.getText().matches("^[0-9-]+$") == false && textNum.getText().isEmpty() == false)
+                || (textDen.getText().matches("^[0-9-]+$") == false && textDen.getText().isEmpty() == false)) {
+            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+            return;
+        }
+
         int numerador, denominador;
         int jContador = 1;
         int j = 0;
         // Recorriendo para comprobar que no hayan 0s en denominador.
-        for (int i = 1; i <= Main.matrizFil; i++){
-            while (jContador <= Main.matrizCol){
+        for (int i = 1; i <= Main.matrizFil; i++) {
+            while (jContador <= Main.matrizCol) {
                 switch (i) {
-                    case 1:
-                        {                      
-                            if(arrayFila1.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
-                            
-                            if(denominador == 0) {
-                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                return;
-                            }
-                            break;
+                    case 1: {
+                        // Valida input de solo números.
+                        if ((arrayFila1.get(j).getText().matches("^[0-9-]+$") == false && arrayFila1.get(j).getText().isEmpty() == false)
+                                || (arrayFila1.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila1.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
                         }
-                    case 2:
-                        {                            
-                            if(arrayFila2.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
-                            
-                            if(denominador == 0) {
-                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                return;
-                            }
-                            break;
+
+                        if (arrayFila1.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila1.get(j + 1).getText());
                         }
-                    case 3:
-                        {
-                            if(arrayFila3.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
-                            
-                            if(denominador == 0) {
-                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                return;
-                            }
-                            break;
+
+                        if (denominador == 0) {
+                            JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                            return;
                         }
-                    case 4:
-                        {
-                            if(arrayFila4.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
-                            
-                            if(denominador == 0) {
-                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                return;
-                            }
-                            break;
+                        break;
+                    }
+                    case 2: {
+                        // Valida input de solo números.
+                        if ((arrayFila2.get(j).getText().matches("^[0-9-]+$") == false && arrayFila2.get(j).getText().isEmpty() == false)
+                                || (arrayFila2.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila2.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
                         }
-                    case 5:
-                        {
-                            if(arrayFila5.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
-                            
-                            if(denominador == 0) {
-                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                return;
-                            }
-                            break;
+
+                        if (arrayFila2.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila2.get(j + 1).getText());
                         }
+
+                        if (denominador == 0) {
+                            JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                            return;
+                        }
+                        break;
+                    }
+                    case 3: {
+                        // Valida input de solo números.
+                        if ((arrayFila3.get(j).getText().matches("^[0-9-]+$") == false && arrayFila3.get(j).getText().isEmpty() == false)
+                                || (arrayFila3.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila3.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
+                        }
+
+                        if (arrayFila3.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila3.get(j + 1).getText());
+                        }
+
+                        if (denominador == 0) {
+                            JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                            return;
+                        }
+                        break;
+                    }
+                    case 4: {
+                        // Valida input de solo números.
+                        if ((arrayFila4.get(j).getText().matches("^[0-9-]+$") == false && arrayFila4.get(j).getText().isEmpty() == false)
+                                || (arrayFila4.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila4.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
+                        }
+
+                        if (arrayFila4.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila4.get(j + 1).getText());
+                        }
+
+                        if (denominador == 0) {
+                            JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                            return;
+                        }
+                        break;
+                    }
+                    case 5: {
+                        // Valida input de solo números.
+                        if ((arrayFila5.get(j).getText().matches("^[0-9-]+$") == false && arrayFila5.get(j).getText().isEmpty() == false)
+                                || (arrayFila5.get(j + 1).getText().matches("^[0-9-]+$") == false && arrayFila5.get(j + 1).getText().isEmpty() == false)) {
+                            JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                            return;
+                        }
+
+                        if (arrayFila5.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila5.get(j + 1).getText());
+                        }
+
+                        if (denominador == 0) {
+                            JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                            return;
+                        }
+                        break;
+                    }
                     default:
                         break;
                 }
@@ -2218,19 +2338,19 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 jContador++;
             }
             j = 0;
-            jContador = 1;         
+            jContador = 1;
         }
-        
+
         // Comprobando que se hayan ingresado los datos para operaciones.
         switch (ComboOperaciones.getSelectedIndex()) {
             case 0:
-                if(textNum.getText().length() == 0 || textDen.getText().equals("0")) {
+                if (textNum.getText().length() == 0 || textDen.getText().equals("0")) {
                     JOptionPane.showMessageDialog(null, "Error: debe ingresar un escalar válido.");
                     return;
                 }
                 break;
             case 2:
-                if(textNum.getText().length() == 0 || textDen.getText().equals("0")) {
+                if (textNum.getText().length() == 0 || textDen.getText().equals("0")) {
                     JOptionPane.showMessageDialog(null, "Error: debe ingresar un múltiplo válido.");
                     return;
                 }
@@ -2238,81 +2358,106 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             default:
                 break;
         }
-        
-        Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
+
+        Fraction elementos[][] = new Fraction[Main.matrizFil][Main.matrizCol];
         Matriz matrizOperacion0 = new Matriz(elementos);
         // Recorrido para crear matriz.
-        if (Main.arrayOperaciones.isEmpty()){
+        if (Main.arrayOperaciones.isEmpty()) {
             jContador = 1;
             j = 0;
-            for (int i = 1; i <= Main.matrizFil; i++){
-                while (jContador <= Main.matrizCol){
+            for (int i = 1; i <= Main.matrizFil; i++) {
+                while (jContador <= Main.matrizCol) {
                     switch (i) {
-                        case 1:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila1.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila1.get(j).getText());
-
-                                if(arrayFila1.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                        case 1: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila1.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                numerador = Integer.parseInt(arrayFila1.get(j).getText());
                             }
-                        case 2:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila2.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila2.get(j).getText());
 
-                                if(arrayFila2.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                            if (arrayFila1.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila1.get(j + 1).getText());
                             }
-                        case 3:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila3.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila3.get(j).getText());
 
-                                if(arrayFila3.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
+                        case 2: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila2.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                numerador = Integer.parseInt(arrayFila2.get(j).getText());
                             }
-                        case 4:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila4.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila4.get(j).getText());
 
-                                if(arrayFila4.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                            if (arrayFila2.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila2.get(j + 1).getText());
                             }
-                        case 5:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila5.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila5.get(j).getText());
 
-                                if(arrayFila5.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
+                        case 3: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila3.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                numerador = Integer.parseInt(arrayFila3.get(j).getText());
                             }
+
+                            if (arrayFila3.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila3.get(j + 1).getText());
+                            }
+
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
+                        case 4: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila4.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                numerador = Integer.parseInt(arrayFila4.get(j).getText());
+                            }
+
+                            if (arrayFila4.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila4.get(j + 1).getText());
+                            }
+
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
+                        case 5: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila5.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                numerador = Integer.parseInt(arrayFila5.get(j).getText());
+                            }
+
+                            if (arrayFila5.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila5.get(j + 1).getText());
+                            }
+
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion0.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
                         default:
                             break;
                     }
@@ -2320,84 +2465,111 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     jContador++;
                 }
                 j = 0;
-                jContador = 1;         
+                jContador = 1;
             }
             Main.arrayOperaciones.add(matrizOperacion0); // Agrega primer matriz a arrayOperaciones.
         }
-        
+
         // Recorrido para crear matriz.
         jContador = 1;
-        j = 0;        
+        j = 0;
         //Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
         Matriz matrizOperacion = new Matriz(elementos);
-        for (int i = 1; i <= Main.matrizFil; i++){
-            while (jContador <= Main.matrizCol){
+        for (int i = 1; i <= Main.matrizFil; i++) {
+            while (jContador <= Main.matrizCol) {
                 switch (i) {
-                    case 1:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila1.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila1.get(j).getText());
-                            
-                            if(arrayFila1.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
+                    case 1: {
+                        Fraction fraccion = new Fraction();
+                        if (arrayFila1.get(j).getText().isEmpty()) {
+                            numerador = 1;
+                        } else {
+                            numerador = Integer.parseInt(arrayFila1.get(j).getText());
                         }
-                    case 2:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila2.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila2.get(j).getText());
-                            
-                            if(arrayFila2.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
+
+                        if (arrayFila1.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila1.get(j + 1).getText());
                         }
-                    case 3:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila3.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila3.get(j).getText());
-                            
-                            if(arrayFila3.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
+
+                        fraccion.setValue(numerador, denominador);
+                        matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                        break;
+                    }
+                    case 2: {
+                        Fraction fraccion = new Fraction();
+                        if (arrayFila2.get(j).getText().isEmpty()) {
+                            numerador = 1;
+                        } else {
+                            numerador = Integer.parseInt(arrayFila2.get(j).getText());
                         }
-                    case 4:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila4.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila4.get(j).getText());
-                            
-                            if(arrayFila4.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
+
+                        if (arrayFila2.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila2.get(j + 1).getText());
                         }
-                    case 5:
-                        {
-                            Fraction fraccion = new Fraction();
-                            if(arrayFila5.get(j).getText().isEmpty()) numerador = 1;
-                            else numerador = Integer.parseInt(arrayFila5.get(j).getText());
-                            
-                            if(arrayFila5.get(j+1).getText().isEmpty()) denominador = 1;
-                            else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
-                            
-                            fraccion.setValue(numerador, denominador);
-                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                            break;
+
+                        fraccion.setValue(numerador, denominador);
+                        matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                        break;
+                    }
+                    case 3: {
+                        Fraction fraccion = new Fraction();
+                        if (arrayFila3.get(j).getText().isEmpty()) {
+                            numerador = 1;
+                        } else {
+
+                            numerador = Integer.parseInt(arrayFila3.get(j).getText());
                         }
+
+                        if (arrayFila3.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila3.get(j + 1).getText());
+                        }
+
+                        fraccion.setValue(numerador, denominador);
+                        matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                        break;
+                    }
+                    case 4: {
+                        Fraction fraccion = new Fraction();
+                        if (arrayFila4.get(j).getText().isEmpty()) {
+                            numerador = 1;
+                        } else {
+
+                            numerador = Integer.parseInt(arrayFila4.get(j).getText());
+                        }
+
+                        if (arrayFila4.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila4.get(j + 1).getText());
+                        }
+
+                        fraccion.setValue(numerador, denominador);
+                        matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                        break;
+                    }
+                    case 5: {
+                        Fraction fraccion = new Fraction();
+                        if (arrayFila5.get(j).getText().isEmpty()) {
+                            numerador = 1;
+                        } else {
+                            numerador = Integer.parseInt(arrayFila5.get(j).getText());
+                        }
+
+                        if (arrayFila5.get(j + 1).getText().isEmpty()) {
+                            denominador = 1;
+                        } else {
+                            denominador = Integer.parseInt(arrayFila5.get(j + 1).getText());
+                        }
+
+                        fraccion.setValue(numerador, denominador);
+                        matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                        break;
+                    }
                     default:
                         break;
                 }
@@ -2405,62 +2577,92 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 jContador++;
             }
             j = 0;
-            jContador = 1;         
+            jContador = 1;
         }
         Main.arrayOperaciones.add(matrizOperacion); // Agrega matriz a arrayOperaciones.
         //if(Main.arrayOperaciones.size() == 1) return;
-        
+
         // Una vez se ha agregado la matriz original al array, la matriz solo puede modificarse mediante operaciones.
-        if (Main.arrayOperaciones.isEmpty() == false){
-            NumF1C1.setEditable(false); DenF1C1.setEditable(false);
-            NumF1C2.setEditable(false); DenF1C2.setEditable(false);
-            NumF1C3.setEditable(false); DenF1C3.setEditable(false);
-            NumF1C4.setEditable(false); DenF1C4.setEditable(false);
-            NumF1C5.setEditable(false); DenF1C5.setEditable(false);
-            NumF2C1.setEditable(false); DenF2C1.setEditable(false);
-            NumF2C2.setEditable(false); DenF2C2.setEditable(false);
-            NumF2C3.setEditable(false); DenF2C3.setEditable(false);
-            NumF2C4.setEditable(false); DenF2C4.setEditable(false);
-            NumF2C5.setEditable(false); DenF2C5.setEditable(false);
-            NumF3C1.setEditable(false); DenF3C1.setEditable(false);
-            NumF3C2.setEditable(false); DenF3C2.setEditable(false);
-            NumF3C3.setEditable(false); DenF3C3.setEditable(false);
-            NumF3C4.setEditable(false); DenF3C4.setEditable(false);
-            NumF3C5.setEditable(false); DenF3C5.setEditable(false);
-            NumF4C1.setEditable(false); DenF4C1.setEditable(false);
-            NumF4C2.setEditable(false); DenF4C2.setEditable(false);
-            NumF4C3.setEditable(false); DenF4C3.setEditable(false);
-            NumF4C4.setEditable(false); DenF4C4.setEditable(false);
-            NumF4C5.setEditable(false); DenF4C5.setEditable(false);
-            NumF5C1.setEditable(false); DenF5C1.setEditable(false);
-            NumF5C2.setEditable(false); DenF5C2.setEditable(false);
-            NumF5C3.setEditable(false); DenF5C3.setEditable(false);
-            NumF5C4.setEditable(false); DenF5C4.setEditable(false);
-            NumF5C5.setEditable(false); DenF5C5.setEditable(false);
+        if (Main.arrayOperaciones.isEmpty() == false) {
+            NumF1C1.setEditable(false);
+            DenF1C1.setEditable(false);
+            NumF1C2.setEditable(false);
+            DenF1C2.setEditable(false);
+            NumF1C3.setEditable(false);
+            DenF1C3.setEditable(false);
+            NumF1C4.setEditable(false);
+            DenF1C4.setEditable(false);
+            NumF1C5.setEditable(false);
+            DenF1C5.setEditable(false);
+            NumF2C1.setEditable(false);
+            DenF2C1.setEditable(false);
+            NumF2C2.setEditable(false);
+            DenF2C2.setEditable(false);
+            NumF2C3.setEditable(false);
+            DenF2C3.setEditable(false);
+            NumF2C4.setEditable(false);
+            DenF2C4.setEditable(false);
+            NumF2C5.setEditable(false);
+            DenF2C5.setEditable(false);
+            NumF3C1.setEditable(false);
+            DenF3C1.setEditable(false);
+            NumF3C2.setEditable(false);
+            DenF3C2.setEditable(false);
+            NumF3C3.setEditable(false);
+            DenF3C3.setEditable(false);
+            NumF3C4.setEditable(false);
+            DenF3C4.setEditable(false);
+            NumF3C5.setEditable(false);
+            DenF3C5.setEditable(false);
+            NumF4C1.setEditable(false);
+            DenF4C1.setEditable(false);
+            NumF4C2.setEditable(false);
+            DenF4C2.setEditable(false);
+            NumF4C3.setEditable(false);
+            DenF4C3.setEditable(false);
+            NumF4C4.setEditable(false);
+            DenF4C4.setEditable(false);
+            NumF4C5.setEditable(false);
+            DenF4C5.setEditable(false);
+            NumF5C1.setEditable(false);
+            DenF5C1.setEditable(false);
+            NumF5C2.setEditable(false);
+            DenF5C2.setEditable(false);
+            NumF5C3.setEditable(false);
+            DenF5C3.setEditable(false);
+            NumF5C4.setEditable(false);
+            DenF5C4.setEditable(false);
+            NumF5C5.setEditable(false);
+            DenF5C5.setEditable(false);
         }
-                
+
         // Realizando operación seleccionada.
         //Matriz matrizOperacion2 = new Matriz(elementos);
         String operacionesString;
         switch (ComboOperaciones.getSelectedIndex()) {
-            case 0:       
-                
+            case 0:
                 int fila = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
                 Fraction escalar = new Fraction();
                 numerador = Integer.parseInt(textNum.getText());
-                if (textDen.getText().isEmpty()) denominador = 1;
-                else denominador = Integer.parseInt(textDen.getText());
+                if (textDen.getText().isEmpty()) {
+                    denominador = 1;
+                } else {
+                    denominador = Integer.parseInt(textDen.getText());
+                }
                 System.out.println(textDen.getText());
                 escalar.setValue(numerador, denominador);
-                
+
                 // Crea objeto de OperacionesElementales para aplicar operación.
                 OperacionesElementales OperacionElementalA = new OperacionesElementales(Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1));
-                
+
                 OperacionElementalA.MultiplicarFilaPorEscalar(fila, escalar); // Realiza operación.
                 matrizOperacion = OperacionElementalA.getMatrizA(); // Actualiza matrizA.
                 //Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.    
-                if (denominador == 1) operacionesString =  Integer.toString(numerador) + " * f" + ComboFilaA.getSelection().getActionCommand();
-                else operacionesString = Integer.toString(numerador)+ "/" + Integer.toString(denominador) + " * f" + ComboFilaA.getSelection().getActionCommand();
+                if (denominador == 1) {
+                    operacionesString = Integer.toString(numerador) + " * f" + ComboFilaA.getSelection().getActionCommand();
+                } else {
+                    operacionesString = Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * f" + ComboFilaA.getSelection().getActionCommand();
+                }
                 Main.arrayOperacionesString.add(operacionesString); // Agrega indicación de operación.
                 break;
             case 1:
@@ -2468,10 +2670,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 //Fraction fraccion = new Fraction();
                 int fila1 = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
                 int fila2 = Integer.parseInt(ComboFilaB.getSelection().getActionCommand());
-                
+
                 // Crea objeto de OperacionesElementales para aplicar operación.
                 OperacionesElementales OperacionElementalB = new OperacionesElementales(Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1));
-                
+
                 OperacionElementalB.IntercabiarFilas(fila1, fila2); // Realiza operación.
                 matrizOperacion = OperacionElementalB.getMatrizA(); // Actualiza matrizA.
                 //Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
@@ -2480,86 +2682,104 @@ public class VentanaOperaciones extends javax.swing.JFrame {
             case 2:
                 int numeroFila1 = Integer.parseInt(ComboFilaA.getSelection().getActionCommand());
                 int numeroFila2 = Integer.parseInt(ComboFilaB.getSelection().getActionCommand());
-                
+
                 Fraction multiplo = new Fraction();
                 numerador = Integer.parseInt(textNum.getText());
-                if (textDen.getText().isEmpty()) denominador = 1;
-                else denominador = Integer.parseInt(textDen.getText());
+                if (textDen.getText().isEmpty()) {
+                    denominador = 1;
+                } else {
+                    denominador = Integer.parseInt(textDen.getText());
+                }
                 System.out.println(textDen.getText());
                 multiplo.setValue(numerador, denominador);
-                
+
                 // Crea objeto de OperacionesElementales para aplicar operación.
                 OperacionesElementales OperacionElementalC = new OperacionesElementales(Main.arrayOperaciones.get(Main.arrayOperaciones.size() - 1));
-                
+
                 OperacionElementalC.SumaFilaMultiplo(numeroFila1, numeroFila2, multiplo); // Realiza operación.
                 matrizOperacion = OperacionElementalC.getMatrizA(); // Actualiza matrizA.
                 //Main.arrayOperaciones.add(matrizOperacion2); // Agrega matriz modificada.
-                if (numerador != 1 && denominador != 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
-                else if (numerador != 1 && denominador == 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
-                else if (numerador == 1 && denominador == 1) operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + "f" + ComboFilaB.getSelection().getActionCommand();
-                else operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
+                if (numerador != 1 && denominador != 1) {
+                    operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
+                } else if (numerador != 1 && denominador == 1) {
+                    operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
+                } else if (numerador == 1 && denominador == 1) {
+                    operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + "f" + ComboFilaB.getSelection().getActionCommand();
+                } else {
+                    operacionesString = "f" + ComboFilaA.getSelection().getActionCommand() + " + " + Integer.toString(numerador) + "/" + Integer.toString(denominador) + " * " + "f" + ComboFilaB.getSelection().getActionCommand();
+                }
                 Main.arrayOperacionesString.add(operacionesString); // Agrega indicación de operación.
                 break;
             default:
                 break;
         }
-        
+
         //Recorre matriz para actualizar interfaz.
         jContador = 1;
         j = 0;
-        for (int i = 1; i <= Main.matrizFil; i++){
-            while (jContador <= Main.matrizCol){
+        for (int i = 1; i <= Main.matrizFil; i++) {
+            while (jContador <= Main.matrizCol) {
                 switch (i) {
-                    case 1:
-                        {
-                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
-                            
-                            arrayFila1.get(j).setText(Integer.toString(numerador));
-                            if(denominador == 1) arrayFila1.get(j+1).setText("");
-                            else arrayFila1.get(j+1).setText(Integer.toString(denominador));                            
-                            break;
+                    case 1: {
+                        numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                        denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
+
+                        arrayFila1.get(j).setText(Integer.toString(numerador));
+                        if (denominador == 1) {
+                            arrayFila1.get(j + 1).setText("");
+                        } else {
+                            arrayFila1.get(j + 1).setText(Integer.toString(denominador));
                         }
-                    case 2:
-                        {
-                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
-                            
-                            arrayFila2.get(j).setText(Integer.toString(numerador));
-                            if(denominador == 1) arrayFila2.get(j+1).setText("");
-                            else arrayFila2.get(j+1).setText(Integer.toString(denominador));
-                            break;
+                        break;
+                    }
+                    case 2: {
+                        numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                        denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
+
+                        arrayFila2.get(j).setText(Integer.toString(numerador));
+                        if (denominador == 1) {
+                            arrayFila2.get(j + 1).setText("");
+                        } else {
+                            arrayFila2.get(j + 1).setText(Integer.toString(denominador));
                         }
-                    case 3:
-                        {
-                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
-                            
-                            arrayFila3.get(j).setText(Integer.toString(numerador));
-                            if(denominador == 1) arrayFila3.get(j+1).setText("");
-                            else arrayFila3.get(j+1).setText(Integer.toString(denominador));
-                            break;
+                        break;
+                    }
+                    case 3: {
+                        numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                        denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
+
+                        arrayFila3.get(j).setText(Integer.toString(numerador));
+                        if (denominador == 1) {
+                            arrayFila3.get(j + 1).setText("");
+                        } else {
+                            arrayFila3.get(j + 1).setText(Integer.toString(denominador));
                         }
-                    case 4:
-                        {
-                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
-                            
-                            arrayFila4.get(j).setText(Integer.toString(numerador));
-                            if(denominador == 1) arrayFila4.get(j+1).setText("");
-                            else arrayFila4.get(j+1).setText(Integer.toString(denominador));
-                            break;
+                        break;
+                    }
+                    case 4: {
+                        numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                        denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
+
+                        arrayFila4.get(j).setText(Integer.toString(numerador));
+                        if (denominador == 1) {
+                            arrayFila4.get(j + 1).setText("");
+                        } else {
+                            arrayFila4.get(j + 1).setText(Integer.toString(denominador));
                         }
-                    case 5:
-                        {
-                            numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
-                            denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
-                            
-                            arrayFila5.get(j).setText(Integer.toString(numerador));
-                            if(denominador == 1) arrayFila5.get(j+1).setText("");
-                            else arrayFila5.get(j+1).setText(Integer.toString(denominador));
-                            break;
+                        break;
+                    }
+                    case 5: {
+                        numerador = matrizOperacion.getElemento(i - 1, jContador - 1).getNumerator();
+                        denominador = matrizOperacion.getElemento(i - 1, jContador - 1).getDenominator();
+
+                        arrayFila5.get(j).setText(Integer.toString(numerador));
+                        if (denominador == 1) {
+                            arrayFila5.get(j + 1).setText("");
+                        } else {
+                            arrayFila5.get(j + 1).setText(Integer.toString(denominador));
                         }
+                        break;
+                    }
                     default:
                         break;
                 }
@@ -2567,7 +2787,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 jContador++;
             }
             j = 0;
-            jContador = 1;         
+            jContador = 1;
         }
     }//GEN-LAST:event_EjecutarOperaciónActionPerformed
 
@@ -2593,7 +2813,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
 
                 // Activando y desactivando radiobutton de filas.
                 switch (Main.matrizFil - 1) {
-                    case 0:                
+                    case 0:
                         filA1.setVisible(true);
                         filA2.setVisible(false);
                         filA3.setVisible(false);
@@ -2643,10 +2863,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 jSeparator1.setVisible(false);
                 labelA.setText("Fila 'a':");
                 labelB.setText("Fila 'b':");
-                
+
                 // Activando y desactivando radiobutton de filas.
                 switch (Main.matrizFil - 1) {
-                    case 0:                
+                    case 0:
                         filA1.setVisible(true);
                         filA2.setVisible(false);
                         filA3.setVisible(false);
@@ -2723,10 +2943,10 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                 labelB.setText("Fila 'b':");
                 labelC.setText("Múltiplo:");
                 labelD.setText("(Fila destino)");
-                
+
                 // Activando y desactivando radiobutton de filas.
                 switch (Main.matrizFil - 1) {
-                    case 0:                
+                    case 0:
                         filA1.setVisible(true);
                         filA2.setVisible(false);
                         filA3.setVisible(false);
@@ -2844,69 +3064,114 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     }//GEN-LAST:event_textDenActionPerformed
 
     private void HistorialOperacionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HistorialOperacionesActionPerformed
-        if (Main.arrayOperaciones.isEmpty()){
+        if (Main.arrayOperaciones.isEmpty()) {
             int numerador, denominador;
             int jContador = 1;
             int j = 0;
             // Recorriendo para comprobar que no hayan 0s en denominador.
-            for (int i = 1; i <= Main.matrizFil; i++){
-                while (jContador <= Main.matrizCol){
+            for (int i = 1; i <= Main.matrizFil; i++) {
+                while (jContador <= Main.matrizCol) {
                     switch (i) {
-                        case 1:
-                            {                      
-                                if(arrayFila1.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
-
-                                if(denominador == 0) {
-                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                    return;
-                                }
-                                break;
+                        case 1: {
+                            // Valida input de solo números.
+                            if ((arrayFila1.get(j).getText().matches("^[0-9]+$") == false && arrayFila1.get(j).getText().isEmpty() == false)
+                                    || (arrayFila1.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila1.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
                             }
-                        case 2:
-                            {                            
-                                if(arrayFila2.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
 
-                                if(denominador == 0) {
-                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                    return;
-                                }
-                                break;
+                            if (arrayFila1.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila1.get(j + 1).getText());
                             }
-                        case 3:
-                            {
-                                if(arrayFila3.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
 
-                                if(denominador == 0) {
-                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                    return;
-                                }
-                                break;
+                            if (denominador == 0) {
+                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                return;
                             }
-                        case 4:
-                            {
-                                if(arrayFila4.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
+                            break;
+                        }
+                        case 2: {
+                            // Valida input de solo números.
+                            if ((arrayFila2.get(j).getText().matches("^[0-9]+$") == false && arrayFila2.get(j).getText().isEmpty() == false)
+                                    || (arrayFila2.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila2.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
+                            }
 
-                                if(denominador == 0) {
-                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                    return;
-                                }
-                                break;
+                            if (arrayFila2.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila2.get(j + 1).getText());
                             }
-                        case 5:
-                            {
-                                if(arrayFila5.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
 
-                                if(denominador == 0) {
-                                    JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
-                                    return;
-                                }
-                                break;
+                            if (denominador == 0) {
+                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                return;
                             }
+                            break;
+                        }
+                        case 3: {
+                            // Valida input de solo números.
+                            if ((arrayFila3.get(j).getText().matches("^[0-9]+$") == false && arrayFila3.get(j).getText().isEmpty() == false)
+                                    || (arrayFila3.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila3.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
+                            }
+
+                            if (arrayFila3.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila3.get(j + 1).getText());
+                            }
+
+                            if (denominador == 0) {
+                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                return;
+                            }
+                            break;
+                        }
+                        case 4: {
+                            // Valida input de solo números.
+                            if ((arrayFila4.get(j).getText().matches("^[0-9]+$") == false && arrayFila4.get(j).getText().isEmpty() == false)
+                                    || (arrayFila4.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila4.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
+                            }
+
+                            if (arrayFila4.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila4.get(j + 1).getText());
+                            }
+
+                            if (denominador == 0) {
+                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                return;
+                            }
+                            break;
+                        }
+                        case 5: {
+                            // Valida input de solo números.
+                            if ((arrayFila5.get(j).getText().matches("^[0-9]+$") == false && arrayFila5.get(j).getText().isEmpty() == false)
+                                    || (arrayFila5.get(j + 1).getText().matches("^[0-9]+$") == false && arrayFila5.get(j + 1).getText().isEmpty() == false)) {
+                                JOptionPane.showMessageDialog(null, "Error: ingresar solo valores numéricos.");
+                                return;
+                            }
+
+                            if (arrayFila5.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila5.get(j + 1).getText());
+                            }
+
+                            if (denominador == 0) {
+                                JOptionPane.showMessageDialog(null, "Error: no pueden haber 0's en el denominador.");
+                                return;
+                            }
+                            break;
+                        }
                         default:
                             break;
                     }
@@ -2914,83 +3179,128 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     jContador++;
                 }
                 j = 0;
-                jContador = 1;         
+                jContador = 1;
             }
-            
+
             // Recorrido para crear matriz.
             jContador = 1;
             j = 0;
 
-            Fraction elementos[][]= new Fraction[Main.matrizFil][Main.matrizCol];
+            Fraction elementos[][] = new Fraction[Main.matrizFil][Main.matrizCol];
             Matriz matrizOperacion = new Matriz(elementos);
-            for (int i = 1; i <= Main.matrizFil; i++){
-                while (jContador <= Main.matrizCol){
+            for (int i = 1; i <= Main.matrizFil; i++) {
+                while (jContador <= Main.matrizCol) {
                     switch (i) {
-                        case 1:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila1.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila1.get(j).getText());
-
-                                if(arrayFila1.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila1.get(j+1).getText()); 
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                        case 1: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila1.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                if (arrayFila1.get(j).getText().matches("^[0-9]+$") == false) {
+                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
+                                    return;
+                                }
+                                numerador = Integer.parseInt(arrayFila1.get(j).getText());
                             }
-                        case 2:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila2.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila2.get(j).getText());
 
-                                if(arrayFila2.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila2.get(j+1).getText());
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                            if (arrayFila1.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila1.get(j + 1).getText());
                             }
-                        case 3:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila3.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila3.get(j).getText());
 
-                                if(arrayFila3.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila3.get(j+1).getText());
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
+                        case 2: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila2.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                if (arrayFila2.get(j).getText().matches("^[0-9]+$") == false) {
+                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
+                                    return;
+                                }
+                                numerador = Integer.parseInt(arrayFila2.get(j).getText());
                             }
-                        case 4:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila4.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila4.get(j).getText());
 
-                                if(arrayFila4.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila4.get(j+1).getText());
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                            if (arrayFila2.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila2.get(j + 1).getText());
                             }
-                        case 5:
-                            {
-                                Fraction fraccion = new Fraction();
-                                if(arrayFila5.get(j).getText().isEmpty()) numerador = 1;
-                                else numerador = Integer.parseInt(arrayFila5.get(j).getText());
 
-                                if(arrayFila5.get(j+1).getText().isEmpty()) denominador = 1;
-                                else denominador = Integer.parseInt(arrayFila5.get(j+1).getText());
-
-                                fraccion.setValue(numerador, denominador);
-                                matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
-                                break;
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
+                        case 3: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila3.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                if (arrayFila3.get(j).getText().matches("^[0-9]+$") == false) {
+                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
+                                    return;
+                                }
+                                numerador = Integer.parseInt(arrayFila3.get(j).getText());
                             }
+
+                            if (arrayFila3.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila3.get(j + 1).getText());
+                            }
+
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
+                        case 4: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila4.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                if (arrayFila4.get(j).getText().matches("^[0-9]+$") == false) {
+                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
+                                    return;
+                                }
+                                numerador = Integer.parseInt(arrayFila4.get(j).getText());
+                            }
+
+                            if (arrayFila4.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila4.get(j + 1).getText());
+                            }
+
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
+                        case 5: {
+                            Fraction fraccion = new Fraction();
+                            if (arrayFila5.get(j).getText().isEmpty()) {
+                                numerador = 1;
+                            } else {
+                                if (arrayFila5.get(j).getText().matches("^[0-9]+$") == false) {
+                                    JOptionPane.showMessageDialog(null, "Error: solo valores numéricos.");
+                                    return;
+                                }
+                                numerador = Integer.parseInt(arrayFila5.get(j).getText());
+                            }
+
+                            if (arrayFila5.get(j + 1).getText().isEmpty()) {
+                                denominador = 1;
+                            } else {
+                                denominador = Integer.parseInt(arrayFila5.get(j + 1).getText());
+                            }
+
+                            fraccion.setValue(numerador, denominador);
+                            matrizOperacion.setElemento(i - 1, jContador - 1, fraccion);
+                            break;
+                        }
                         default:
                             break;
                     }
@@ -2998,17 +3308,87 @@ public class VentanaOperaciones extends javax.swing.JFrame {
                     jContador++;
                 }
                 j = 0;
-                jContador = 1;         
+                jContador = 1;
             }
             Main.arrayOperaciones.add(matrizOperacion); // Agrega primer matriz a arrayOperaciones.
         }
-        
+
+        // Una vez se ha agregado la matriz original al array, la matriz solo puede modificarse mediante operaciones.
+        if (Main.arrayOperaciones.isEmpty() == false) {
+            NumF1C1.setEditable(false);
+            DenF1C1.setEditable(false);
+            NumF1C2.setEditable(false);
+            DenF1C2.setEditable(false);
+            NumF1C3.setEditable(false);
+            DenF1C3.setEditable(false);
+            NumF1C4.setEditable(false);
+            DenF1C4.setEditable(false);
+            NumF1C5.setEditable(false);
+            DenF1C5.setEditable(false);
+            NumF2C1.setEditable(false);
+            DenF2C1.setEditable(false);
+            NumF2C2.setEditable(false);
+            DenF2C2.setEditable(false);
+            NumF2C3.setEditable(false);
+            DenF2C3.setEditable(false);
+            NumF2C4.setEditable(false);
+            DenF2C4.setEditable(false);
+            NumF2C5.setEditable(false);
+            DenF2C5.setEditable(false);
+            NumF3C1.setEditable(false);
+            DenF3C1.setEditable(false);
+            NumF3C2.setEditable(false);
+            DenF3C2.setEditable(false);
+            NumF3C3.setEditable(false);
+            DenF3C3.setEditable(false);
+            NumF3C4.setEditable(false);
+            DenF3C4.setEditable(false);
+            NumF3C5.setEditable(false);
+            DenF3C5.setEditable(false);
+            NumF4C1.setEditable(false);
+            DenF4C1.setEditable(false);
+            NumF4C2.setEditable(false);
+            DenF4C2.setEditable(false);
+            NumF4C3.setEditable(false);
+            DenF4C3.setEditable(false);
+            NumF4C4.setEditable(false);
+            DenF4C4.setEditable(false);
+            NumF4C5.setEditable(false);
+            DenF4C5.setEditable(false);
+            NumF5C1.setEditable(false);
+            DenF5C1.setEditable(false);
+            NumF5C2.setEditable(false);
+            DenF5C2.setEditable(false);
+            NumF5C3.setEditable(false);
+            DenF5C3.setEditable(false);
+            NumF5C4.setEditable(false);
+            DenF5C4.setEditable(false);
+            NumF5C5.setEditable(false);
+            DenF5C5.setEditable(false);
+        }
+
         // Inicia VentanaHistorialOperaciones.
         VentanaHistorialOperaciones VentanaHistorialOperaciones_ = new VentanaHistorialOperaciones();
         VentanaHistorialOperaciones_.setVisible(true);
         VentanaHistorialOperaciones_.setResizable(false); // Tamaño de ventana no variable.
         VentanaHistorialOperaciones_.setLocationRelativeTo(null); // Centra ventana.
     }//GEN-LAST:event_HistorialOperacionesActionPerformed
+
+    private void RegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegresarActionPerformed
+        int response = JOptionPane.showConfirmDialog(null, "Si sale perderá la matriz.", "Confirm",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (response == JOptionPane.YES_OPTION) {
+            Main.arrayOperaciones.clear();
+
+            // Inicia VentanaPrincipal
+            this.setVisible(false); // Oculta esta ventana.
+            VentanaPrincipal VentanaPrincipal_ = new VentanaPrincipal();
+            VentanaPrincipal_.setVisible(true);
+            VentanaPrincipal_.setResizable(false); // Tamaño de ventana no variable.
+            VentanaPrincipal_.setLocationRelativeTo(null); // Centra ventana.
+            return;
+        }
+    }//GEN-LAST:event_RegresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -3111,6 +3491,7 @@ public class VentanaOperaciones extends javax.swing.JFrame {
     private javax.swing.JTextField NumF5C3;
     private javax.swing.JTextField NumF5C4;
     private javax.swing.JTextField NumF5C5;
+    private javax.swing.JButton Regresar;
     private javax.swing.JSeparator SepF1C1;
     private javax.swing.JSeparator SepF1C2;
     private javax.swing.JSeparator SepF1C3;

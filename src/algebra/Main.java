@@ -18,6 +18,7 @@ public class Main {
     public static short matrizFil; // Cantidad de filas seleccionada por usuario.
     public static ArrayList<Matriz> arrayOperaciones = new ArrayList<>(); // Se agregan matrices al aplicar operaciones elementales.
     public static ArrayList<String> arrayOperacionesString = new ArrayList<>(); // Array para almacenar la indicación de la operación.
+    public static ArrayList<Matriz> arrayEcuaciones = new ArrayList<>(); // Para agregar las tres matrices de ecuaciones.
 
     public static void main(String[] args) {        
         //Se realizan pruebas
