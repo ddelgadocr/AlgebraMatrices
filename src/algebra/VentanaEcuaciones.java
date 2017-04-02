@@ -5,7 +5,6 @@
  */
 package algebra;
 
-import com.sun.xml.internal.ws.util.StringUtils;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JSeparator;
