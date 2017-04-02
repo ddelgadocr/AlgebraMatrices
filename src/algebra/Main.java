@@ -23,31 +23,8 @@ public class Main {
     public static void main(String[] args) {        
         //Se realizan pruebas
         //------Se crea la matriz------
-        /*Fraction elementos[][]= new Fraction[4][4];
-        Matriz matrizA = new Matriz(elementos);
         
-        //Lo que hice fue hacer una matriz y a todas les puse un solo valor "5/6"
-        Fraction fraccion = new Fraction();
-        fraccion.setValue(45, 19);
-         for (int i = 0; i < matrizA.getFilas(); i++) {
-            for (int j = 0; j < matrizA.getColumnas(); j++) {
-                matrizA.setElemento(i,j, fraccion);
-            }
-        }
         
-       
-        //Primero imprime la matriz 
-        System.out.println("Soy la matriz A:");
-        matrizA.imprime();
-       
-        //Se hace una nueva operacion
-        OperacionesElementales SumaMultiplo= new OperacionesElementales(matrizA);
-        Fraction multiplo = new Fraction(1,3);
-        SumaMultiplo.SumaFilaMultiplo(3,2,multiplo);*/
-        
-       // Falta validar que sean 5x5
-
-        // Inicia VentanaPrincipal.
         VentanaPrincipal VentanaPrincipal_ = new VentanaPrincipal();
         VentanaPrincipal_.setVisible(true);
         VentanaPrincipal_.setResizable(false); // Tamaño de ventana no variable.

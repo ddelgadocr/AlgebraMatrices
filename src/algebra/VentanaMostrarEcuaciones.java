@@ -66,9 +66,22 @@ public class VentanaMostrarEcuaciones extends javax.swing.JFrame {
             for (int i = 0; i <= (Main.matrizCol * 6); i++){
                 textEcuaciones.append("  "); 
             }
-            if (p == 0) textEcuaciones.append("Matriz A");
-            else if (p == 1) textEcuaciones.append("Matriz B");
-            else if (p == 2) textEcuaciones.append("Matriz C");
+            switch (p) {
+                case 0:
+                    textEcuaciones.append("Matriz A");
+                    break;
+                case 1:
+                    textEcuaciones.append("Matriz B");
+                    break;
+                case 2:
+                    textEcuaciones.append("Matriz C");
+                    break;
+                case 3:
+                    textEcuaciones.append("Matriz X");
+                    break;
+                default:
+                    break;
+            }
             textEcuaciones.append("\n\n");
         }
     }

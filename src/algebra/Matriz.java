@@ -199,7 +199,7 @@ public class Matriz {
     }
 
     private Fraction Determinante44(Matriz matriz44) {
-        Fraction elementos[][] = new Fraction[3][3];
+        Fraction[][] elementos = new Fraction[3][3];
         Matriz matriz1 = new Matriz(elementos);
         Matriz matriz2 = new Matriz(elementos);
         Matriz matriz3 = new Matriz(elementos);
@@ -246,7 +246,10 @@ public class Matriz {
         matriz4.setElemento(2, 2, matriz44.getElemento(3, 2));
 
         Fraction det = new Fraction(); // Determinante.
-
+        
+        matriz1.imprime();
+        System.out.println(matriz1.Determinante(3));
+        
         det = (((matriz44.getElemento(0, 0).multiply(matriz1.Determinante(3))).subtract(
                 (matriz44.getElemento(0, 1).multiply(matriz2.Determinante(3))))).add(
                 (matriz44.getElemento(0, 2).multiply(matriz3.Determinante(3))))).subtract(
@@ -255,7 +258,7 @@ public class Matriz {
     }
 
     private Fraction Determinante55(Matriz matriz55) {
-        Fraction elementos[][] = new Fraction[4][4];
+        Fraction[][] elementos = new Fraction[4][4];
         Matriz matriz1 = new Matriz(elementos);
         Matriz matriz2 = new Matriz(elementos);
         Matriz matriz3 = new Matriz(elementos);
