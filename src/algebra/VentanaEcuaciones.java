@@ -2352,6 +2352,21 @@ public class VentanaEcuaciones extends javax.swing.JFrame {
                 labelA.setVisible(false);
                 AgregarMatriz.setVisible(false);
                 Resolver.setVisible(true);
+                arrayFila1.forEach((i) -> {
+                    i.setEditable(false);
+                });
+                arrayFila2.forEach((i) -> {
+                    i.setEditable(false);
+                });
+                arrayFila3.forEach((i) -> {
+                    i.setEditable(false);
+                });
+                arrayFila4.forEach((i) -> {
+                    i.setEditable(false);
+                });
+                arrayFila5.forEach((i) -> {
+                    i.setEditable(false);
+                });
                 break;
             default:
                 break;
